@@ -1,9 +1,10 @@
-package model;
+package controller.CatalogCntlr;
 
 import jakarta.ws.rs.*;
 
 import jakarta.ws.rs.core.MediaType;
-import presistence.CatalogDAO;
+import model.Item;
+import presistence.daoLayer.*;
 
 import java.util.List;
 

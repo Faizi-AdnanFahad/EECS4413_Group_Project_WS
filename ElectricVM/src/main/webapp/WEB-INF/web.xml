@@ -3,6 +3,10 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
+	<context-param>
+		<param-name>context-root</param-name>
+		<param-value>/ElectricVM</param-value>
+	</context-param>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -16,7 +20,7 @@
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>package  model</param-value>
+			<param-value>package controller.CatalogCntlr</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

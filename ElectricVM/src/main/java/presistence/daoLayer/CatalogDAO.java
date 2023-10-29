@@ -1,4 +1,4 @@
-package presistence;
+package presistence.daoLayer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ public class CatalogDAO {
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
-
 			while (rs.next()) {
 				Item item = new Item();
 				item.setVid(rs.getInt("vid"));
