@@ -1,5 +1,6 @@
 package application;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,6 +26,10 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+        ServletContext context = getServletContext();
+        String appRoot = context.getRealPath("/");
+        System.out.println(appRoot);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		System.out.println("Hi");
 	}
