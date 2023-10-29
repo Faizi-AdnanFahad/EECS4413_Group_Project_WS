@@ -11,33 +11,25 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
 	<servlet>
 		<servlet-name>Jersey REST Service</servlet-name>
-		<servlet-class>org.glassfish.jersey.servlet.ServletContainer
-		</servlet-class>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>package business.controller.CatalogCntlr, presistence</param-value>
+			<param-value>package  model</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Jersey REST Service</servlet-name>
-		<url-pattern>/items</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<description></description>
-		<display-name>HelloServlet</display-name>
-		<servlet-name>HelloServlet</servlet-name>
-		<servlet-class>application.HelloServlet</servlet-class>
-	</servlet>
+
 	<servlet>
 		<description></description>
 		<display-name>TestServlet</display-name>
 		<servlet-name>TestServlet</servlet-name>
-		<servlet-class>application.TestServlet</servlet-class>
+		<servlet-class>testPackage.TestServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>TestServlet</servlet-name>
