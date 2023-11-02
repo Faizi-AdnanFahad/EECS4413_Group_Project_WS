@@ -8,7 +8,6 @@ import business.model.User.User;
 
 
 @Path("/users") 
-
 public class SignInController {
 	private UserDAO userDAO = new UserDAO();
 	@GET 

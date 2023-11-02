@@ -15,12 +15,14 @@
 	<servlet>
 		<servlet-name>Jersey REST Service</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		
 		<init-param>
 			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>package business.controller.CatalogCntlr</param-value>
+			<param-value>package business.controller.CatalogCntlr;business.controller.UserCntlr</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>Jersey REST Service</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
