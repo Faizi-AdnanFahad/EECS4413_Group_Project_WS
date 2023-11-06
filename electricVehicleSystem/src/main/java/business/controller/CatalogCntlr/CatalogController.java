@@ -1,6 +1,6 @@
 package business.controller.CatalogCntlr;
 
-import jakarta.ws.rs.*; 
+import jakarta.ws.rs.*;  
 
 import jakarta.ws.rs.core.MediaType;
 import presistence.daoLayer.ItemDAO;
@@ -8,7 +8,6 @@ import presistence.daoLayer.ItemDAO;
 import java.util.List;
 
 import business.model.Catalog.Catalog;
-import business.model.Vehicle.Item;
 
 @Path("/items")
 public class CatalogController {
@@ -16,7 +15,8 @@ public class CatalogController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Catalog> getAllStudents() {
+	public List<Catalog> getAllCatalogs() {
 		return catalogDAO.readAll();
 	}
 }
+
