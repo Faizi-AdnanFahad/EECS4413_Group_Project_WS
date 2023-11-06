@@ -36,11 +36,13 @@
 				url: "http://localhost:8080/electricVehicleSystem/rest/items",
 				type: 'GET',
 				success: function (result) {
-					var item = result[0]; // Assuming you want to populate the first item
+					for(let i=0; i< result.length; i++){
+					var item = result[i]; // Assuming you want to populate the first item
 					$("#itemId").text("Item ID: " + item.vid);
 					$("#itemName").text("Item Name: " + item.name);
 					$("#itemModel").text("Item Model: " + item.model);
 					$("#itemDescription").text("Item Description: " + item.description);
+					}
 				},
 				error: function (error) {
 					console.log(error);
