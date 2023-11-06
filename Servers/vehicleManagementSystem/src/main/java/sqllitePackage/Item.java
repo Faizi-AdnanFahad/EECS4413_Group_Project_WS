@@ -1,4 +1,4 @@
-package testPackage;
+package sqllitePackage;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,21 +7,17 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Item {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private int vid;
-	
 	private String name;
 	private String description;
 	private String model;
 	private int quanitity;
 	private int price;
 	private int mileage;
-	private int historyId;
+	private int historyId; // Getters and setters
 
-	public Item(String name, String description, String model, int quanitity, int price, int mileage,
-			int historyId) {
+	public Item(int vid, String name, String description, String model, int quanitity, int price, int mileage, int historyId) {
 		this.name = name;
 		this.description = description;
 		this.model = model;
@@ -94,5 +90,4 @@ public class Item {
 	public void setHistoryId(int historyId) {
 		this.historyId = historyId;
 	}
-
 }
