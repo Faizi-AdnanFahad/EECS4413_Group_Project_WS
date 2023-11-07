@@ -1,22 +1,26 @@
 package presistence.daoLayer;
 
-import java.sql.*;
+import java.sql.Connection; 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import business.model.Vehicle.Item;
+
+import business.model.Catalog.Catalog;
 import presistence.DatabaseConnection;
 
-public class CatalogDAO {
-	public List<Item> readAll() {
+public class ItemDAO {
+	public List<Catalog> readAll() {
 		String sql = "SELECT * FROM Item";
-		List<Item> items = new ArrayList<>();
+		List<Catalog> items = new ArrayList<>();
 
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
 
 			while (rs.next()) {
-				Item item = new Item();
+				Catalog item = new Catalog();
 				item.setVid(rs.getInt("vid"));
 				item.setName(rs.getString("name"));
 				item.setDescription(rs.getString("description"));
