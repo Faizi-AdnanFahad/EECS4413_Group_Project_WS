@@ -1,10 +1,13 @@
 package business.controller.UserCntlr;
 
-import jakarta.ws.rs.*; 
+import java.util.List;
+
+import business.model.User.User;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import presistence.daoLayer.UserDAO;
-import java.util.List;
-import business.model.User.User;
 
 
 @Path("/users") 
