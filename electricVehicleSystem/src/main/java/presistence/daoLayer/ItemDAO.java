@@ -9,7 +9,7 @@ import presistence.DatabaseConnection;
 
 public class ItemDAO {
 	public List<Catalog> readAll() {
-		String sql = "SELECT * FROM Item";
+		String sql = "SELECT * FROM Item ORDER BY price desc";
 		List<Catalog> catalogs = new ArrayList<>();
 
 		try (Connection conn = DatabaseConnection.connect();
