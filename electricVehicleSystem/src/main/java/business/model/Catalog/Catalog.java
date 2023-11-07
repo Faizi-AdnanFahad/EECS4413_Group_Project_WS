@@ -1,6 +1,6 @@
-package business.model.Vehicle;
+package business.model.Catalog;
 
-public class Item {
+public class Catalog {
 	private int vid;
 	private String name;
 	private String description;
