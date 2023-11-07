@@ -8,19 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import business.model.Catalog.Catalog;
+import business.model.Vehicle.Item;
 import presistence.DatabaseConnection;
 
-public class ItemDAO {
-	public List<Catalog> readAll() {
+public class catalogDAO {
+	public List<Item> listAllVehicles() {
 		String sql = "SELECT * FROM Item";
-		List<Catalog> items = new ArrayList<>();
+		
+		Catalog catalog = new Catalog();
 
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
 
 			while (rs.next()) {
-				Catalog item = new Catalog();
+				Item item = new Item();
 				item.setVid(rs.getInt("vid"));
 				item.setName(rs.getString("name"));
 				item.setDescription(rs.getString("description"));
@@ -29,11 +31,17 @@ public class ItemDAO {
 				item.setPrice(rs.getInt("price"));
 				item.setMileage(rs.getInt("mileage"));
 				item.setMileage(rs.getInt("history"));
-				items.add(item);
+				
+				catalog.addVehicles(item);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		return items;
+		return catalog.getVehicles();
+	}
+	
+	public List<Item> sortByPriceAsc() {
+		// perform the sort query
+		return null;
 	}
 }
