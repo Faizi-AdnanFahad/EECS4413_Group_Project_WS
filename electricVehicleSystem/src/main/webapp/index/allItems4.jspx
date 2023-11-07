@@ -11,24 +11,38 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Greetings</title>
+
+<link rel="stylesheet" type="text/css" href="../styles/listPage.css"></link>
+>
+
 </head>
 
 <body>
 	<header>
-		<h1>Item Information System</h1>
+		<h1>Listing All Items</h1>
 	</header>
 	<div class="container">
 		<div id="itemsContainer">
-			<div class="card">
-				<h3 id="itemId">Item ID:</h3>
-				<p id="itemName">Item Name:</p>
-				<p id="itemModel">Item Model:</p>
-				<p id="itemDescription">Item Description: </p>
-				<div class="button-container">
-					<button>View More</button>
-					<button>Add to Cart</button>
+			<c:forEach var="j" begin="0" end="3">
+				<div class="card">
+					<p id="itemId_${j}">
+						<span>Item ID: </span>
+					</p>
+					<p id="itemName_${j}">
+						<span>Item Name: </span>
+					</p>
+					<p id="itemModel_${j}">
+						<span>Item Model: </span>
+					</p>
+					<p id="itemDescription_${j}">
+						<span>Item Description: </span>
+					</p>
+					<div class="button-container">
+						<button>View More</button>
+						<button>Add to Cart</button>
+					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 	<footer>
@@ -47,12 +61,14 @@
 			if (xhr.status >= 200 && xhr.status < 300) {
 				// Request was successful
 				var jsonResponse = JSON.parse(xhr.responseText);
-				var data = jsonResponse[0];
-				
-				document.getElementById("itemId").textContent += data.vid;
-				document.getElementById("itemName").textContent += data.name;
-				document.getElementById("itemModel").textContent += data.model;
-				document.getElementById("itemDescription").textContent += data.description;
+				for (i = 0; i < 4; i++) {
+					var data = jsonResponse[i];
+
+					document.getElementById("itemId_" + i).textContent += data.vid;
+					document.getElementById("itemName_" + i).textContent += data.name;
+					document.getElementById("itemModel_" + i).textContent += data.model;
+					document.getElementById("itemDescription_" + i).textContent += data.description;
+				}
 
 			} else {
 				// Request had an error
