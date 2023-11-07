@@ -26,5 +26,25 @@
 	  </div>
 	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$.ajax({
+				url: "http://localhost:8080/electricVehicleSystem/rest/users",
+				type: 'GET',
+				success: function (result) {
+					var item = result[0]; // Assuming you want to populate the first item
+					$("#itemId").text("Item ID: " + item.vid);
+					$("#itemName").text("Item Name: " + item.name);
+					$("#itemModel").text("Item Model: " + item.model);
+					$("#itemDescription").text("Item Description: " + item.description);
+				},
+				error: function (error) {
+					console.log(error);
+				}
+			});
+		});
+	</script>
 </body>
 </html>
