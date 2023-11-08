@@ -25,14 +25,11 @@ public class CatalogController {
 	
 	// SORT BASED ON A QUERY PARAMETER e.g., sortByPrice=true
 	@GET
-    @Path("?sortByPrice=true")
+    @Path("sort")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Item> sortByPrice() {
 		
-        List<Item> catalogList = itemDAO.listAllVehicles();
-        // call relevant model
-//        catalogList.sort(Comparator.comparing(Item::getPrice));
-        return catalogList;
+		 return itemDAO.sortByPriceAsc();
     }
 	
 //	@GET
