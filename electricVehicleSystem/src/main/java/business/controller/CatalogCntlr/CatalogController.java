@@ -25,22 +25,39 @@ public class CatalogController {
 	
 	// SORT BASED ON A QUERY PARAMETER e.g., sortByPrice=true
 	@GET
-    @Path("sort")
+    @Path("sortASC")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Item> sortByPrice() {
 		
 		 return itemDAO.sortByPriceAsc();
     }
 	
+	@GET
+    @Path("sortDESC")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Item> sortByPriceDESC() {
+		
+		 return itemDAO.sortByPriceDESC();
+    }
+	
+	@GET
+    @Path("filter/{model}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Item> filterByBrands(@PathParam("model") String model) {
+		
+		 return itemDAO.filterByBrands(model);
+    }
+	
+	
 //	@GET
 //	@Path("/filter/{model}")
 //	@Produces(MediaType.APPLICATION_JSON)
-//	public List<Catalog> filterByModel(@PathParam("model") String model) {
-//	    List<Catalog> catalogList = itemDAO.readAll();
-//	    List<Catalog> filteredCatalogList = new ArrayList<>();
+//	public List<Item> filterByModel(@PathParam("model") String model) {
+//	    List<Item> catalogList = itemDAO.listAllVehicles();
+//	    List<Item> filteredCatalogList = new ArrayList<>();
 //
-//	    for (Catalog catalog : catalogList) {
-//	        if (catalog.getModel().equalsIgnoreCase(model)) {
+//	    for (Item catalog : catalogList) {
+//	        if (catalog.getName().equalsIgnoreCase(model)) {
 //	            filteredCatalogList.add(catalog);
 //	        }
 //	    }

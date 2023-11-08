@@ -20,6 +20,21 @@ header {
     text-align: center;
 }
 
+.sort {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+#button1,
+#button2 {
+    display: flex;
+    gap: 2px; /* Adjust the gap as needed */
+    margin-top: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+
 /* Card styling with flexbox */
 #itemsContainer {
     display: flex;
@@ -54,6 +69,10 @@ button {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#updateData:hover {
+    background-color: #555; /* Change the background color on hover */
 }
 
 /* Footer styling */

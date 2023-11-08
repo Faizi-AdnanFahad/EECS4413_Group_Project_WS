@@ -20,21 +20,24 @@
 	<header>
 		<h1>Electric Vehicle System</h1>
 	</header>
-	<main>
-		<div class="sort-bar">
-			<form action="sortByPriceASC.jspx" method="post">
-				<label>filter by:</label>
-				<select>
-					<option value="">--Please choose an option--</option>
-					<option value="sortByPrice">sortByPrice (ASC)</option>
-					<!--<option value="name_desc">Name (Z-A)</option>
-					<option value="price_asc">Price (Low-High)</option>
-					<option value="price_desc">Price (High-Low)</option>-->
-				</select>
-				<button id="updateData" type="submit">Apply</button>
-				</form>
-				</div>
-				</main>
+		<div class="sort">
+			<label>filter by:</label>
+					<div id="button1">
+						<form action="sortByPriceASC.jspx" method="get">
+							<button id="updateData" type="submit">Price_ASC</button>
+						</form>
+					</div>
+					<div id="button2">
+						<form action="sortByPriceDESC.jspx" method="get">
+							<button id="updateData" type="submit">Price_DESC</button>
+						</form>
+						</div>
+					<div id="button3">
+						<form action="sortByPriceDESC.jspx" method="get">
+							<button id="updateData" type="submit">SortDESC</button>
+						</form>
+						</div>
+		</div>
 	<div class="container">
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="3">

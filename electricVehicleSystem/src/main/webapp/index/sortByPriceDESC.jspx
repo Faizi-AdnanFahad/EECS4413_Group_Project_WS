@@ -64,7 +64,7 @@
 
 		// Configure the request
 		xhr.open("GET",
-				"http://localhost:8080/electricVehicleSystem/rest/items/sortASC", true);
+				"http://localhost:8080/electricVehicleSystem/rest/items/sortDESC", true);
 		// <![CDATA[
 		// Set up event handlers
 		xhr.onload = function() {
