@@ -65,6 +65,7 @@
 	<footer>
 		<p>© 2023 Item Information System</p>
 	</footer>
+
 	<script>
 		// Create an instance of XMLHttpRequest
 		var xhr = new XMLHttpRequest();
@@ -103,8 +104,6 @@
 		xhr.send();
 		// ]]>
 	</script>
-
-
 </body>
 	</html>
 </jsp:root>

@@ -1,12 +1,7 @@
 package business.controller.CatalogCntlr;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-
-import business.model.Catalog.Catalog;
 import business.model.Vehicle.Item;
-import jakarta.websocket.server.PathParam;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -31,6 +26,7 @@ public class CatalogController {
 		
 		 return itemDAO.sortByPriceAsc();
     }
+	
 	
 //	@GET
 //	@Path("/filter/{model}")
