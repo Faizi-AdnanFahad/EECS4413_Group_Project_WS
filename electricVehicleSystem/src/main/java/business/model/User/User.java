@@ -87,4 +87,11 @@ public class User {
 	{
 		return type;
 	}
+	
+	//
+	
+	public String toString()
+	{
+		return "ID: " + id + "Firstname: " + firstName + "Lastname" + lastName + "Email: " + email + "Password: " + password + "Type: " + type;
+	}
 }
