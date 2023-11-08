@@ -13,7 +13,7 @@ import presistence.DatabaseConnection;
 
 public class catalogDAO {
 	public List<Item> listAllVehicles() {
-		String sql = "SELECT * FROM Item";
+		String sql = "SELECT vid, name, model, price, mileage FROM Item";
 		
 		Catalog catalog = new Catalog();
 
@@ -25,19 +25,46 @@ public class catalogDAO {
 				Item item = new Item();
 				item.setVid(rs.getInt("vid"));
 				item.setName(rs.getString("name"));
-				item.setDescription(rs.getString("description"));
 				item.setModel(rs.getString("model"));
-				item.setQuanitity(rs.getInt("quanitity"));
 				item.setPrice(rs.getInt("price"));
 				item.setMileage(rs.getInt("mileage"));
-				item.setMileage(rs.getInt("history"));
 				
+				// add items to the catalog
 				catalog.addVehicles(item);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 		return catalog.getVehicles();
+	}
+	
+	/*
+	 * Runs only a query to retrieve a particular vehicle from the database
+	 */
+	public Item getVehicleById(String id) {
+		String sql = "SELECT * FROM Item WHERE vid=" + id;
+		
+		Item item = new Item();
+
+		try (Connection conn = DatabaseConnection.connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+
+			while (rs.next()) {
+				item.setVid(rs.getInt("vid"));
+				item.setName(rs.getString("name"));
+				item.setDescription(rs.getString("description"));
+				item.setModel(rs.getString("model"));
+				item.setQuanitity(rs.getInt("quanitity"));
+				item.setPrice(rs.getInt("price"));
+				item.setMileage(rs.getInt("mileage"));
+				item.setMileage(rs.getInt("history"));
+			
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return item;
 	}
 	
 	public List<Item> sortByPriceAsc() {
