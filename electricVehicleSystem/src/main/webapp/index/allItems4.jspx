@@ -24,9 +24,6 @@
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="3">
 				<div class="card">
-					<p id="itemId_${j}">
-						<span>Item ID: </span>
-					</p>
 					<p id="itemName_${j}">
 						<span>Vehicle Brand: </span>
 					</p>
@@ -40,7 +37,8 @@
 						<span>Vehicle Mileage: </span>
 					</p>
 					<div class="button-container">
-						<button>View More</button>
+						<a id="viewMoreBtn_${j}" class="btn btn-primary"
+							href="../VehicleController?id="><button>View More</button></a>
 						<button>Add to Cart</button>
 					</div>
 				</div>
@@ -53,6 +51,7 @@
 
 	<script>
 		// Create an instance of XMLHttpRequest
+
 		var xhr = new XMLHttpRequest();
 
 		// Configure the request
@@ -67,7 +66,14 @@
 				for (i = 0; i < 4; i++) {
 					var data = jsonResponse[i];
 
-					document.getElementById("itemId_" + i).textContent += data.vid;
+					// refer each vehicle to its page by setting appending its id as an attribute
+					var linkElement = document.getElementById('viewMoreBtn_'
+							+ i);
+					var currentHref = linkElement.getAttribute('href');
+					console.log(currentHref);
+					var modifiedHref = currentHref + data.vid;
+					linkElement.setAttribute('href', modifiedHref);
+
 					document.getElementById("itemName_" + i).textContent += data.name;
 					document.getElementById("itemModel_" + i).textContent += data.model;
 					document.getElementById("itemPrice_" + i).textContent += data.price;
@@ -89,7 +95,7 @@
 		xhr.send();
 		// ]]>
 	</script>
-	
+
 </body>
 	</html>
 </jsp:root>
