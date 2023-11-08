@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign In</title>
+<link rel="stylesheet" href="../styles/SignInView.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<header>Sign In</header>
+	<div class="container">
+		<form id="signInForm">
+			<label for="Username">Email:</label>
+			<input type="text" id="username" name="username" required><br>
+			<label for="password">Password:</label>
+			<input type="text" id="password" name="password" required><br>
+			<input type="submit" value="Sign In">
+		</form>
+		<p id="confirmationMessage"></p>
+		<input type="submit" value="Sign Up">
+	</div>
+	<footer><p>© 2023 Sign In Portal</p></footer>
+	<script>
+		$("#signInForm").submit(function(e){
+		alert("Hello");
+		e.preventDefault();
+		var userData = {
+		email: $("#username").val(),
+		password: $("#password").val(),
+		};
+		$.ajax({
+        url: "http://localhost:8080/electricVehicleSystem/rest/users/" + userData.username, // Use the correct URL for the login endpoint
+        type: 'POST', // Use POST for sensitive data like passwords
+        contentType: 'application/json',
+        data: JSON.stringify(userData),
+        success: function(result) {
+            $("#confirmationMessage").text("Log In Successful!");
+            location.reload();
+        },
+        error: function(error) {
+            console.log(error);
+            $("#confirmationMessage").text("Log In Failed"); // Display a message for failed login
+        }
+		});
+		});
+	</script>
+</body>
+</html>

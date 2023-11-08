@@ -1,6 +1,7 @@
 package presistence.daoLayer;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,7 +14,7 @@ import presistence.DatabaseConnection;
 public class UserDAO {
 	
 	
-	public List<User> readAll() {
+	public List<User> selectAllUsers() {
 		String sql = "SELECT * FROM User";
 		List<User> users = new ArrayList<>();
 
@@ -23,7 +24,7 @@ public class UserDAO {
 
 			while (rs.next()) {
 				User user = new User();
-				user.setId(rs.getInt("uid"));
+				user.setId(rs.getInt("id"));
 				user.setFirstName(rs.getString("firstName"));
 				user.setLastName(rs.getString("lastName"));
 				user.setEmail(rs.getString("email"));
@@ -35,6 +36,69 @@ public class UserDAO {
 			System.out.println(e.getMessage());
 		}
 		return users;
+	}
+	
+	public boolean CreateUser(User user)
+	{
+		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
+		try(Connection conn = DatabaseConnection.connect();PreparedStatement statement = conn.prepareStatement(createCommand))
+		{
+			statement.setString(1,user.getFirstName());
+			statement.setString(2,user.getLastName());
+			statement.setString(3,user.getEmail());
+			statement.setString(4,user.getPassword());
+			statement.setString(5,user.getType());
+			statement.executeUpdate();
+			return true;
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		
+	}
+	
+	public User getByUsername(String username)
+	{
+		User user = new User();
+		String selectUser = "SELECT id,firstName,lastName,email,password,type FROM User WHERE email='" + username + "'";
+		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectUser))
+		{
+			while(rs.next())
+			{
+				user.setId(rs.getInt("id"));
+				user.setFirstName(rs.getString("firstName"));
+				user.setLastName(rs.getString("lastName"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				user.setType(rs.getString("type"));
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return user;
+	}
+	
+	public String getUserPassword(String username)
+	{
+		String password = null;
+		
+		
+		return password;
+	}
+	
+	public boolean changePassword(String firstName, String lastName, String email)
+	{
+		return false;
+	}
+	
+	public void makeAdmin(String username)
+	{
+		
 	}
 	
 }
