@@ -12,7 +12,7 @@
 <head>
 <title>Greetings</title>
 
-<link rel="stylesheet" type="text/css" href="../styles/listPage.css"></link>
+<link rel="stylesheet" type="text/css" href="../styles/index.css"></link>
 
 </head>
 
@@ -28,13 +28,16 @@
 						<span>Item ID: </span>
 					</p>
 					<p id="itemName_${j}">
-						<span>Item Name: </span>
+						<span>Vehicle Brand: </span>
 					</p>
 					<p id="itemModel_${j}">
-						<span>Item Model: </span>
+						<span>Vehicle Model: </span>
 					</p>
-					<p id="itemDescription_${j}">
-						<span>Item Description: </span>
+					<p id="itemPrice_${j}">
+						<span>Vehicle Price: </span>
+					</p>
+					<p id="itemMilage_${j}">
+						<span>Vehicle Mileage: </span>
 					</p>
 					<div class="button-container">
 						<button>View More</button>
@@ -66,7 +69,8 @@
 					document.getElementById("itemId_" + i).textContent += data.vid;
 					document.getElementById("itemName_" + i).textContent += data.name;
 					document.getElementById("itemModel_" + i).textContent += data.model;
-					document.getElementById("itemDescription_" + i).textContent += data.description;
+					document.getElementById("itemPrice_" + i).textContent += data.price;
+					document.getElementById("itemMilage_" + i).textContent += data.mileage;
 				}
 
 			} else {
