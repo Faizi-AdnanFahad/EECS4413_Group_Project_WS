@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* Reset some default styles to ensure consistency across browsers */
+body,
+h1,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+	font-size: 24px;
+	color: #333;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 16px;
+	color: #666;
+	margin: 10px 0;
+}
+
+/* Style the item details section */
+.item-details {
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+/* Customize links */
+a {
+	text-decoration: none;
+	color: #0078d4;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #0056b3;
+}

@@ -24,9 +24,6 @@
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="3">
 				<div class="card">
-					<p id="itemId_${j}">
-						<span>Item ID: </span>
-					</p>
 					<p id="itemName_${j}">
 						<span>Vehicle Brand: </span>
 					</p>
@@ -40,7 +37,8 @@
 						<span>Vehicle Mileage: </span>
 					</p>
 					<div class="button-container">
-						<button>View More</button>
+						<a id="viewMoreBtn_${j}" class="btn btn-primary"
+							href="../VehicleController?id="><button>View More</button></a>
 						<button>Add to Cart</button>
 					</div>
 				</div>
