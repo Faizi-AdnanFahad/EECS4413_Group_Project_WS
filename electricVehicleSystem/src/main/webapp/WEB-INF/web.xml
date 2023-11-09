@@ -21,23 +21,6 @@
     <servlet-name>Jersey REST Service</servlet-name>
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>HelloServlet</display-name>
-    <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>application.HelloServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <description></description>
-    <display-name>TestServlet</display-name>
-    <servlet-name>TestServlet</servlet-name>
-    <servlet-class>application.TestServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TestServlet</servlet-name>
-    <url-pattern>/TestServlet</url-pattern>
-  </servlet-mapping>
-  
     <servlet>
     <description></description>
     <display-name>VehicleController</display-name>

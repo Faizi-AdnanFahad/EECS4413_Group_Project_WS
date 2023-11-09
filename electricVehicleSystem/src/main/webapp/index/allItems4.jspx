@@ -12,7 +12,8 @@
 <head>
 <title>Greetings</title>
 
-<link rel="stylesheet" type="text/css" href="../styles/index.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="/electricVehicleSystem/styles/index.css"></link>
 
 </head>
 
@@ -49,6 +50,7 @@
 		<p>© 2023 Item Information System</p>
 	</footer>
 
+	<!-- <script src="/electricVehicleSystem/scripts/populate.js"></script> -->
 	<script>
 		// Create an instance of XMLHttpRequest
 
@@ -95,7 +97,6 @@
 		xhr.send();
 		// ]]>
 	</script>
-
 </body>
 	</html>
 </jsp:root>
