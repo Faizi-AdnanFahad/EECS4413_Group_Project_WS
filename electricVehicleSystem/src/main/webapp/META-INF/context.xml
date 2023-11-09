@@ -5,6 +5,7 @@
 	<Resource name="jdbc/EECS"
 		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
 		type="javax.sql.DataSource" driverClassName="org.sqlite.JDBC"
+
 		url="jdbc:sqlite:C:\TIRTH EECS\YorkU semester\fall2023\EECS4413\EECS4413_Group_Project_WS5\electricVehicleSystem.db" />
 	<ResourceLink global="jdbc/EECS" name="jdbc/EECS"
 		type="javax.sql.DataSource" />
