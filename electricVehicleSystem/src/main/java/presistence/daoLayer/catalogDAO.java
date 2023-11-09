@@ -91,34 +91,107 @@ public class catalogDAO {
 		return catalog.getVehicles();
 	}
 
-	public List<Item> filterByBrands(String m) {
-	    String sql = "SELECT * FROM Item WHERE name = ?";
-	    Catalog catalog = new Catalog();
-	    String name=m;
-	    try (Connection conn = DatabaseConnection.connect();
-	         PreparedStatement pstmt = conn.prepareStatement(sql)) {
-	        pstmt.setString(1, m);
-
-	        try (ResultSet rs = pstmt.executeQuery()) {
-	            while (rs.next()) {
-	                Item item = new Item();
-	                item.setVid(rs.getInt("vid"));
-	                item.setName(rs.getString("name"));
-	                item.setDescription(rs.getString("description"));
-	                item.setModel(rs.getString("model"));
-	                item.setQuanitity(rs.getInt("quanitity"));
-	                item.setPrice(rs.getInt("price"));
-	                item.setMileage(rs.getInt("mileage"));
-	                item.setHistoryId(rs.getInt("history"));
-
-	                catalog.addVehicles(item);
-	            }
-	        }
-	    } catch (SQLException e) {
-	        System.out.println(e.getMessage());
-	    }
-
-	    return catalog.getVehicles();
+	public List<Item> filter_tesla(String m) {
+//		m="Tesla";		 
+		String sql = String.format("Select * from Item Where name=\"%s\"",m);
+		 Catalog catalog = new Catalog();
+			try (Connection conn = DatabaseConnection.connect();
+					Statement stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery(sql)) {
+				while (rs.next()) {
+					Item item = new Item();
+					item.setVid(rs.getInt("vid"));
+					item.setName(rs.getString("name"));
+					item.setDescription(rs.getString("description"));
+					item.setModel(rs.getString("model"));
+					item.setQuanitity(rs.getInt("quanitity"));
+					item.setPrice(rs.getInt("price"));
+					item.setMileage(rs.getInt("mileage"));
+					item.setMileage(rs.getInt("history"));
+					
+					catalog.addVehicles(item);
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			return catalog.getVehicles();
+		
 	}
 
+	public List<Item> filter_toyota(String model) {
+		String sql = String.format("Select * from Item Where name=\"%s\"",model);
+		 Catalog catalog = new Catalog();
+			try (Connection conn = DatabaseConnection.connect();
+					Statement stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery(sql)) {
+				while (rs.next()) {
+					Item item = new Item();
+					item.setVid(rs.getInt("vid"));
+					item.setName(rs.getString("name"));
+					item.setDescription(rs.getString("description"));
+					item.setModel(rs.getString("model"));
+					item.setQuanitity(rs.getInt("quanitity"));
+					item.setPrice(rs.getInt("price"));
+					item.setMileage(rs.getInt("mileage"));
+					item.setMileage(rs.getInt("history"));
+					
+					catalog.addVehicles(item);
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			return catalog.getVehicles();
+	}
+
+	public List<Item> filter_BYD(String model) {
+		String sql = String.format("Select * from Item Where name=\"%s\"",model);
+		 Catalog catalog = new Catalog();
+			try (Connection conn = DatabaseConnection.connect();
+					Statement stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery(sql)) {
+				while (rs.next()) {
+					Item item = new Item();
+					item.setVid(rs.getInt("vid"));
+					item.setName(rs.getString("name"));
+					item.setDescription(rs.getString("description"));
+					item.setModel(rs.getString("model"));
+					item.setQuanitity(rs.getInt("quanitity"));
+					item.setPrice(rs.getInt("price"));
+					item.setMileage(rs.getInt("mileage"));
+					item.setMileage(rs.getInt("history"));
+					
+					catalog.addVehicles(item);
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			return catalog.getVehicles();
+	}
+
+	public List<Item> filter_KIA(String model) {
+		String sql = String.format("Select * from Item Where name=\"%s\"",model);
+		 Catalog catalog = new Catalog();
+			try (Connection conn = DatabaseConnection.connect();
+					Statement stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery(sql)) {
+				while (rs.next()) {
+					Item item = new Item();
+					item.setVid(rs.getInt("vid"));
+					item.setName(rs.getString("name"));
+					item.setDescription(rs.getString("description"));
+					item.setModel(rs.getString("model"));
+					item.setQuanitity(rs.getInt("quanitity"));
+					item.setPrice(rs.getInt("price"));
+					item.setMileage(rs.getInt("mileage"));
+					item.setMileage(rs.getInt("history"));
+					
+					catalog.addVehicles(item);
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			return catalog.getVehicles();
+	}
+	
 }
+

@@ -41,13 +41,36 @@ public class CatalogController {
     }
 	
 	@GET
-    @Path("filter/{model}")
+    @Path("/filter/Tesla")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Item> filterByBrands(@PathParam("model") String model) {
-		
-		 return itemDAO.filterByBrands(model);
+    public List<Item> filterByBrands1(String model) {
+		model="Tesla";
+		 return itemDAO.filter_tesla(model);
     }
 	
+	@GET
+    @Path("/filter/Toyota")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Item> filterByBrands2(String model) {
+		model="Toyota";
+		 return itemDAO.filter_toyota(model);
+    }
+	
+	@GET
+    @Path("/filter/BYD")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Item> filterByBrands3(String model) {
+		model="BYD";
+		 return itemDAO.filter_BYD(model);
+    }
+	
+	@GET
+    @Path("/filter/KIA")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Item> filterByBrands4(String model) {
+		model="KIA";
+		 return itemDAO.filter_KIA(model);
+    }
 	
 //	@GET
 //	@Path("/filter/{model}")
@@ -58,7 +81,17 @@ public class CatalogController {
 //
 //	    for (Item catalog : catalogList) {
 //	        if (catalog.getName().equalsIgnoreCase(model)) {
-//	            filteredCatalogList.add(catalog);
+//	        	Item item = new Item();
+//				item.setVid(catalog.getVid());
+//				item.setName(catalog.getName());
+//				item.setDescription(catalog.getDescription());
+//				item.setModel(catalog.getModel());
+//				item.setQuanitity(catalog.getQuanitity());
+//				item.setPrice(catalog.getPrice());
+//				item.setMileage(catalog.getMileage());
+//				item.setHistoryId(catalog.getHistoryId());
+//				
+//				catalog.addVehicles(item);
 //	        }
 //	    }
 //

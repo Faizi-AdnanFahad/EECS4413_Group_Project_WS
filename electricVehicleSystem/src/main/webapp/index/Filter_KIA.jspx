@@ -20,49 +20,32 @@
 	<header>
 		<h1>Electric Vehicle System</h1>
 	</header>
+	<main>
 		<div class="sort">
-			<label>filter by:</label>
-					<div id="button1">
-						<form action="sortByPriceASC.jspx" method="get">
-							<button id="updateData" type="submit">Price_ASC</button>
-						</form>
-					</div>
-					<div id="button2">
-						<form action="sortByPriceDESC.jspx" method="get">
-							<button id="updateData" type="submit">Price_DESC</button>
-						</form>
-						</div>
+		<BR />
+				<form action="allItems4.jspx" method="get">
+					<button id="updateData" type="submit">Home</button>
+				</form>
 				
-				<div id="link1" style="margin-right: 2px">
-					<a href="Filter_Tesla.jspx">Tesla</a>
-				</div>
-				<div id="link2" style="margin-right: 2px">
-				<a href="Filter_Toyota.jspx">Toyota</a>
-				</div>
-				<div id="link3" style="margin-right: 2px">
-				<a href="Filter_BYD.jspx">BYD</a>
-				</div>
-				<div id="link4" style="margin-right: 2px">
-				<a href="Filter_KIA.jspx">KIA</a>
-				</div>
 		</div>
+	</main>
 	<div class="container">
 		<div id="itemsContainer">
-			<c:forEach var="j" begin="0" end="3">
+			<!--<c:forEach var="j" begin="0" end="3">-->
 				<div class="card">
-					<p id="itemId_${j}">
+					<p id="itemId_">
 						<span>Item ID: </span>
 					</p>
-					<p id="itemName_${j}">
+					<p id="itemName_">
 						<span>Vehicle Brand: </span>
 					</p>
-					<p id="itemModel_${j}">
+					<p id="itemModel_">
 						<span>Vehicle Model: </span>
 					</p>
-					<p id="itemPrice_${j}">
+					<p id="itemPrice_">
 						<span>Vehicle Price: </span>
 					</p>
-					<p id="itemMilage_${j}">
+					<p id="itemMilage_">
 						<span>Vehicle Mileage: </span>
 					</p>
 					<div class="button-container">
@@ -70,7 +53,7 @@
 						<button>Add to Cart</button>
 					</div>
 				</div>
-			</c:forEach>
+			<!--</c:forEach>-->
 		</div>
 	</div>
 	<footer>
@@ -82,22 +65,22 @@
 
 		// Configure the request
 		xhr.open("GET",
-				"http://localhost:8080/electricVehicleSystem/rest/items", true);
+				"http://localhost:8080/electricVehicleSystem/rest/items/filter/KIA", true);
 		// <![CDATA[
 		// Set up event handlers
 		xhr.onload = function() {
 			if (xhr.status >= 200 && xhr.status < 300) {
 				// Request was successful
 				var jsonResponse = JSON.parse(xhr.responseText);
-				for (i = 0; i < 4; i++) {
-					var data = jsonResponse[i];
+				//for (i = 0; i < 4; i++) {
+					var data = jsonResponse[0];
 
-					document.getElementById("itemId_" + i).textContent += data.vid;
-					document.getElementById("itemName_" + i).textContent += data.name;
-					document.getElementById("itemModel_" + i).textContent += data.model;
-					document.getElementById("itemPrice_" + i).textContent += data.price;
-					document.getElementById("itemMilage_" + i).textContent += data.mileage;
-				}
+					document.getElementById("itemId_").textContent += data.vid;
+					document.getElementById("itemName_").textContent += data.name;
+					document.getElementById("itemModel_").textContent += data.model;
+					document.getElementById("itemPrice_").textContent += data.price;
+					document.getElementById("itemMilage_").textContent += data.mileage;
+			//	}
 
 			} else {
 				// Request had an error
@@ -114,8 +97,6 @@
 		xhr.send();
 		// ]]>
 	</script>
-
-
 </body>
 	</html>
 </jsp:root>
