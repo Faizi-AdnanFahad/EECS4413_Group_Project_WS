@@ -68,7 +68,28 @@ public class catalogDAO {
 	}
 	
 	public List<Item> sortByPriceAsc() {
-		// perform the sort query
-		return null;
+		String sql = "SELECT * FROM Item ORDER BY price asc";
+		Catalog catalog = new Catalog();
+		try (Connection conn = DatabaseConnection.connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+			while (rs.next()) {
+				Item item = new Item();
+				item.setVid(rs.getInt("vid"));
+				item.setName(rs.getString("name"));
+				item.setDescription(rs.getString("description"));
+				item.setModel(rs.getString("model"));
+				item.setQuanitity(rs.getInt("quanitity"));
+				item.setPrice(rs.getInt("price"));
+				item.setMileage(rs.getInt("mileage"));
+				item.setMileage(rs.getInt("history"));
+				
+				catalog.addVehicles(item);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return catalog.getVehicles();
 	}
+
 }
