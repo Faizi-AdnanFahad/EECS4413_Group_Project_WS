@@ -10,7 +10,7 @@ import presistence.daoLayer.catalogDAO;
 
 @Path("/items")
 public class CatalogController {
-	private catalogDAO itemDAO = new catalogDAO();
+	private catalogDAO itemDAO = catalogDAO.getInstance();
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

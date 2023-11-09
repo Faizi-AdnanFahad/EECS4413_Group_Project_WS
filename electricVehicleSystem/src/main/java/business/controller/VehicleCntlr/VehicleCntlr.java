@@ -11,7 +11,7 @@ import presistence.daoLayer.catalogDAO;
 
 @Path("/items")
 public class VehicleCntlr {
-	private catalogDAO itemDAO = new catalogDAO();
+	private catalogDAO itemDAO = catalogDAO.getInstance();
 
 	@GET
 	@Path("/{id}")
