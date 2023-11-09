@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import business.model.Vehicle.Item;
+import presistence.daoLayer.catalogDAO;
 
 public class Catalog {
 	private List<Item> vehicles;
@@ -21,8 +22,9 @@ public class Catalog {
 	}
 	
 	public List<Item> sortByPriceAsc() {
-		// implement the sort here and call the catalogDAO.sortByPriceAsc to perform the sort query
-		return this.vehicles;
+		catalogDAO c=new catalogDAO();
+		
+		return c.sortByPriceAsc();
 	}
 	
 }
