@@ -17,20 +17,19 @@ public class CatalogController {
 	public List<Item> getAllCatalogs() {
 		return itemDAO.listAllVehicles();
 	}
-	
+
 	// SORT BASED ON A QUERY PARAMETER e.g., sortByPrice=true
 	@GET
-    @Path("?sortByPrice=true")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Item> sortByPrice() {
-		
-        List<Item> catalogList = itemDAO.listAllVehicles();
-        // call relevant model
+	@Path("?sortByPrice=true")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Item> sortByPrice() {
+
+		List<Item> catalogList = itemDAO.listAllVehicles();
+		// call relevant model
 //        catalogList.sort(Comparator.comparing(Item::getPrice));
-        return catalogList;
-    }
-	
-	
+		return catalogList;
+	}
+
 //	@GET
 //	@Path("/filter/{model}")
 //	@Produces(MediaType.APPLICATION_JSON)
@@ -47,4 +46,3 @@ public class CatalogController {
 //	    return filteredCatalogList;
 //	}
 }
-

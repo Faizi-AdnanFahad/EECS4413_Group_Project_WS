@@ -78,7 +78,7 @@ public class catalogDAO {
 		return item;
 	}
 
-	public List<Item> compareVehicles(int[] cars) {
+	public List<Item> compareVehicles(String[] cars) {
 		String compareList = this.helperCreateList(cars);
 
 		String sql = "SELECT * FROM Item WHERE vid in " + compareList;
@@ -106,7 +106,7 @@ public class catalogDAO {
 		return catalog.getVehicles();
 	}
 
-	private String helperCreateList(int[] cars) {
+	private String helperCreateList(String[] cars) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("(");
 		for (int i = 0; i < cars.length; i++) {

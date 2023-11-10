@@ -1,7 +1,6 @@
 package business.controller.VehicleComparisionCntlr;
 
 import java.io.IOException;
-import java.security.InvalidAlgorithmParameterException;
 import java.util.List;
 import business.model.Vehicle.Item;
 import jakarta.servlet.ServletException;
@@ -13,7 +12,7 @@ import presistence.daoLayer.catalogDAO;
 public class VehicleComparisionCntlr extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final int MAX_NUM_VEHICLES_TO_COMPARE = 3;
-	private final String JSPXFILE = "/index/oneItem.jspx";
+	private final String JSPXFILE = "/index/comparisionView.jspx";
 
 	public VehicleComparisionCntlr() {
 	}
@@ -22,24 +21,26 @@ public class VehicleComparisionCntlr extends HttpServlet {
 			throws ServletException, IOException {
 		catalogDAO itemDAO = catalogDAO.getInstance();
 
-//		String id = request.getParameter("id");
-//		Item item = itemDAO.getVehicleById(id);
-//		request.setAttribute("item", item);
-		
+		String compareVehicles = request.getParameter("vehiclesToCompare");
+
+		// Split the string by comma
+		String[] compareVehiclesStringArray = compareVehicles.split(",");
+//		System.out.println(compareVehiclesStringArray);
+		// Create an array of integers
+//		int[] intArray = new int[compareVehicles.length()];
+//		for (int i = 0; i < compareVehiclesStringArray.length; i++) {
+//			// Convert each element to an integer
+//			intArray[i] = Integer.parseInt(compareVehiclesStringArray[i].trim());
+//		}
+
 		if (MAX_NUM_VEHICLES_TO_COMPARE <= 3) {
-			int[] carIDs = {1, 5};
-			List<Item> t = itemDAO.compareVehicles(carIDs);
-			
-			for (int i = 0; i < t.size(); i ++) {
-				System.out.println(t.get(i).getVid());
-				System.out.println(t.get(i).getName());
+			List<Item> items = itemDAO.compareVehicles(compareVehiclesStringArray);
+			request.setAttribute("items", items);
+			request.getRequestDispatcher(JSPXFILE).forward(request, response);
 
-			}
+		} else {
+			throw new NoSuchFieldError("Maximum comparable number of vehicles are " + MAX_NUM_VEHICLES_TO_COMPARE);
 		}
-		else {
-	        throw new NoSuchFieldError("Maximum comparable number of vehicles are " + MAX_NUM_VEHICLES_TO_COMPARE);
-		}
-
 
 		// Forward the request to the JSP page that will display the item details
 //		request.getRequestDispatcher(JSPXFILE).forward(request, response);

@@ -11,22 +11,33 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Greetings</title>
-<link rel="stylesheet" type="text/css" href="/electricVehicleSystem/styles/onePage.css"></link>
+<link rel="stylesheet" type="text/css" href="/electricVehicleSystem/styles/comparision.css"></link>
 
 </head>
 
 <body>
-	<div class="card">
-		<c:if test="${not empty item}">
-			<p><span>VIN Number: </span>${item.vid}</p>
-			<p><span>Name: </span>${item.name}</p>
-			<p><span>Descriptions: </span>${item.description}</p>
-			<p><span>Model: </span>${item.model}</p>
-			<p><span>Quantity: </span>${item.quanitity}</p>
-			<p><span>Price: </span>${item.price}</p>
-			<p><span>Mileage: </span>${item.mileage}</p>
-			<p><span>History: </span>${item.historyId}</p>
-		</c:if>
+	<div class="card-container">
+
+		<c:forEach items="${items}" var="item">
+			<div class="card">
+				<p>
+					<span>VIN Number: </span>${item.vid}</p>
+				<p>
+					<span>Name: </span>${item.name}</p>
+				<p>
+					<span>Descriptions: </span>${item.description}</p>
+				<p>
+					<span>Model: </span>${item.model}</p>
+				<p>
+					<span>Quantity: </span>${item.quanitity}</p>
+				<p>
+					<span>Price: </span>${item.price}</p>
+				<p>
+					<span>Mileage: </span>${item.mileage}</p>
+				<p>
+					<span>History: </span>${item.historyId}</p>
+			</div>
+		</c:forEach>
 	</div>
 
 </body>
