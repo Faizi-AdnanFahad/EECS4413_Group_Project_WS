@@ -40,6 +40,9 @@ public class UserDAO {
 	
 	public boolean CreateUser(User user)
 	{
+		
+		System.out.println("in CreateUser");
+		System.out.println(user.toString());
 		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
 		try(Connection conn = DatabaseConnection.connect();PreparedStatement statement = conn.prepareStatement(createCommand))
 		{
@@ -48,6 +51,7 @@ public class UserDAO {
 			statement.setString(3,user.getEmail());
 			statement.setString(4,user.getPassword());
 			statement.setString(5,user.getType());
+			System.out.println("before");
 			statement.executeUpdate();
 			return true;
 		}
@@ -86,6 +90,19 @@ public class UserDAO {
 	public String getUserPassword(String username)
 	{
 		String password = null;
+		
+		String selectPassword = "SELECT * FROM User WHERE email='"+username+"'";
+		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectPassword))
+		{
+			while(rs.next())
+			{
+				password = rs.getString("password");
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e.getMessage());
+		}
 		
 		
 		return password;
