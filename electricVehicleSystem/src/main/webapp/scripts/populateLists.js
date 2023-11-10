@@ -1,5 +1,3 @@
-const MAX_COMPARABLE_VEHICLES = 3;
-
 var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 // Convert the NodeList to an array for easier manipulation
 var checkboxArray = Array.from(checkboxes);
@@ -33,7 +31,7 @@ function populateMain() {
 			// Request was successful
 			var jsonResponse = JSON
 				.parse(xhr.responseText);
-			for (i = 0; i < 4; i++) {
+			for (i = 0; i < 5; i++) {
 				var data = jsonResponse[i];
 
 				changeTheOneItemURLBtn(data, "viewMoreBtn_" + i);
@@ -68,47 +66,5 @@ function populateMain() {
 	xhr.send();
 }
 
-// run the functions
+// run the function
 populateMain()
-
-var checkedCheckboxes = [];
-// Array to store checked checkbox ids
-var compareAnchor = document
-	.getElementById("compareButtonHref");
-var compareHref = compareAnchor
-	.getAttribute('href');
-
-var comparables = "";
-// Function to update the list when a checkbox is checked or unchecked
-function updateCheckedCheckboxes(checkboxId) {
-	var index = checkedCheckboxes.indexOf(checkboxId[checkboxId.length - 1]);
-	if (index === -1) {
-		// Checkbox is checked, add to the list
-		if (checkedCheckboxes.length < MAX_COMPARABLE_VEHICLES) {
-			checkedCheckboxes.push(checkboxId[checkboxId.length - 1]);
-
-			comparables = checkedCheckboxes.join(",");
-
-			var modifiedHref = compareHref + comparables;
-			compareAnchor.setAttribute('href', modifiedHref);
-		}
-		else {
-			document.getElementById(checkboxId).checked = false;
-			alert("You can not compare more than *" + MAX_COMPARABLE_VEHICLES + "* vehicles!")
-		}
-	} else {
-		// Checkbox is unchecked, remove from the list
-		checkedCheckboxes.splice(index, 1);
-	}
-
-	// Log the updated list (you can replace this with your desired logic)
-	console.log("Checked Checkboxes: " + checkedCheckboxes);
-}
-
-// Add event listener to each checkbox
-for (var j = 0; j < checkboxArray.length; j++) {
-
-	checkboxArray[j].addEventListener('change', function() {
-		updateCheckedCheckboxes(this.id);
-	});
-}

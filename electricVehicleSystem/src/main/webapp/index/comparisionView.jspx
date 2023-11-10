@@ -11,7 +11,8 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Greetings</title>
-<link rel="stylesheet" type="text/css" href="/electricVehicleSystem/styles/comparision.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="/electricVehicleSystem/styles/comparision.css"></link>
 
 </head>
 

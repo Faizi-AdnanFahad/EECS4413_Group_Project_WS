@@ -64,13 +64,7 @@ public class catalogDAO {
 				ResultSet rs = stmt.executeQuery(sql)) {
 
 			while (rs.next()) {
-				item.setVid(rs.getInt("vid"));
-				item.setName(rs.getString("name"));
-				item.setDescription(rs.getString("description"));
-				item.setModel(rs.getString("model"));
-				item.setQuanitity(rs.getInt("quanitity"));
-				item.setPrice(rs.getInt("price"));
-				item.setMileage(rs.getInt("mileage"));
+				item = helper(rs);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -90,12 +84,7 @@ public class catalogDAO {
 				ResultSet rs = stmt.executeQuery(sql)) {
 
 			while (rs.next()) {
-				Item item = new Item();
-				item.setVid(rs.getInt("vid"));
-				item.setName(rs.getString("name"));
-				item.setModel(rs.getString("model"));
-				item.setPrice(rs.getInt("price"));
-				item.setMileage(rs.getInt("mileage"));
+				Item item = helper(rs);
 
 				// add items to the catalog
 				catalog.addVehicles(item);
@@ -104,6 +93,24 @@ public class catalogDAO {
 			System.out.println(e.getMessage());
 		}
 		return catalog.getVehicles();
+	}
+
+	private Item helper(ResultSet rs) {
+		Item item = new Item();
+
+		try {
+			item.setVid(rs.getInt("vid"));
+			item.setName(rs.getString("name"));
+			item.setDescription(rs.getString("description"));
+			item.setModel(rs.getString("model"));
+			item.setQuanitity(rs.getInt("quanitity"));
+			item.setPrice(rs.getInt("price"));
+			item.setMileage(rs.getInt("mileage"));
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return item;
 	}
 
 	private String helperCreateList(String[] cars) {

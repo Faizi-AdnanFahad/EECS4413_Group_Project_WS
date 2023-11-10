@@ -12,8 +12,7 @@ import business.model.User.User;
 import presistence.DatabaseConnection;
 
 public class UserDAO {
-	
-	
+
 	public List<User> selectAllUsers() {
 		String sql = "SELECT * FROM User";
 		List<User> users = new ArrayList<>();
@@ -37,36 +36,32 @@ public class UserDAO {
 		}
 		return users;
 	}
-	
-	public boolean CreateUser(User user)
-	{
+
+	public boolean CreateUser(User user) {
 		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
-		try(Connection conn = DatabaseConnection.connect();PreparedStatement statement = conn.prepareStatement(createCommand))
-		{
-			statement.setString(1,user.getFirstName());
-			statement.setString(2,user.getLastName());
-			statement.setString(3,user.getEmail());
-			statement.setString(4,user.getPassword());
-			statement.setString(5,user.getType());
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(createCommand)) {
+			statement.setString(1, user.getFirstName());
+			statement.setString(2, user.getLastName());
+			statement.setString(3, user.getEmail());
+			statement.setString(4, user.getPassword());
+			statement.setString(5, user.getType());
 			statement.executeUpdate();
 			return true;
-		}
-		catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			return false;
 		}
-		
+
 	}
-	
-	public User getByUsername(String username)
-	{
+
+	public User getByUsername(String username) {
 		User user = new User();
 		String selectUser = "SELECT id,firstName,lastName,email,password,type FROM User WHERE email='" + username + "'";
-		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectUser))
-		{
-			while(rs.next())
-			{
+		try (Connection conn = DatabaseConnection.connect();
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(selectUser)) {
+			while (rs.next()) {
 				user.setId(rs.getInt("id"));
 				user.setFirstName(rs.getString("firstName"));
 				user.setLastName(rs.getString("lastName"));
@@ -74,32 +69,25 @@ public class UserDAO {
 				user.setPassword(rs.getString("password"));
 				user.setType(rs.getString("type"));
 			}
-		}
-		catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 		return user;
 	}
-	
-	public String getUserPassword(String username)
-	{
+
+	public String getUserPassword(String username) {
 		String password = null;
-		
-		
+
 		return password;
 	}
-	
-	public boolean changePassword(String firstName, String lastName, String email)
-	{
+
+	public boolean changePassword(String firstName, String lastName, String email) {
 		return false;
 	}
-	
-	public void makeAdmin(String username)
-	{
-		
-	}
-	
-}
 
+	public void makeAdmin(String username) {
+
+	}
+
+}
