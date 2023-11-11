@@ -21,6 +21,15 @@ public class User {
 		setType(type);
 	}
 	
+	public User(String firstName, String lastName, String email, String password, String type) 
+	{
+		setFirstName(firstName);
+		setLastName(lastName);
+		setEmail(email);
+		setPassword(password);
+		setType(type);
+	}
+	
 	// Setters
 	
 	public void setId(int id)

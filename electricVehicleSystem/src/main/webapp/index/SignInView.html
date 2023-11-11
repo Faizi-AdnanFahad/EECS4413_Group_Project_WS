@@ -5,24 +5,29 @@
 <title>Sign In</title>
 <link rel="stylesheet" href="../styles/SignInView.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 	<header>Sign In</header>
 	<div class="container">
-		<form id="signInForm">
+		<form id="signInForm" action="/electricVehicleSystem/UserServlet"  method="post">
+			
 			<label for="Username">Email:</label>
 			<input type="text" id="username" name="username" required><br>
 			<label for="password">Password:</label>
-			<input type="text" id="password" name="password" required><br>
+			<input type="password" id="password" name="password" required><br>
+			
+			<input type="hidden" name="op" value="0">
+			 
 			<input type="submit" value="Sign In">
 		</form>
 		<p id="confirmationMessage"></p>
-		<input type="submit" value="Sign Up">
+		<a href="SignUpView.html"><input type="submit" value="Sign Up"></a>
 	</div>
 	<footer><p>© 2023 Sign In Portal</p></footer>
+	<!--
 	<script>
 		$("#signInForm").submit(function(e){
-		alert("Hello");
 		e.preventDefault();
 		var userData = {
 		email: $("#username").val(),
@@ -39,10 +44,11 @@
         },
         error: function(error) {
             console.log(error);
-            $("#confirmationMessage").text("Log In Failed"); // Display a message for failed login
+            $("#confirmationMessage").text("Login Failed"); // Display a message for failed login
         }
 		});
 		});
 	</script>
+	-->
 </body>
 </html>

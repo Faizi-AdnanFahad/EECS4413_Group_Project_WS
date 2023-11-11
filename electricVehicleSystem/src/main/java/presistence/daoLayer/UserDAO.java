@@ -36,16 +36,20 @@ public class UserDAO {
 		}
 		return users;
 	}
-
-	public boolean CreateUser(User user) {
+	public boolean CreateUser(User user)
+	{
+		
+		System.out.println("in CreateUser");
+		System.out.println(user.toString());
 		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
-		try (Connection conn = DatabaseConnection.connect();
-				PreparedStatement statement = conn.prepareStatement(createCommand)) {
-			statement.setString(1, user.getFirstName());
-			statement.setString(2, user.getLastName());
-			statement.setString(3, user.getEmail());
-			statement.setString(4, user.getPassword());
-			statement.setString(5, user.getType());
+		try(Connection conn = DatabaseConnection.connect();PreparedStatement statement = conn.prepareStatement(createCommand))
+		{
+			statement.setString(1,user.getFirstName());
+			statement.setString(2,user.getLastName());
+			statement.setString(3,user.getEmail());
+			statement.setString(4,user.getPassword());
+			statement.setString(5,user.getType());
+			System.out.println("before");
 			statement.executeUpdate();
 			return true;
 		} catch (SQLException e) {
@@ -77,17 +81,17 @@ public class UserDAO {
 	}
 
 	public String getUserPassword(String username) {
-		String password = null;
-
-		return password;
-	}
-
-	public boolean changePassword(String firstName, String lastName, String email) {
-		return false;
-	}
-
-	public void makeAdmin(String username) {
-
-	}
-
+		String password = null;		
+		String selectPassword = "SELECT * FROM User WHERE email='"+username+"'";
+		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectPassword))
+		{
+			while(rs.next())
+			{
+				password = rs.getString("password");
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e.getMessage());
+		}
 }

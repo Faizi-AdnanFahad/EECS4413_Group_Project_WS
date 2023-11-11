@@ -2,9 +2,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Sign Up</title>
+<link rel="stylesheet" href="../styles/SignInView.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+	<header>Sign Up</header>
+	<div class="container">
+		<form id="signUpForm" action="/electricVehicleSystem/UserServlet"  method="post">
 
+			<label for="firstName">Firstname:</label>
+			<input type="text" id="firstName" name="firstName" required><br>
+			<label for="lastName">Lastname:</label>
+			<input type="text" id="lastName" name="lastName" required><br>
+			<label for="email">Email:</label>
+			<input type="text" id="email" name="email" required><br>
+			<label for="password">Password:</label>
+			<input type="text" id="password" name="password" required><br>
+			
+			<input type="hidden" name="op" value="1">
+			
+			<input type="submit" value="Sign Up">
+		</form>
+		<p id="confirmationMessage"></p>
+		<a href="SignInView.html"><input type="submit" value="Back"></a>
+	</div>
+	<footer><p>© 2023 Sign In Portal</p></footer>
 </body>
 </html>
