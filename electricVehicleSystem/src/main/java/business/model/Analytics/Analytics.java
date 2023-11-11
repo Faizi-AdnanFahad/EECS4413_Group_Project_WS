@@ -1,5 +1,7 @@
 package business.model.Analytics;
 
+import javax.xml.crypto.Data;
+
 public class Analytics {
 	
 	public Analytics getAnalytics()
@@ -9,7 +11,7 @@ public class Analytics {
 	
 	public Data getVehicleSales()
 	{
-		
+		return null;
 	}
 
 }

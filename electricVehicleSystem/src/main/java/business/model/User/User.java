@@ -1,18 +1,24 @@
 package business.model.User;
 
+import java.util.List;
+
+import presistence.daoLayer.UserDAO;
+
 public class User {
-	
+
 	private int id;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
 	private String type;
-	
-	public User() {}
-	
-	public User(int id, String firstName, String lastName, String email, String password, String type) 
-	{
+	private UserDAO userDAO;
+
+	public User() {
+		this.userDAO = UserDAO.getInstance();
+	}
+
+	public User(int id, String firstName, String lastName, String email, String password, String type) {
 		setId(id);
 		setFirstName(firstName);
 		setLastName(lastName);
@@ -20,87 +26,83 @@ public class User {
 		setPassword(password);
 		setType(type);
 	}
-	
-	public User(String firstName, String lastName, String email, String password, String type) 
-	{
+
+	public User(String firstName, String lastName, String email, String password, String type) {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setEmail(email);
 		setPassword(password);
 		setType(type);
 	}
-	
+
 	// Setters
-	
-	public void setId(int id)
-	{
-		if(id >= 0)
-		{
+
+	public void setId(int id) {
+		if (id >= 0) {
 			this.id = id;
 		}
 	}
-	
-	public void setFirstName(String firstName)
-	{
+
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	public void setLastName(String lastName)
-	{
+
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	public void setEmail(String email)
-	{
+
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public void setPassword(String password)
-	{
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public void setType(String type)
-	{
+
+	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 	// Getters
-	
-	public int getId()
-	{
+
+	public int getId() {
 		return id;
 	}
-	
-	public String getFirstName()
-	{
+
+	public String getFirstName() {
 		return firstName;
 	}
-	
-	public String getLastName()
-	{
+
+	public String getLastName() {
 		return lastName;
 	}
-	
-	public String getEmail()
-	{
+
+	public String getEmail() {
 		return email;
 	}
-	
-	public String getPassword()
-	{
+
+	public String getPassword() {
 		return password;
 	}
-	
-	public String getType()
-	{
+
+	public String getType() {
 		return type;
 	}
+
+	public List<User> selectAllUsers() {
+		return this.userDAO.selectAllUsers();
+	}
 	
-	//
-	
-	public String toString()
-	{
-		return "ID: " + id + "Firstname: " + firstName + "Lastname" + lastName + "Email: " + email + "Password: " + password + "Type: " + type;
+	public User getByUsername(String email) {
+		return this.userDAO.getByUsername(email);
+	}
+
+	public String toString() {
+		return "ID: " + id + "Firstname: " + firstName + "Lastname" + lastName + "Email: " + email + "Password: "
+				+ password + "Type: " + type;
+	}
+
+	public boolean CreateUser(User user) {
+		return this.userDAO.CreateUser(user);
 	}
 }

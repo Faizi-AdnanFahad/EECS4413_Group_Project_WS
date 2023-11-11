@@ -11,30 +11,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import presistence.daoLayer.UserDAO;
 
-/**
- * Servlet implementation class UserSignUpServlet
- */
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	private User user = new User();
+	
     public UserServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		HttpSession session = request.getSession();
-		
-		UserDAO userDAO = new UserDAO();
-		
+				
 		String op = (String) request.getParameter("op");
 		int operation = Integer.parseInt(op);
 		
@@ -44,13 +31,13 @@ public class UserServlet extends HttpServlet {
 			email = (String) request.getParameter("username");
 			password = (String) request.getParameter("password");
 			
-			User user = userDAO.getByUsername(email);
+			User user = this.user.getByUsername(email);
 		    
 		    if (user != null && (user.getPassword().equals(password))) 
 		    {
 		    	session.setAttribute("id", user.getId());
 		    	System.out.println(session.getAttribute("id"));
-		    	response.sendRedirect("index/allItems.html");
+		    	response.sendRedirect("index/allItems.jspx");
 		    	
 		    } 
 		    else 
@@ -69,7 +56,7 @@ public class UserServlet extends HttpServlet {
 			type = "normal";
 			
 			User user = new User(firstname,lastname,email,password,type);
-			boolean isCreated = userDAO.CreateUser(user);
+			boolean isCreated = this.user.CreateUser(user);
 			
 			if(isCreated)
 			{

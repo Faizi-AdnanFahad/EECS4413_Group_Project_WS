@@ -12,6 +12,20 @@ import business.model.User.User;
 import presistence.DatabaseConnection;
 
 public class UserDAO {
+	
+	/* Singleton Design Pattern */
+	private static UserDAO instance;
+
+	private UserDAO() {
+
+	}
+
+	public static UserDAO getInstance() {
+		if (instance == null) {
+			instance = new UserDAO();
+		}
+		return instance;
+	}
 
 	public List<User> selectAllUsers() {
 		String sql = "SELECT * FROM User";
@@ -36,19 +50,19 @@ public class UserDAO {
 		}
 		return users;
 	}
-	public boolean CreateUser(User user)
-	{
-		
+
+	public boolean CreateUser(User user) {
+
 		System.out.println("in CreateUser");
 		System.out.println(user.toString());
 		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
-		try(Connection conn = DatabaseConnection.connect();PreparedStatement statement = conn.prepareStatement(createCommand))
-		{
-			statement.setString(1,user.getFirstName());
-			statement.setString(2,user.getLastName());
-			statement.setString(3,user.getEmail());
-			statement.setString(4,user.getPassword());
-			statement.setString(5,user.getType());
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(createCommand)) {
+			statement.setString(1, user.getFirstName());
+			statement.setString(2, user.getLastName());
+			statement.setString(3, user.getEmail());
+			statement.setString(4, user.getPassword());
+			statement.setString(5, user.getType());
 			System.out.println("before");
 			statement.executeUpdate();
 			return true;
@@ -81,17 +95,17 @@ public class UserDAO {
 	}
 
 	public String getUserPassword(String username) {
-		String password = null;		
-		String selectPassword = "SELECT * FROM User WHERE email='"+username+"'";
-		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectPassword))
-		{
-			while(rs.next())
-			{
+		String password = null;
+		String selectPassword = "SELECT * FROM User WHERE email='" + username + "'";
+		try (Connection conn = DatabaseConnection.connect();
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(selectPassword)) {
+			while (rs.next()) {
 				password = rs.getString("password");
 			}
-		}
-		catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return password;
+	}
 }
