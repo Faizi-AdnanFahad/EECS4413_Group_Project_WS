@@ -29,10 +29,11 @@ function populateMain() {
 	xhr.onload = function() {
 		if (xhr.status >= 200 && xhr.status < 300) {
 			// Request was successful
-			var jsonResponse = JSON
-				.parse(xhr.responseText);
-			for (i = 0; i < 5; i++) {
+			var jsonResponse = JSON.parse(xhr.responseText);
+			for (i = 0; i < 4; i++) {
 				var data = jsonResponse[i];
+				
+				
 
 				changeTheOneItemURLBtn(data, "viewMoreBtn_" + i);
 

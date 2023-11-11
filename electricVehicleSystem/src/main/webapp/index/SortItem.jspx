@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=UTF-8"
+		pageEncoding="UTF-8" session="false" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Greetings</title>
+<link rel="stylesheet" type="text/css" href="/electricVehicleSystem/styles/onePage.css"></link>
+
+</head>
+
+<body>
+	<div class="card">
+		<c:if test="${not empty item}">
+			<c:forEach var="j" begin="0" end="3">
+				<div class="card">
+					<p id="itemName_${j}">
+						<span>Vehicle Brand: </span>${item_{j}.name}
+					</p>
+					<p id="itemModel_${j}">
+						<span>Vehicle Model: </span>${item_{j}.model}
+					</p>
+					<p id="itemPrice_${j}">
+						<span>Vehicle Price: </span>${item_{j}.price}
+					</p>
+					<p id="itemMilage_${j}">
+						<span>Vehicle Mileage: </span>
+					</p>
+			</c:forEach>
+		</c:if>
+	</div>
+
+</body>
+	</html>
+</jsp:root>

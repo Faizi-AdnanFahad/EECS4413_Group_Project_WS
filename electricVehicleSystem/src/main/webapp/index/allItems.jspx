@@ -24,8 +24,35 @@
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="../VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
-
-	<div class="container">
+	<div class="sort">
+			<label>filter by:</label>
+					<div id="button1">
+						<form action="sortByPriceASC.jspx" method="get">
+							<button id="updateData" type="submit">Price_ASC</button>
+						</form>
+					</div>
+					<div id="button2">
+						<form action="sortByPriceDESC.jspx" method="get">
+							<button id="updateData" type="submit">Price_DESC</button>
+						</form>
+						</div>
+				
+				<div id="link1" style="margin-right: 2px">
+					<a href="Filter_Tesla.jspx">Tesla</a>
+				</div>
+				<div id="link2" style="margin-right: 2px">
+				<a href="Filter_Toyota.jspx">Toyota</a>
+				</div>
+				<div id="link3" style="margin-right: 2px">
+				<a href="Filter_BYD.jspx">BYD</a>
+				</div>
+				<div id="link4" style="margin-right: 2px">
+				<a href="Filter_KIA.jspx">KIA</a>
+				</div>
+		</div>
+		
+		
+		<div class="container">
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="4">
 				<div class="card">
