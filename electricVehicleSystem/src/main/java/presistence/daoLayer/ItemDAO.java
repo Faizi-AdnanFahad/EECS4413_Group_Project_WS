@@ -9,18 +9,18 @@ import business.model.Catalog.Catalog;
 import business.model.Vehicle.Item;
 import presistence.DatabaseConnection;
 
-public class catalogDAO {
+public class ItemDAO {
 
 	/* Singleton Design Pattern */
-	private static catalogDAO instance;
+	private static ItemDAO instance;
 
-	private catalogDAO() {
+	private ItemDAO() {
 
 	}
 
-	public static catalogDAO getInstance() {
+	public static ItemDAO getInstance() {
 		if (instance == null) {
-			instance = new catalogDAO();
+			instance = new ItemDAO();
 		}
 		return instance;
 	}
