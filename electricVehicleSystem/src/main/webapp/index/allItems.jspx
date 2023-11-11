@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=UTF-8"
+		pageEncoding="UTF-8" session="false" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Greetings</title>
+
+<link rel="stylesheet" type="text/css"
+	href="/electricVehicleSystem/styles/index.css"></link>
+
+</head>
+
+<body>
+	<header>
+		<h1>Listing All Items</h1>
+	</header>
+	<a id="compareButtonHref" class="btn btn-primary"
+		href="../VehicleComparisionCntlr?vehiclesToCompare="><button
+			id="compareButton">Compare</button></a>
+
+	<div class="container">
+		<div id="itemsContainer">
+			<c:forEach var="j" begin="0" end="4">
+				<div class="card">
+					<p id="itemName_${j}">
+						<span>Vehicle Brand: </span>
+					</p>
+					<p id="itemModel_${j}">
+						<span>Vehicle Model: </span>
+					</p>
+					<p id="itemPrice_${j}">
+						<span>Vehicle Price: </span>
+					</p>
+					<p id="itemMilage_${j}">
+						<span>Vehicle Mileage: </span>
+					</p>
+					<div class="button-container">
+						<a id="viewMoreBtn_${j}" class="btn btn-primary"
+							href="../VehicleController?id="><button>View More</button></a>
+						<button>Add to Cart</button>
+					</div>
+					<label>Compare<input type="checkbox"
+						id="compareCheckbox_${j}"></input></label>
+
+				</div>
+			</c:forEach>
+		</div>
+	</div>
+	<footer>
+		<p>© 2023 Item Information System</p>
+	</footer>
+
+	<script src="/electricVehicleSystem/scripts/populateLists.js"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
+	<script src="/electricVehicleSystem/scripts/comparision.js"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
+
+</body>
+	</html>
+</jsp:root>

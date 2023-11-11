@@ -11,20 +11,23 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Greetings</title>
+<link rel="stylesheet" type="text/css" href="/electricVehicleSystem/styles/onePage.css"></link>
 
 </head>
 
 <body>
-	<c:if test="${not empty item}">
-		<p>Item ID: ${item.vid}</p>
-		<p>Name: ${item.name}</p>
-		<p>Description: ${item.description}</p>
-		<p>Model: ${item.model}</p>
-		<p>Quantity: ${item.quanitity}</p>
-		<p>Price: ${item.price}</p>
-		<p>Mileage: ${item.mileage}</p>
-		<p>History ID: ${item.historyId}</p>
-	</c:if>
+	<div class="card">
+		<c:if test="${not empty item}">
+			<p><span>VIN Number: </span>${item.vid}</p>
+			<p><span>Name: </span>${item.name}</p>
+			<p><span>Descriptions: </span>${item.description}</p>
+			<p><span>Model: </span>${item.model}</p>
+			<p><span>Quantity: </span>${item.quanitity}</p>
+			<p><span>Price: </span>${item.price}</p>
+			<p><span>Mileage: </span>${item.mileage}</p>
+			<p><span>History: </span>${item.historyId}</p>
+		</c:if>
+	</div>
 
 </body>
 	</html>

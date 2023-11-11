@@ -1,5 +1,7 @@
 package business.model.Vehicle;
 
+import presistence.daoLayer.ItemDAO;
+
 public class Item {
 	private int vid;
 	private String name;
@@ -9,6 +11,11 @@ public class Item {
 	private int price;
 	private int mileage;
 	private int historyId;
+	private ItemDAO itemDao;
+
+	public Item() {
+		this.itemDao = ItemDAO.getInstance();
+	}
 
 	public int getVid() {
 		return vid;
@@ -73,4 +80,21 @@ public class Item {
 	public void setHistoryId(int historyId) {
 		this.historyId = historyId;
 	}
+
+	public Item getVehicleById(String id) {
+		return this.itemDao.getVehicleById(id);
+	}
+
+	public void customizeInteriorColour(String id, String newColour) {
+		// TBD
+	}
+
+	public void customizeExteriorColour(String id, String newColour) {
+		// TBD
+	}
+
+	public void customizeFabric(String id, String newFabric) {
+		// TBD
+	}
+
 }

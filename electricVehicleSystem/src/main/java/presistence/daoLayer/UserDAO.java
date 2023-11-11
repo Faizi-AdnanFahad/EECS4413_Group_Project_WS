@@ -12,8 +12,7 @@ import business.model.User.User;
 import presistence.DatabaseConnection;
 
 public class UserDAO {
-	
-	
+
 	public List<User> selectAllUsers() {
 		String sql = "SELECT * FROM User";
 		List<User> users = new ArrayList<>();
@@ -37,7 +36,6 @@ public class UserDAO {
 		}
 		return users;
 	}
-	
 	public boolean CreateUser(User user)
 	{
 		
@@ -54,23 +52,20 @@ public class UserDAO {
 			System.out.println("before");
 			statement.executeUpdate();
 			return true;
-		}
-		catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			return false;
 		}
-		
+
 	}
-	
-	public User getByUsername(String username)
-	{
+
+	public User getByUsername(String username) {
 		User user = new User();
 		String selectUser = "SELECT id,firstName,lastName,email,password,type FROM User WHERE email='" + username + "'";
-		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectUser))
-		{
-			while(rs.next())
-			{
+		try (Connection conn = DatabaseConnection.connect();
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(selectUser)) {
+			while (rs.next()) {
 				user.setId(rs.getInt("id"));
 				user.setFirstName(rs.getString("firstName"));
 				user.setLastName(rs.getString("lastName"));
@@ -78,19 +73,15 @@ public class UserDAO {
 				user.setPassword(rs.getString("password"));
 				user.setType(rs.getString("type"));
 			}
-		}
-		catch(SQLException e)
-		{
+		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 		return user;
 	}
-	
-	public String getUserPassword(String username)
-	{
-		String password = null;
-		
+
+	public String getUserPassword(String username) {
+		String password = null;		
 		String selectPassword = "SELECT * FROM User WHERE email='"+username+"'";
 		try(Connection conn = DatabaseConnection.connect();Statement statement = conn.createStatement();ResultSet rs = statement.executeQuery(selectPassword))
 		{
@@ -103,20 +94,4 @@ public class UserDAO {
 		{
 			System.out.println(e.getMessage());
 		}
-		
-		
-		return password;
-	}
-	
-	public boolean changePassword(String firstName, String lastName, String email)
-	{
-		return false;
-	}
-	
-	public void makeAdmin(String username)
-	{
-		
-	}
-	
 }
-

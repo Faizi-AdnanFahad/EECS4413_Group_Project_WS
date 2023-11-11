@@ -1,0 +1,30 @@
+/* Flex container for the cards */
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 20px;
+	/* Adjust the gap between cards as needed */
+}
+
+/* Individual card styling */
+.card {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	width: calc(33.33% - 20px);
+	/* 3 cards in a row, minus the gap */
+	box-sizing: border-box;
+
+	/* Style for comparison mode */
+	background-color: #f0f0f0;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for cards */
+.card:hover {
+	background-color: #e0e0e0;
+	transform: scale(1.03);
+	cursor: pointer;
+}
