@@ -11,24 +11,54 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Greetings</title>
-<link rel="stylesheet" type="text/css" href="/electricVehicleSystem/styles/onePage.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="/electricVehicleSystem/styles/onePage.css"></link>
 
 </head>
 
 <body>
 	<div class="card">
 		<c:if test="${not empty item}">
-			<p><span>VIN Number: </span>${item.vid}</p>
-			<p><span>Name: </span>${item.name}</p>
-			<p><span>Descriptions: </span>${item.description}</p>
-			<p><span>Model: </span>${item.model}</p>
-			<p><span>Quantity: </span>${item.quanitity}</p>
-			<p><span>Price: </span>${item.price}</p>
-			<p><span>Mileage: </span>${item.mileage}</p>
-			<p><span>History: </span>${item.historyId}</p>
+			<p>
+				<span>VIN Number: </span>${item.vid}</p>
+			<p>
+				<span>Name: </span>${item.name}</p>
+			<p>
+				<span>Descriptions: </span>${item.description}</p>
+			<p>
+				<span>Model: </span>${item.model}</p>
+			<p>
+				<span>Quantity: </span>${item.quanitity}</p>
+			<p>
+				<span>Price: </span>${item.price}</p>
+			<p>
+				<span>Mileage: </span>${item.mileage}</p>
+			<p>
+				<span>History: </span>${item.historyId}</p>
+			<!-- Retrieve a session attribute and store it in a variable -->
+
+			<!-- Display the value -->
+			<p>Session Attribute Value: ${param['id']}</p>
 		</c:if>
 	</div>
 
+	<!-- Add a section for displaying a list of reviews -->
+	<h2>Reviews</h2>
+	<c:forEach var="j" begin="0" end="10">
+		<div class="review-card">
+			<div id="user_${j}">User:</div>
+			<div id="rating_${j}">Rating:</div>
+			<div id="description_${j}">Comment: </div>
+			<hr></hr>
+		</div>
+	</c:forEach>
+
+
+	<script src="/electricVehicleSystem/scripts/populateReviews.js"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
 </body>
 	</html>
 </jsp:root>
