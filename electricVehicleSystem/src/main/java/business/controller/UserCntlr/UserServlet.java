@@ -1,8 +1,6 @@
 package business.controller.UserCntlr;
 
 import java.io.IOException;
-import java.util.List;
-
 import business.model.Catalog.Catalog;
 import business.model.User.User;
 import business.model.Vehicle.Item;
@@ -40,17 +38,28 @@ public class UserServlet extends HttpServlet {
 		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
 		    {
 		    	
-		    	System.out.println("Successful Login for User: \n" + user.toString());
-		    	Catalog catalog = new Catalog();
-		    	List<Item> allVehicles = catalog.getVehicles();// Implement this method
-	                // Set the list of vehicles as a request attribute
-		    	request.setAttribute("allVehicles", allVehicles);
-		    	session.setAttribute("id", user.getId());
-
-	                // Forward the request to allitems.jspx
-	            request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+	            URL url = new URL("http://localhost:8080/electricVehicleSystem/rest/items");
+	            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+	            con.setRequestMethod("GET");
 	            
-		    	
+	            List<Item> allVehicles = parseResponse(con.getInputStream());
+	            System.out.println(((Item)allVehicles.get(0)).getModel());
+	            
+	            int responseCode = con.getResponseCode();
+	            System.out.println(responseCode)
+	            ;
+	            if(responseCode == HttpURLConnection.HTTP_OK)
+	            {
+	            
+	            	Catalog catalog = new Catalog();
+			    	//List<Item> allVehicles = catalog.getVehicles();// Implement this method
+		                // Set the list of vehicles as a request attribute
+			    	request.setAttribute("allVehicles", allVehicles);
+			    	
+
+		                // Forward the request to allitems.jspx
+		            request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+	            }		    	
 		    } 
 		    else 
 		    {
@@ -89,6 +98,14 @@ public class UserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	private List<Item> parseResponse(InputStream inputStream) throws IOException {
+	    // Use a library like Jackson for JSON parsing
+	    ObjectMapper objectMapper = new ObjectMapper();
+	    List<Item> itemList = objectMapper.readValue(inputStream, new TypeReference<List<Item>>() {});
+	    return itemList;
+	}
+
 
 }
 
