@@ -1,8 +1,11 @@
 package business.controller.UserCntlr;
 
 import java.io.IOException;
+import java.util.List;
 
+import business.model.Catalog.Catalog;
 import business.model.User.User;
+import business.model.Vehicle.Item;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -27,17 +30,26 @@ public class UserServlet extends HttpServlet {
 		
 		if(operation == 0)
 		{
+			
 			String email, password;
 			email = (String) request.getParameter("username");
 			password = (String) request.getParameter("password");
 			
 			User user = this.user.getByUsername(email);
-		    
-		    if (user != null && (user.getPassword().equals(password))) 
+			
+		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
 		    {
+		    	
+		    	System.out.println("Successful Login for User: \n" + user.toString());
+		    	Catalog catalog = new Catalog();
+		    	List<Item> allVehicles = catalog.getVehicles();// Implement this method
+	                // Set the list of vehicles as a request attribute
+		    	request.setAttribute("allVehicles", allVehicles);
 		    	session.setAttribute("id", user.getId());
-		    	System.out.println(session.getAttribute("id"));
-		    	response.sendRedirect("index/allItems.jspx");
+
+	                // Forward the request to allitems.jspx
+	            request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+	            
 		    	
 		    } 
 		    else 
