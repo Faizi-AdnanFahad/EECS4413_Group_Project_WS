@@ -9,9 +9,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import business.model.Catalog.Catalog;
 import business.model.User.User;
+import business.model.Vehicle.Item;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -36,13 +36,14 @@ public class UserServlet extends HttpServlet {
 		
 		if(operation == 0)
 		{
+			
 			String email, password;
 			email = (String) request.getParameter("username");
 			password = (String) request.getParameter("password");
 			
 			User user = this.user.getByUsername(email);
-		    
-		    if (user != null && (user.getPassword().equals(password))) 
+			
+		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
 		    {
 		    	session.setAttribute("id", user.getId());
 		    	System.out.println(session.getAttribute("id"));
@@ -61,6 +62,7 @@ public class UserServlet extends HttpServlet {
 			    	//List<Item> allVehicles = catalog.getVehicles();// Implement this method
 		                // Set the list of vehicles as a request attribute
 			    	//request.setAttribute("allVehicles", allVehicles);
+
 			    	
 
 		                // Forward the request to allitems.jspx
