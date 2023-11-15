@@ -25,6 +25,7 @@ public class User {
 		setEmail(email);
 		setPassword(password);
 		setType(type);
+		this.userDAO = UserDAO.getInstance();
 	}
 
 	public User(String firstName, String lastName, String email, String password, String type) {
@@ -33,6 +34,7 @@ public class User {
 		setEmail(email);
 		setPassword(password);
 		setType(type);
+		this.userDAO = UserDAO.getInstance();
 	}
 
 	// Setters
@@ -87,6 +89,7 @@ public class User {
 
 	public String getType() {
 		return type;
+		
 	}
 
 	public List<User> selectAllUsers() {
@@ -97,12 +100,18 @@ public class User {
 		return this.userDAO.getByUsername(email);
 	}
 
-	public String toString() {
-		return "ID: " + id + "Firstname: " + firstName + "Lastname" + lastName + "Email: " + email + "Password: "
-				+ password + "Type: " + type;
-	}
-
 	public boolean CreateUser(User user) {
 		return this.userDAO.CreateUser(user);
 	}
+	
+	public String getUserPassword(String email)
+	{
+		return userDAO.getUserPassword(email);
+	}
+	
+	public String toString() {
+		return "ID: " + id + " - Firstname: " + firstName + " - Lastname: " + lastName + " - Email: " + email + " - Password: "
+				+ password + " - Type: " + type;
+	}
 }
+
