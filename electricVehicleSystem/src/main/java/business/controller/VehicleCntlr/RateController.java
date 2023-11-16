@@ -22,8 +22,7 @@ public class RateController extends HttpServlet {
 		int vid = Integer.parseInt(request.getParameter("vid"));
 		int rating = Integer.parseInt(request.getParameter("rating"));
 		String comment = (String) request.getParameter("comment");
-		
-		
+
 		if (session.getAttribute("userId") == null) { // if user is not logged in, redirect it to the login page
 			response.sendRedirect("index/SignInView.html");
 		} else {
