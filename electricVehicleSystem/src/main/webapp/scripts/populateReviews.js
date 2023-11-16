@@ -27,7 +27,7 @@ function populateReview() {
 				.parse(xhr.responseText);
 			for (i = 0; i < jsonResponse.length; i++) {
 				var data = jsonResponse[i];
-
+				console.log(data)
 				document
 					.getElementById("user_" + i).textContent += data.userId;
 				document.getElementById("rating_"

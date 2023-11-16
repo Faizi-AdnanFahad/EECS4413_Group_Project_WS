@@ -57,6 +57,7 @@
 		<p>© 2023 Item Information System</p>
 	</footer>
 
+
 	<script src="/electricVehicleSystem/scripts/populateLists.js"></script>
 	<script>
 	<!-- allows the script before it to work somehow-->

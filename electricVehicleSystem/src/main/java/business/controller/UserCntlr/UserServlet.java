@@ -35,14 +35,18 @@ public class UserServlet extends HttpServlet {
 		    
 		    if (user != null && (user.getPassword().equals(password))) 
 		    {
-		    	session.setAttribute("id", user.getId());
-		    	System.out.println(session.getAttribute("id"));
+		    	request.setAttribute("userId", user.getId());
+		    	System.out.println("User ID in request: " + request.getAttribute("userId"));
+
+		    	session.setAttribute("userId", user.getId());
+		    	System.out.println("user id:" + user.getId());
+		    	System.out.println(session.getAttribute("userId"));
 		    	response.sendRedirect("index/allItems.jspx");
 		    	
 		    } 
 		    else 
 		    {
-		    	response.sendRedirect("index/SignInView.html");
+		    	response.sendRedirect("index/SignInView.jspx");
 		    }
 		}
 		else if(operation == 1)
