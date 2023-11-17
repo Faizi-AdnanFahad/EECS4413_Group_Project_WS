@@ -1,6 +1,11 @@
 package business.controller.UserCntlr;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import business.model.Catalog.Catalog;
 import business.model.User.User;
 import business.model.Vehicle.Item;
@@ -39,7 +44,6 @@ public class UserServlet extends HttpServlet {
 		    {  	
 
 		    	session.setAttribute("id", user.getId());
-		    	
 		    	System.out.println(session.getAttribute("id"));
 		    	
 		    	request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
@@ -47,10 +51,10 @@ public class UserServlet extends HttpServlet {
 		    } 
 		    else 
 		    {
-		    	response.sendRedirect("index/SignInView.html");
+		    	response.sendRedirect("index/userpassError.html");
 		    }
 		}
-		else if(operation == 1)
+		else if (operation == 1)
 		{
 			String firstname, lastname, email, password, type;
 			
@@ -83,12 +87,14 @@ public class UserServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
+	/*
 	private List<Item> parseResponse(InputStream inputStream) throws IOException {
 	    // Use a library like Jackson for JSON parsing
 	    ObjectMapper objectMapper = new ObjectMapper();
 	    List<Item> itemList = objectMapper.readValue(inputStream, new TypeReference<List<Item>>() {});
 	    return itemList;
 	}
+	*/
 
 
 }

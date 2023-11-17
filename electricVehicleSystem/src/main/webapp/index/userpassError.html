@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .error-container {
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: 72px;
+            font-weight: bold;
+            color: #e74c3c; /* Red color for error */
+        }
+
+        .error-message {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .back-to-home {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db; /* Blue color for link */
+            font-weight: bold;
+        }
+
+        .back-to-home:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Error - Not Found</title>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">Not Found</div>
+        <div class="error-message">Username / Password Not Valid</div>
+        <p>The page you are looking for might be in another castle!</p>
+        <a href="SignInView.html" class="back-to-login">Back to Login</a>
+    </div>
+</body>
+</html>
