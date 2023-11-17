@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import business.model.Administrator.Feedback;
+import business.model.Rating.Rating;
 import business.model.User.User;
 import presistence.DatabaseConnection;
 
@@ -109,35 +111,44 @@ public class UserDAO {
 		return password;
 	}
 
-	    public boolean addFeedback(String feedback) {
-	        String sql = "INSERT INTO feedback VALUES(?);";
-	        try (Connection conn = DatabaseConnection.connect();
-					PreparedStatement statement = conn.prepareStatement(sql)) {
-				statement.setString(1, feedback);
-	            statement.executeUpdate();
-	            return true;
+
+		public List<Feedback> listAllFeedback() {
+			String sql = "SELECT id AS description, userId FROM Feedback";
+
+			List<Feedback> allFeedbacks = new ArrayList<>();
+			
+			try (Connection conn = DatabaseConnection.connect();
+					Statement stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery(sql)) {
+				while (rs.next()) {
+					Feedback feedback = new Feedback();
+					feedback.setFeedback(rs.getString("description"));
+					feedback.setUserId(rs.getInt("userId"));
+
+					allFeedbacks.add(feedback);
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			return allFeedbacks;
+		}
+		
+		/*
+		 * Create a new feedback in the database
+		 */
+		public boolean postFeedback(Feedback feedback) {
+			String createCommand = "INSERT INTO Feedback (description,userId) VALUES (?,?)";
+			try (Connection conn = DatabaseConnection.connect();
+					PreparedStatement statement = conn.prepareStatement(createCommand)) {
+				statement.setString(1, feedback.getFeedback());
+				statement.setInt(2, feedback.getUserId());
+				statement.executeUpdate();
+				return true;
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
 				return false;
 			}
-	    }
 
-//	    public List<Feedback> getAllFeedback() {
-//	        List<Feedback> feedbackList = new ArrayList<>();
-//	        String sql = "SELECT id, content FROM feedback;";
-//	        try {
-//	            PreparedStatement pstmt = connection.prepareStatement(sql);
-//	            ResultSet rs = pstmt.executeQuery();
-//	            while (rs.next()) {
-//	                int id = rs.getInt("id");
-//	                String content = rs.getString("content");
-//	                Feedback feedback = new Feedback(id, content);
-//	                feedbackList.add(feedback);
-//	            }
-//	            rs.close();
-//	        } catch (SQLException e) {
-//	            System.out.println(e.getMessage());
-//	        }
-//	        return feedbackList;
-//	    }
+		}
+
 }

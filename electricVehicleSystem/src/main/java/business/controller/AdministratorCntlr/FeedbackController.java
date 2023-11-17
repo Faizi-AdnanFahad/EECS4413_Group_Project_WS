@@ -1,6 +1,7 @@
 package business.controller.AdministratorCntlr;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import business.model.Administrator.Administrator;
 import business.model.Administrator.Feedback;
@@ -30,11 +31,24 @@ public class FeedbackController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		Administrator admin=new Administrator();
+		response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		String feedback = (String) request.getParameter("feedback");
-		Feedback feedback = new Feedback(feedback);
+		
+		if (session.getAttribute("userId") == null) { // if user is not logged in, redirect it to the login page
+			response.sendRedirect("index/SignInView.html");
+		} else {
+			// create the feedback and redirect back to the same page
+			int userId = (int) session.getAttribute("userId");
+			Feedback newFeedback= new Feedback(feedback,userId);
+			Administrator admin=new Administrator();
+			admin.postNewFeedback(newFeedback);
+			out.println("<script type=\"text/javascript\">");
+            out.println("alert('Feedback saved successfully!');");
+            out.println("location='" + request.getContextPath() + "';");
+            out.println("</script>");
+		}
 		
 	}
 
