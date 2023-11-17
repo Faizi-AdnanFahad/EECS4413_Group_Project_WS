@@ -1,6 +1,6 @@
 package business.model.Analytics;
 
-import javax.xml.crypto.Data;
+import business.model.Administrator.Administrator;
 
 public class Analytics {
 	
@@ -9,7 +9,17 @@ public class Analytics {
 		return null;
 	}
 	
-	public Data getVehicleSales()
+	public String getVehicleSales()
+	{
+		return null;
+	}
+	
+	public String getAppUsage()
+	{
+		return null;
+	}
+	
+	public Administrator getAdmin()
 	{
 		return null;
 	}

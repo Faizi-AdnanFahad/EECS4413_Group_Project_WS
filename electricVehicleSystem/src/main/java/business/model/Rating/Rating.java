@@ -12,6 +12,14 @@ public class Rating {
 	private int userId;
 	private RatingDAO ratingDAO;
 
+	public Rating(int rateNum, String reviewDescription, int itemId, int userId) {
+		super();
+		this.rateNum = rateNum;
+		this.reviewDescription = reviewDescription;
+		this.itemId = itemId;
+		this.userId = userId;
+	}
+
 	public Rating() {
 		this.ratingDAO = RatingDAO.getInstance();
 	}

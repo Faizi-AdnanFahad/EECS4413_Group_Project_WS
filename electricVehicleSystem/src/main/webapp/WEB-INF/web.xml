@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
@@ -35,24 +36,38 @@
 		<servlet-name>VehicleController</servlet-name>
 		<url-pattern>/VehicleController</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<description></description>
 		<display-name>VehicleComparisionCntlr</display-name>
 		<servlet-name>VehicleComparisionCntlr</servlet-name>
-		<servlet-class>business.controller.VehicleComparisionCntlr.VehicleComparisionCntlr</servlet-class>
+		<servlet-class>
+			business.controller.VehicleComparisionCntlr.VehicleComparisionCntlr
+		</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>VehicleComparisionCntlr</servlet-name>
 		<url-pattern>/VehicleComparisionCntlr</url-pattern>
 	</servlet-mapping>
-    <servlet>
-    <description></description>
-    <display-name>UserServlet</display-name>
-    <servlet-name>UserServlet</servlet-name>
-    <servlet-class>business.controller.UserCntlr.UserServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UserServlet</servlet-name>
-    <url-pattern>/UserServlet</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>UserServlet</display-name>
+		<servlet-name>UserServlet</servlet-name>
+		<servlet-class>business.controller.UserCntlr.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserServlet</servlet-name>
+		<url-pattern>/UserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>RateController</display-name>
+		<servlet-name>RateController</servlet-name>
+		<servlet-class>
+			business.controller.VehicleCntlr.RateController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RateController</servlet-name>
+		<url-pattern>/RateController</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -22,10 +22,12 @@
 		<h1>Listing All Items</h1>
 	</header>
 	<a id="compareButtonHref" class="btn btn-primary"
-		href="../VehicleComparisionCntlr?vehiclesToCompare="><button
+		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
 
 	<div class="container">
+		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign
+			Out</button>
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="4">
 				<div class="card">
@@ -43,7 +45,8 @@
 					</p>
 					<div class="button-container">
 						<a id="viewMoreBtn_${j}" class="btn btn-primary"
-							href="../VehicleController?id="><button>View More</button></a>
+							href="/electricVehicleSystem/VehicleController?id="><button>View
+								More</button></a>
 						<button>Add to Cart</button>
 					</div>
 					<label>Compare<input type="checkbox"
@@ -63,6 +66,13 @@
 		<p>© 2023 Item Information System</p>
 	</footer>
 
+	<script>
+		function signOut() {
+			alert("Signing out...");
+			window.location.href = "/electricVehicleSystem/index/SignInView.html";
+
+		}
+	</script>
 	<script src="/electricVehicleSystem/scripts/populateLists.js"></script>
 	<script>
 	<!-- allows the script before it to work somehow-->
