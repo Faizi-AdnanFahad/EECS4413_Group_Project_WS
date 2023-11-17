@@ -36,30 +36,14 @@ public class UserServlet extends HttpServlet {
 			User user = this.user.getByUsername(email);
 			
 		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
-		    {
-		    	
-	            URL url = new URL("http://localhost:8080/electricVehicleSystem/rest/items");
-	            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-	            con.setRequestMethod("GET");
-	            
-	            List<Item> allVehicles = parseResponse(con.getInputStream());
-	            System.out.println(((Item)allVehicles.get(0)).getModel());
-	            
-	            int responseCode = con.getResponseCode();
-	            System.out.println(responseCode)
-	            ;
-	            if(responseCode == HttpURLConnection.HTTP_OK)
-	            {
-	            
-	            	Catalog catalog = new Catalog();
-			    	//List<Item> allVehicles = catalog.getVehicles();// Implement this method
-		                // Set the list of vehicles as a request attribute
-			    	request.setAttribute("allVehicles", allVehicles);
-			    	
+		    {  	
 
-		                // Forward the request to allitems.jspx
-		            request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
-	            }		    	
+		    	session.setAttribute("id", user.getId());
+		    	
+		    	System.out.println(session.getAttribute("id"));
+		    	
+		    	request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+	          	    	
 		    } 
 		    else 
 		    {
