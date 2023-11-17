@@ -108,4 +108,36 @@ public class UserDAO {
 		}
 		return password;
 	}
+
+	    public boolean addFeedback(String feedback) {
+	        String sql = "INSERT INTO feedback VALUES(?);";
+	        try (Connection conn = DatabaseConnection.connect();
+					PreparedStatement statement = conn.prepareStatement(sql)) {
+				statement.setString(1, feedback);
+	            statement.executeUpdate();
+	            return true;
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				return false;
+			}
+	    }
+
+//	    public List<Feedback> getAllFeedback() {
+//	        List<Feedback> feedbackList = new ArrayList<>();
+//	        String sql = "SELECT id, content FROM feedback;";
+//	        try {
+//	            PreparedStatement pstmt = connection.prepareStatement(sql);
+//	            ResultSet rs = pstmt.executeQuery();
+//	            while (rs.next()) {
+//	                int id = rs.getInt("id");
+//	                String content = rs.getString("content");
+//	                Feedback feedback = new Feedback(id, content);
+//	                feedbackList.add(feedback);
+//	            }
+//	            rs.close();
+//	        } catch (SQLException e) {
+//	            System.out.println(e.getMessage());
+//	        }
+//	        return feedbackList;
+//	    }
 }
