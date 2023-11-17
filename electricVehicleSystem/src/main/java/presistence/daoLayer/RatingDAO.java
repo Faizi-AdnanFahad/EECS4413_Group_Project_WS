@@ -1,13 +1,13 @@
 package presistence.daoLayer;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import business.model.Rating.Rating;
-import business.model.Vehicle.Item;
 import presistence.DatabaseConnection;
 
 public class RatingDAO {
@@ -53,6 +53,9 @@ public class RatingDAO {
 		return allRatings;
 	}
 	
+	/*
+	 * Lists all rating in the database
+	 */
 	public List<Rating> listRatingsByVehicle(String vid) {
 		String sql = "SELECT id AS rateID, rateNum, reviewDescription, itemId, userId FROM Rating WHERE itemId=" + vid;
 
@@ -76,4 +79,26 @@ public class RatingDAO {
 		}
 		return allRatings;
 	}
+	
+	/*
+	 * Create a new rating in the database
+	 */
+	public boolean postRating(Rating rating) {
+		String createCommand = "INSERT INTO Rating (rateNum,reviewDescription,itemId,userId) VALUES (?,?,?,?)";
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(createCommand)) {
+			statement.setInt(1, rating.getRateNum());
+			statement.setString(2, rating.getReviewDescription());
+			statement.setInt(3, rating.getItemId());
+			statement.setInt(4, rating.getUserId());
+			statement.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+
+	}
+	
+	
 }

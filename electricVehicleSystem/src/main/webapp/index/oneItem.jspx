@@ -42,19 +42,64 @@
 		</c:if>
 	</div>
 
+	<!-- section for a Calculator to calculate monthly payment for the user  -->
+    <h2>Loan Calculator</h2>
+	<div id="loanCalculatorForm">
+	    <label for="vehiclePrice">Vehicle Price*:</label>
+        <input type="number" id="vehiclePrice" name="vehiclePrice" min="0"></input>
+
+        <label for="downPayment">Down Payment*:</label>
+        <input type="number" id="downPayment" name="downPayment" min="0" ></input>
+
+        <label for="interestRate">Loan Interest Rate*:</label>
+        <select id="interestRate" name="interestRate" >
+            <option value="0.05">5%</option>
+            <option value="0.1">10%</option>
+            <option value="0.15">15%</option>
+        </select>
+
+        <label for="loanDuration">Loan Duration (in months)*:</label>
+        <select id="loanDuration" name="loanDuration" >
+            <option value="36">36 months</option>
+            <option value="48">48 months</option>
+            <option value="72">72 months</option>
+        </select>
+
+        <input type="submit" value="Calculate Monthly Payment" onclick="calculateWithAjax()"></input>
+        <p id="loanValue"></p>
+       
+	</div>
+
+	<!-- A Form that authorized users can comment on a vehicle. -->
+	<h2>Submit a Review</h2>
+	<form action="/electricVehicleSystem/RateController?vid=${item.vid}"
+		method="post">
+		<label for="rating">Rating:</label> <input type="number" id="rating"
+			name="rating" min="1" max="5"> </input> <label for="comment">Comment:</label>
+		<input id="comment" name="comment" type="text"></input> <input
+			type="submit" value="Submit Review"></input>
+	</form>
+
+
+
 	<!-- Add a section for displaying a list of reviews -->
 	<h2>Reviews</h2>
 	<c:forEach var="j" begin="0" end="10">
 		<div class="review-card">
 			<div id="user_${j}">User:</div>
 			<div id="rating_${j}">Rating:</div>
-			<div id="description_${j}">Comment: </div>
+			<div id="description_${j}">Comment:</div>
 			<hr></hr>
 		</div>
 	</c:forEach>
 
 
 	<script src="/electricVehicleSystem/scripts/populateReviews.js"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
+	<script src="/electricVehicleSystem/scripts/loanCalculate.js"></script>
 	<script>
 	<!-- allows the script before it to work somehow-->
 		console.log("");
