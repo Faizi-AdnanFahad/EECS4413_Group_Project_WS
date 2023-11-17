@@ -9,7 +9,7 @@ import presistence.daoLayer.ItemDAO;
 public class Catalog {
 	private List<Item> vehicles;
 	private ItemDAO itemDao;
-	
+
 	public Catalog() {
 		this.vehicles = new ArrayList<Item>();
 		this.itemDao = ItemDAO.getInstance();
@@ -18,22 +18,26 @@ public class Catalog {
 	public void addVehicles(Item item) {
 		this.vehicles.add(item);
 	}
-	
+
 	public List<Item> getVehicles() {
 		return this.vehicles;
 	}
-	
+
 	public List<Item> sortByPriceAsc() {
-		// implement the sort here and call the catalogDAO.sortByPriceAsc to perform the sort query
+		// implement the sort here and call the catalogDAO.sortByPriceAsc to perform the
+		// sort query
 		return this.vehicles;
 	}
-	
+
 	public List<Item> listVehicles() {
 		return this.itemDao.listAllVehicles();
 	}
-	
+
 	public List<Item> compareVehicles(String[] cars) {
 		return this.itemDao.compareVehicles(cars);
 	}
-	
+
+	public List<Item> filterByModel(String model) {
+		return itemDao.filterByModel(model);
+	}
 }
