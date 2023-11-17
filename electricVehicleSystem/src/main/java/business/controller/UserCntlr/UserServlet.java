@@ -2,6 +2,13 @@ package business.controller.UserCntlr;
 
 import java.io.IOException;
 
+import java.io.InputStream;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import business.model.Catalog.Catalog;
+
 import business.model.User.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -31,19 +38,23 @@ public class UserServlet extends HttpServlet {
 
 			User user = this.user.getByUsername(email);
 
-			if (user != null && (user.getPassword().equals(password))) {
-				request.setAttribute("userId", user.getId());
-				System.out.println("User ID in request: " + request.getAttribute("userId"));
+			
+		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
+		    {  	
 
-				session.setAttribute("userId", user.getId());
-				System.out.println("user id:" + user.getId());
-				System.out.println(session.getAttribute("userId"));
-				response.sendRedirect("index/allItems.jspx");
-
-			} else {
-				response.sendRedirect("index/SignInView.jspx");
-			}
-		} else if (operation == 1) {
+		    	session.setAttribute("id", user.getId());
+		    	System.out.println(session.getAttribute("id"));
+		    	
+		    	request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+	          	    	
+		    } 
+		    else 
+		    {
+		    	response.sendRedirect("index/userpassError.html");
+		    }
+		}
+		else if (operation == 1)
+		{
 			String firstname, lastname, email, password, type;
 
 			firstname = (String) request.getParameter("firstName");
@@ -74,5 +85,13 @@ public class UserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	/*
+	private List<Item> parseResponse(InputStream inputStream) throws IOException {
+	    // Use a library like Jackson for JSON parsing
+	    ObjectMapper objectMapper = new ObjectMapper();
+	    List<Item> itemList = objectMapper.readValue(inputStream, new TypeReference<List<Item>>() {});
+	    return itemList;
+	}
+	*/
 
 }

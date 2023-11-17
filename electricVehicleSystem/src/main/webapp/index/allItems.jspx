@@ -26,6 +26,7 @@
 			id="compareButton">Compare</button></a>
 
 	<div class="container">
+	<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign Out</button>
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="4">
 				<div class="card">
@@ -57,7 +58,13 @@
 		<p>© 2023 Item Information System</p>
 	</footer>
 
-
+	<script>
+	    function signOut() {
+	        alert("Signing out...");
+	        window.location.href = "/SignInView.html"; 
+	        
+	    }
+	</script>
 	<script src="/electricVehicleSystem/scripts/populateLists.js"></script>
 	<script>
 	<!-- allows the script before it to work somehow-->
