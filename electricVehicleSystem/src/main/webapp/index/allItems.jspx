@@ -57,6 +57,12 @@
 		</div>
 	</div>
 	<footer>
+		<form action="/electricVehicleSystem/FeedbackController"
+		method="post">
+		<label for="Feedback">Feedback:</label>
+		<input id="feedback" name="feedback" type="text"></input> <input
+			type="submit" value="Submit Feedback"></input>
+		</form>
 		<p>© 2023 Item Information System</p>
 	</footer>
 
