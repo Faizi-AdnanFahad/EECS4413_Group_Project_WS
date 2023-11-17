@@ -26,27 +26,27 @@
 	</div>
 	<footer><p>© 2023 Sign In Portal</p></footer>
 	<script>
-		$("#signInForm").submit(function(e){
-		e.preventDefault();
-		var userData = {
-		email: $("#username").val(),
-		password: $("#password").val(),
-		};
-		$.ajax({
-        url: "http://localhost:8080/electricVehicleSystem/rest/users/" + userData.username, // Use the correct URL for the login endpoint
-        type: 'POST', // Use POST for sensitive data like passwords
-        contentType: 'application/json',
-        data: JSON.stringify(userData),
-        success: function(result) {
-            $("#confirmationMessage").text("Log In Successful!");
-            location.reload();
-        },
-        error: function(error) {
-            console.log(error);
-            $("#confirmationMessage").text("Login Failed"); // Display a message for failed login
-        }
-		});
-		});
+		//$("#signInForm").submit(function(e){
+	//	e.preventDefault();
+		//var userData = {
+		//email: $("#username").val(),
+		//password: $("#password").val(),
+		//};
+		//$.ajax({
+        //url: "http://localhost:8080/electricVehicleSystem/rest/users/" + userData.username, // Use the correct URL for the login endpoint
+        //type: 'POST', // Use POST for sensitive data like passwords
+        //contentType: 'application/json',
+        //data: JSON.stringify(userData),
+        //success: function(result) {
+          //  $("#confirmationMessage").text("Log In Successful!");
+            //location.reload();
+        //},
+        //error: function(error) {
+          //  console.log(error);
+            //$("#confirmationMessage").text("Login Failed"); // Display a message for failed login
+        //}
+		//});
+		//});
 	</script>
 </body>
 </html>

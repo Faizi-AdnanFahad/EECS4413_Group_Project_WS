@@ -42,8 +42,7 @@ public class UserServlet extends HttpServlet {
 		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
 		    {  	
 
-		    	session.setAttribute("id", user.getId());
-		    	System.out.println(session.getAttribute("id"));
+		    	session.setAttribute("userId", user.getId());
 		    	
 		    	request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
 	          	    	
