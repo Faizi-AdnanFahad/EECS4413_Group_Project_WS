@@ -57,6 +57,9 @@ public class Catalog {
 
 	public boolean deleteVehicle(int vid) {
 		return this.itemDao.deleteVehicle(vid);
+	}
 
+	public List<Item> filterByModel(String model) {
+		return itemDao.filterByModel(model);
 	}
 }

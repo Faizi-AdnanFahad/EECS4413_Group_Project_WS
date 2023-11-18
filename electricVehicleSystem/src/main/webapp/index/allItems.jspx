@@ -24,7 +24,7 @@
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
-	
+
 
 	<div class="container">
 		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<div id="itemsContainer">
-			<c:forEach var="j" begin="0" end="4">
+			<c:forEach var="j" begin="0" end="5">
 				<div class="card">
 					<p id="itemName_${j}">
 						<span>Vehicle Brand: </span>
@@ -80,11 +80,10 @@
 		</div>
 	</div>
 	<footer>
-		<form action="/electricVehicleSystem/FeedbackController"
-		method="post">
-		<label for="Feedback">Feedback:</label>
-		<input id="feedback" name="feedback" type="text"></input> <input
-			type="submit" value="Submit Feedback"></input>
+		<form action="/electricVehicleSystem/FeedbackController" method="post">
+			<label for="Feedback">Feedback:</label> <input id="feedback"
+				name="feedback" type="text"></input> <input type="submit"
+				value="Submit Feedback"></input>
 		</form>
 		<p>© 2023 Item Information System</p>
 	</footer>
