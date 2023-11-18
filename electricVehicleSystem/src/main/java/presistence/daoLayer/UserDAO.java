@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import business.model.Administrator.Feedback;
-import business.model.Rating.Rating;
 import business.model.User.User;
 import presistence.DatabaseConnection;
 
@@ -113,7 +112,7 @@ public class UserDAO {
 
 
 		public List<Feedback> listAllFeedback() {
-			String sql = "SELECT id AS description, userId FROM Feedback";
+			String sql = "SELECT description, userId FROM Feedback";
 
 			List<Feedback> allFeedbacks = new ArrayList<>();
 			
@@ -140,6 +139,8 @@ public class UserDAO {
 			String createCommand = "INSERT INTO Feedback (description,userId) VALUES (?,?)";
 			try (Connection conn = DatabaseConnection.connect();
 					PreparedStatement statement = conn.prepareStatement(createCommand)) {
+				System.out.println(feedback.getFeedback());
+				System.out.println(feedback.getUserId());
 				statement.setString(1, feedback.getFeedback());
 				statement.setInt(2, feedback.getUserId());
 				statement.executeUpdate();

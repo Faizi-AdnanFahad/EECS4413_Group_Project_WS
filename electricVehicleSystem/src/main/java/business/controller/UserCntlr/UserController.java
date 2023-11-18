@@ -16,7 +16,6 @@ public class UserController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAllUsers() {
-		System.out.println("in getAllUsers!");
 		return this.user.selectAllUsers();
 	}
 
