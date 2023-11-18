@@ -3,9 +3,12 @@ package business.controller.UserCntlr;
 import java.util.List;
 
 import business.model.User.User;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -30,6 +33,13 @@ public class UserController {
 		} else {
 			return -1;
 		}
+	}
+	
+	@DELETE
+	@Path("/{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public boolean deletePlant(@PathParam("id") String id) {
+		return this.user.deleteUser(Integer.parseInt(id));
 	}
 
 }

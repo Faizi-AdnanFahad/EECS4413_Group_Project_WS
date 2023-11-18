@@ -1,7 +1,11 @@
 package business.model.User;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
+import presistence.DatabaseConnection;
 import presistence.daoLayer.UserDAO;
 
 public class User {
@@ -89,13 +93,13 @@ public class User {
 
 	public String getType() {
 		return type;
-		
+
 	}
 
 	public List<User> selectAllUsers() {
 		return this.userDAO.selectAllUsers();
 	}
-	
+
 	public User getByUsername(String email) {
 		return this.userDAO.getByUsername(email);
 	}
@@ -103,15 +107,29 @@ public class User {
 	public boolean CreateUser(User user) {
 		return this.userDAO.CreateUser(user);
 	}
-	
-	public String getUserPassword(String email)
-	{
+
+	public String getUserPassword(String email) {
 		return userDAO.getUserPassword(email);
 	}
-	
+
 	public String toString() {
-		return "ID: " + id + " - Firstname: " + firstName + " - Lastname: " + lastName + " - Email: " + email + " - Password: "
-				+ password + " - Type: " + type;
+		return "ID: " + id + " - Firstname: " + firstName + " - Lastname: " + lastName + " - Email: " + email
+				+ " - Password: " + password + " - Type: " + type;
+	}
+
+	public boolean deleteUser(int id) {
+		String deleteCommand = "DELETE FROM User WHERE id = ?";
+
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(deleteCommand)) {
+			statement.setInt(1, id);
+			int rowsAffected = statement.executeUpdate();
+
+			// Check if any rows were affected to determine if the deletion was successful
+			return rowsAffected > 0;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 }
-
