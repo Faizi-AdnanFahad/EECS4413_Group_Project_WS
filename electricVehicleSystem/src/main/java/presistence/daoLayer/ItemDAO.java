@@ -1,6 +1,7 @@
 package presistence.daoLayer;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -129,5 +130,40 @@ public class ItemDAO {
 	public List<Item> sortByPriceAsc() {
 		// perform the sort query
 		return null;
+	}
+
+	public boolean createVehicle(Item item) {
+		String createCommand = "INSERT INTO Item (name, description, model, quanitity, price, mileage) VALUES (?, ?, ?, ?, ?, ?)";
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(createCommand)) {
+			statement.setString(1, item.getName());
+			statement.setString(2, item.getDescription());
+			statement.setString(3, item.getModel());
+			statement.setInt(4, item.getQuanitity());
+			statement.setInt(5, item.getPrice());
+			statement.setInt(6, item.getMileage());
+
+			statement.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
+
+	public boolean deleteVehicle(int vid) {
+		String deleteCommand = "DELETE FROM Item WHERE vid = ?";
+
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(deleteCommand)) {
+			statement.setInt(1, vid);
+			int rowsAffected = statement.executeUpdate();
+
+			// Check if any rows were affected to determine if the deletion was successful
+			return rowsAffected > 0;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 }
