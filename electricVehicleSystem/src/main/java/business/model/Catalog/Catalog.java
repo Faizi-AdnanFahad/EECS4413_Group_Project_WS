@@ -24,9 +24,11 @@ public class Catalog {
 	}
 
 	public List<Item> sortByPriceAsc() {
-		// implement the sort here and call the catalogDAO.sortByPriceAsc to perform the
-		// sort query
-		return this.vehicles;
+		return this.itemDao.sortByPriceASC();
+	}
+
+	public List<Item> sortByPriceDesc() {
+		return this.itemDao.sortByPriceDESC();
 	}
 
 	public List<Item> listVehicles() {
@@ -36,16 +38,25 @@ public class Catalog {
 	public List<Item> compareVehicles(String[] cars) {
 		return this.itemDao.compareVehicles(cars);
 	}
-	
+
+	public List<Item> sortByMileageHTL() {
+		return this.itemDao.sortByMileageHTL();
+	}
+
+	public List<Item> sortByMileageLTH() {
+		return this.itemDao.sortByMileageLTH();
+	}
+
 	public Item getVehicleById(String id) {
 		return this.itemDao.getVehicleById(id);
 	}
-	
+
 	public boolean createNewVehicle(Item item) {
 		return this.itemDao.createVehicle(item);
 	}
-	
+
 	public boolean deleteVehicle(int vid) {
 		return this.itemDao.deleteVehicle(vid);
+
 	}
 }

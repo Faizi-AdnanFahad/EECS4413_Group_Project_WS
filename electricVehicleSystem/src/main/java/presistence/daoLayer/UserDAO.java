@@ -13,7 +13,7 @@ import business.model.User.User;
 import presistence.DatabaseConnection;
 
 public class UserDAO {
-	
+
 	/* Singleton Design Pattern */
 	private static UserDAO instance;
 
@@ -53,9 +53,6 @@ public class UserDAO {
 	}
 
 	public boolean CreateUser(User user) {
-
-		System.out.println("in CreateUser");
-		System.out.println(user.toString());
 		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
 		try (Connection conn = DatabaseConnection.connect();
 				PreparedStatement statement = conn.prepareStatement(createCommand)) {
@@ -110,46 +107,61 @@ public class UserDAO {
 		return password;
 	}
 
+	public List<Feedback> listAllFeedback() {
+		String sql = "SELECT description, userId FROM Feedback";
 
-		public List<Feedback> listAllFeedback() {
-			String sql = "SELECT description, userId FROM Feedback";
+		List<Feedback> allFeedbacks = new ArrayList<>();
 
-			List<Feedback> allFeedbacks = new ArrayList<>();
-			
-			try (Connection conn = DatabaseConnection.connect();
-					Statement stmt = conn.createStatement();
-					ResultSet rs = stmt.executeQuery(sql)) {
-				while (rs.next()) {
-					Feedback feedback = new Feedback();
-					feedback.setFeedback(rs.getString("description"));
-					feedback.setUserId(rs.getInt("userId"));
+		try (Connection conn = DatabaseConnection.connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+			while (rs.next()) {
+				Feedback feedback = new Feedback();
+				feedback.setFeedback(rs.getString("description"));
+				feedback.setUserId(rs.getInt("userId"));
 
-					allFeedbacks.add(feedback);
-				}
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
+				allFeedbacks.add(feedback);
 			}
-			return allFeedbacks;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
 		}
-		
-		/*
-		 * Create a new feedback in the database
-		 */
-		public boolean postFeedback(Feedback feedback) {
-			String createCommand = "INSERT INTO Feedback (description,userId) VALUES (?,?)";
-			try (Connection conn = DatabaseConnection.connect();
-					PreparedStatement statement = conn.prepareStatement(createCommand)) {
-				System.out.println(feedback.getFeedback());
-				System.out.println(feedback.getUserId());
-				statement.setString(1, feedback.getFeedback());
-				statement.setInt(2, feedback.getUserId());
-				statement.executeUpdate();
-				return true;
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-				return false;
-			}
+		return allFeedbacks;
+	}
 
+	/*
+	 * Create a new feedback in the database
+	 */
+	public boolean postFeedback(Feedback feedback) {
+		String createCommand = "INSERT INTO Feedback (description,userId) VALUES (?,?)";
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(createCommand)) {
+			System.out.println(feedback.getFeedback());
+			System.out.println(feedback.getUserId());
+			statement.setString(1, feedback.getFeedback());
+			statement.setInt(2, feedback.getUserId());
+			statement.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
 		}
+
+	}
+
+	public boolean deleteUser(int id) {
+		String deleteCommand = "DELETE FROM User WHERE id = ?";
+
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(deleteCommand)) {
+			statement.setInt(1, id);
+			int rowsAffected = statement.executeUpdate();
+
+			// Check if any rows were affected to determine if the deletion was successful
+			return rowsAffected > 0;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
 
 }
