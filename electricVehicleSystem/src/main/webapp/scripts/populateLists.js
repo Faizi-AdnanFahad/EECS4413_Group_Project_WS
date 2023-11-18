@@ -30,8 +30,7 @@ function populateMain() {
 		if (xhr.status >= 200 && xhr.status < 300) {
 			// Request was successful
 			var jsonResponse = JSON.parse(xhr.responseText);
-
-			for (var i = 0; i < Math.min(jsonResponse.length, 5); i++) {
+			for (var i = 0; i < 6; i++) {
 				var data = jsonResponse[i];
 
 				// Change the URL of the button
