@@ -24,10 +24,33 @@
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
+	
 
 	<div class="container">
 		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign
 			Out</button>
+		<div class="sort">
+			<div id="button1" class="button">
+				<form action="sortByPriceASC.jspx" method="get">
+					<button id="updateData" type="submit">Price_ASC</button>
+				</form>
+			</div>
+			<div id="button2" class="button">
+				<form action="sortByPriceDESC.jspx" method="get">
+					<button id="updateData" type="submit">Price_DESC</button>
+				</form>
+			</div>
+			<div id="button3" class="button">
+				<form action="sortByMileageHTL.jspx" method="get">
+					<button id="updateData" type="submit">Mileage_HTL</button>
+				</form>
+			</div>
+			<div id="button4" class="button">
+				<form action="sortByMileageLTH.jspx" method="get">
+					<button id="updateData" type="submit">Mileage_LTH</button>
+				</form>
+			</div>
+		</div>
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="4">
 				<div class="card">
@@ -57,10 +80,11 @@
 		</div>
 	</div>
 	<footer>
-		<form action="/electricVehicleSystem/FeedbackController" method="post">
-			<label for="Feedback">Feedback:</label> <input id="feedback"
-				name="feedback" type="text"></input> <input type="submit"
-				value="Submit Feedback"></input>
+		<form action="/electricVehicleSystem/FeedbackController"
+		method="post">
+		<label for="Feedback">Feedback:</label>
+		<input id="feedback" name="feedback" type="text"></input> <input
+			type="submit" value="Submit Feedback"></input>
 		</form>
 		<p>© 2023 Item Information System</p>
 	</footer>
