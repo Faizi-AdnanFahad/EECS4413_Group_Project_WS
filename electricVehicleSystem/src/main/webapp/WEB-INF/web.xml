@@ -18,7 +18,7 @@
 			<param-name>jersey.config.server.provider.packages</param-name>
 			<param-value>
 				package
-				business.controller.CatalogCntlr;business.controller.UserCntlr;business.controller.VehicleCntlr;business.controller.VehicleComparisionCntlr;business.controller.AdministratorCntlr</param-value>
+				business.controller.CatalogCntlr;business.controller.UserCntlr;business.controller.VehicleCntlr;business.controller.VehicleComparisionCntlr;business.controller.AdministratorCntlr;business.controller.ShoppingCartCntlr;</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

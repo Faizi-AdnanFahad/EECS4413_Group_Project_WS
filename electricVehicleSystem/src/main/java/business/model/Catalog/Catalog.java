@@ -62,4 +62,8 @@ public class Catalog {
 	public List<Item> filterByModel(String model) {
 		return itemDao.filterByModel(model);
 	}
+
+	public boolean addVehicleToCart(int userId, int vid) {
+		return this.itemDao.insertCartItem(userId, vid);
+	}
 }

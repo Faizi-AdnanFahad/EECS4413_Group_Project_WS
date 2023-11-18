@@ -289,4 +289,19 @@ public class ItemDAO {
 		return catalog.getVehicles();
 	}
 
+	public boolean insertCartItem(int userId, int vid) {
+		String createCommand = "INSERT INTO Cart (userId, vid) VALUES (?, ?)";
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(createCommand)) {
+			statement.setInt(1, userId);
+			statement.setInt(2, vid);
+
+			statement.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
+
 }

@@ -69,8 +69,9 @@
 					<div class="button-container">
 						<a id="viewMoreBtn_${j}" class="btn btn-primary"
 							href="/electricVehicleSystem/VehicleController?id="><button>View
-								More</button></a>
-						<button>Add to Cart</button>
+								More</button></a> <a id="viewMoreBtn_${j}" class="btn btn-primary"
+							href="http://localhost:8080/electricVehicleSystem/rest/cart"><button>Add to
+								Cart</button></a>
 					</div>
 					<label>Compare<input type="checkbox"
 						id="compareCheckbox_${j}"></input></label>

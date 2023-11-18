@@ -1,11 +1,6 @@
 package business.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
-
-import presistence.DatabaseConnection;
 import presistence.daoLayer.UserDAO;
 
 public class User {
