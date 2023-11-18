@@ -143,7 +143,7 @@ public class ItemDAO {
 				item.setPrice(rs.getInt("price"));
 				item.setMileage(rs.getInt("mileage"));
 				item.setHistoryId(rs.getInt("history"));
-				
+
 				catalog.addVehicles(item);
 			}
 		} catch (SQLException e) {
@@ -168,7 +168,7 @@ public class ItemDAO {
 				item.setPrice(rs.getInt("price"));
 				item.setMileage(rs.getInt("mileage"));
 				item.setHistoryId(rs.getInt("history"));
-				
+
 				catalog.addVehicles(item);
 			}
 		} catch (SQLException e) {
@@ -193,7 +193,7 @@ public class ItemDAO {
 				item.setPrice(rs.getInt("price"));
 				item.setMileage(rs.getInt("mileage"));
 				item.setHistoryId(rs.getInt("history"));
-				
+
 				catalog.addVehicles(item);
 			}
 		} catch (SQLException e) {
@@ -201,7 +201,7 @@ public class ItemDAO {
 		}
 		return catalog.getVehicles();
 	}
-	
+
 	public List<Item> sortByMileageLTH() {
 		String sql = "SELECT * FROM Item ORDER BY mileage asc";
 		Catalog catalog = new Catalog();
@@ -218,7 +218,7 @@ public class ItemDAO {
 				item.setPrice(rs.getInt("price"));
 				item.setMileage(rs.getInt("mileage"));
 				item.setHistoryId(rs.getInt("history"));
-				
+
 				catalog.addVehicles(item);
 			}
 		} catch (SQLException e) {

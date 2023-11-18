@@ -118,18 +118,6 @@ public class User {
 	}
 
 	public boolean deleteUser(int id) {
-		String deleteCommand = "DELETE FROM User WHERE id = ?";
-
-		try (Connection conn = DatabaseConnection.connect();
-				PreparedStatement statement = conn.prepareStatement(deleteCommand)) {
-			statement.setInt(1, id);
-			int rowsAffected = statement.executeUpdate();
-
-			// Check if any rows were affected to determine if the deletion was successful
-			return rowsAffected > 0;
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			return false;
-		}
+		return this.userDAO.deleteUser(id);
 	}
 }
