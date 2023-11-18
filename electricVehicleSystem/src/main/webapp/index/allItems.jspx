@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
@@ -20,6 +21,9 @@
 <body>
 	<header>
 		<h1>Listing All Items</h1>
+		<a href="http://localhost:8080/electricVehicleSystem/rest/cart/3"
+			id="viewCartBtn" class="btn btn-primary">View Cart</a>
+
 	</header>
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
@@ -70,8 +74,8 @@
 						<a id="viewMoreBtn_${j}" class="btn btn-primary"
 							href="/electricVehicleSystem/VehicleController?id="><button>View
 								More</button></a> <a id="viewMoreBtn_${j}" class="btn btn-primary"
-							href="http://localhost:8080/electricVehicleSystem/rest/cart"><button>Add to
-								Cart</button></a>
+							href="http://localhost:8080/electricVehicleSystem/rest/cart"><button>Add
+								to Cart</button></a>
 					</div>
 					<label>Compare<input type="checkbox"
 						id="compareCheckbox_${j}"></input></label>
