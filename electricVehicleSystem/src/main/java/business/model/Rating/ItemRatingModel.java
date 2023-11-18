@@ -18,4 +18,8 @@ public class ItemRatingModel extends Rating {
 	public boolean postNewRating(Rating rating) {
 		return this.ratingDAO.postRating(rating);
 	}
+	
+	public boolean deleteRating(int idInt) {
+		return this.ratingDAO.deleteRating(idInt);
+	}
 }

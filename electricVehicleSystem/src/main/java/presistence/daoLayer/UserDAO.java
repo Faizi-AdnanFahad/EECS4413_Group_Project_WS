@@ -53,9 +53,6 @@ public class UserDAO {
 	}
 
 	public boolean CreateUser(User user) {
-
-		System.out.println("in CreateUser");
-		System.out.println(user.toString());
 		String createCommand = "INSERT INTO User (firstName,lastName,email,password,type) VALUES (?,?,?,?,?)";
 		try (Connection conn = DatabaseConnection.connect();
 				PreparedStatement statement = conn.prepareStatement(createCommand)) {
@@ -150,6 +147,11 @@ public class UserDAO {
 				return false;
 			}
 
+		}
+
+		public boolean deleteUser(int id) {
+			// TODO Auto-generated method stub
+			return false;
 		}
 
 }
