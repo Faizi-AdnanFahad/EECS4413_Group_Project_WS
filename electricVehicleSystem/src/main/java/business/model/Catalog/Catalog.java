@@ -59,4 +59,7 @@ public class Catalog {
 		return this.itemDao.deleteVehicle(vid);
 
 	}
+	public List<Item> filterByModel(String model) {
+		return itemDao.filterByModel(model);
+	}
 }

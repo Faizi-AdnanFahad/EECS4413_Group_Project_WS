@@ -261,4 +261,30 @@ public class ItemDAO {
 			return false;
 		}
 	}
+
+	public List<Item> filterByModel(String model) {
+		String sql = "SELECT * FROM Item WHERE name='"+model+"'";
+
+		Catalog catalog = new Catalog();
+
+		try (Connection conn = DatabaseConnection.connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+
+			while (rs.next()) {
+				Item item = new Item();
+				item.setVid(rs.getInt("vid"));
+				item.setName(rs.getString("name"));
+				item.setModel(rs.getString("model"));
+				item.setPrice(rs.getInt("price"));
+				item.setMileage(rs.getInt("mileage"));
+
+				// add items to the catalog
+				catalog.addVehicles(item);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return catalog.getVehicles();
+	}
 }

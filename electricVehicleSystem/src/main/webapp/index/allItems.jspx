@@ -24,7 +24,35 @@
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
-	
+	<div>
+        <!-- Brand filter dropdown -->
+        <label for="brandFilter">Filter by:</label>
+        <select id="brandFilter" onchange="filterByBrand(this.value)">
+            <option value="">All Brands</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Toyota">Toyota</option>
+            <!-- Add more options for other brands -->
+        </select>
+    </div>
+    <script>
+    function filterByBrand(brand) {
+    	var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:8080/electricVehicleSystem/rest/items/filter/'+brand, true);
+        xhr.onload = function() {
+        	xhr.onload = function() {
+                if (this.status === 200) {
+                    var filteredData = JSON.parse(this.responseText);
+                    displayFilteredItems(filteredData);
+                }
+            };
+            xhr.send();
+    }
+   }
+    </script>
+    <script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
 
 	<div class="container">
 		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign

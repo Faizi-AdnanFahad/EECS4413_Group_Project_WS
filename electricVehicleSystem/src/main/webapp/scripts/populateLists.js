@@ -15,13 +15,27 @@ function changeOneItemURLBtn(data, id) {
 
 // Function to populate the main content
 function populateMain() {
+	var currentURL = window.location.href;
+
+	// Parse the URL
+	var urlObject = new URL(currentURL);
+	var searchParams = new URLSearchParams(urlObject.search);
+
+	// Get the value of the "vid" parameter
+	var model = document.getElementById("filter").textContent;
+	console.log(model)
+	var url="http://localhost:8080/electricVehicleSystem/rest/items";
+	if(model!=" "){
+		var url="http://localhost:8080/electricVehicleSystem/rest/items/filter/"+model;
+	}
+	
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
 
 	// Configure the request
 	xhr.open(
 		"GET",
-		"http://localhost:8080/electricVehicleSystem/rest/items",
+		url,
 		true
 	);
 

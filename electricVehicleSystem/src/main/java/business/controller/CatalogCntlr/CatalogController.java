@@ -5,6 +5,7 @@ import business.model.Catalog.Catalog;
 import business.model.Vehicle.Item;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -61,19 +62,10 @@ public class CatalogController {
 //		return catalogList;
 //	}
 
-//	@GET
-//	@Path("/filter/{model}")
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public List<Catalog> filterByModel(@PathParam("model") String model) {
-//	    List<Catalog> catalogList = itemDAO.readAll();
-//	    List<Catalog> filteredCatalogList = new ArrayList<>();
-//
-//	    for (Catalog catalog : catalogList) {
-//	        if (catalog.getModel().equalsIgnoreCase(model)) {
-//	            filteredCatalogList.add(catalog);
-//	        }
-//	    }
-//
-//	    return filteredCatalogList;
-//	}
+	@GET
+	@Path("/filter/{model}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Item> filterByModel(@PathParam("model") String model) {
+	    return catalog.filterByModel(model);
+	}
 }
