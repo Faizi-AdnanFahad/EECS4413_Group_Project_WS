@@ -23,6 +23,13 @@ public class CatalogController {
 	public List<Item> getAllCatalogs() {
 		return this.catalog.listVehicles();
 	}
+	
+	@GET
+	@Path("Deals")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Item> getDeals() {
+		return this.catalog.listDeals();
+	}
 
 	@GET
 	@Path("sortASC")
