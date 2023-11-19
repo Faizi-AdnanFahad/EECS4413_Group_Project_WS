@@ -21,23 +21,21 @@
 	<header>
 		<h1>Listing All Items</h1>
 		<a href="http://localhost:8080/electricVehicleSystem/rest/cart/3"
-			id="viewCartBtn" class="btn btn-primary">View Cart</a>
-		<a id="signInBtn" class="btn btn-primary"
-			href="/electricVehicleSystem/index/SignInView.html"><button>Sign In</button></a>
-		<a id="signUpBtn" class="btn btn-primary"
-			href="/electricVehicleSystem/index/SignUpView.html"><button>Sign Up</button></a> 
+			id="viewCartBtn" class="btn btn-primary">View Cart</a> <a
+			id="signInBtn" class="btn btn-primary"
+			href="/electricVehicleSystem/index/SignInView.html"><button>Sign
+				In</button></a> <a id="signUpBtn" class="btn btn-primary"
+			href="/electricVehicleSystem/index/SignUpView.html"><button>Sign
+				Up</button></a>
 	</header>
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
 
-	 <form action="/electricVehicleSystem/SignOutServlet"  method="post">
-                <input type="submit" value="Sign Out"/>
-     </form>
+	<form action="/electricVehicleSystem/SignOutServlet" method="post">
+		<input type="submit" value="Sign Out"></input>
+	</form>
 	<div class="container">
-	<div class="container">
-		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign
-			Out</button>
 		<div class="sort">
 			<div id="button1" class="button">
 				<form action="sortByPriceASC.jspx" method="get">
@@ -60,7 +58,6 @@
 				</form>
 			</div>
 		</div>
-
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="5">
 				<div class="card">
@@ -96,14 +93,6 @@
 		</form>
 		<p>© 2023 Electric Vehicle System</p>
 	</footer>
-
-	<script>
-		function signOut() {
-			alert("Signing out...");
-			window.location.href = "/electricVehicleSystem/index/SignInView.html";
-
-		}
-	</script>
 	<script src="/electricVehicleSystem/scripts/populateLists.js"></script>
 	<script>
 	<!-- allows the script before it to work somehow-->
