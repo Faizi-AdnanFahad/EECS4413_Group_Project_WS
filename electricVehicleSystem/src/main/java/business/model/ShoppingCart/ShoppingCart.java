@@ -18,6 +18,10 @@ public class ShoppingCart {
 		this.cartDAO = CartDAO.getInstance();
 	}
 
+	/*
+	 * given a list vehicle IDs, it checks it populates the list of vehicles in the
+	 * cart based on all items in the catalog.
+	 */
 	public void loadItemsToCatalog(List<Integer> vids) {
 		List<Item> itemsInCatalog = this.catalog.listVehicles();
 		this.vehiclesInCart = new ArrayList<>();

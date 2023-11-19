@@ -19,6 +19,7 @@ public class ItemDAO {
 
 	}
 
+	// Singleton pattern: Ensures only one instance of ItemDAO is created.
 	public static ItemDAO getInstance() {
 		if (instance == null) {
 			instance = new ItemDAO();
@@ -26,6 +27,7 @@ public class ItemDAO {
 		return instance;
 	}
 
+	// Retrieves a list of all vehicles from the database.
 	public List<Item> listAllVehicles() {
 		String sql = "SELECT vid, name, model, price, mileage FROM Item";
 
@@ -73,6 +75,7 @@ public class ItemDAO {
 		return item;
 	}
 
+    // Compares vehicles based on their IDs using ItemDAO.
 	public List<Item> compareVehicles(String[] cars) {
 		String compareList = this.helperCreateList(cars);
 
@@ -96,6 +99,7 @@ public class ItemDAO {
 		return catalog.getVehicles();
 	}
 
+    // Helper method to create a string list for SQL queries. helps in code duplications
 	private Item helper(ResultSet rs) {
 		Item item = new Item();
 
@@ -127,6 +131,9 @@ public class ItemDAO {
 		return sb.toString();
 	}
 
+	/*
+	 * Sorting strategies
+	 */
 	public List<Item> sortByPriceDESC() {
 		String sql = "SELECT * FROM Item ORDER BY price desc";
 		Catalog catalog = new Catalog();
@@ -305,18 +312,18 @@ public class ItemDAO {
 	}
 
 	public Item updateInteriorColour(String color, int vid) {
-        String updateCommand = "UPDATE Item SET interiorColor= ? WHERE vid = ?";
-        Item item = new Item();
-        try (Connection conn = DatabaseConnection.connect();
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(updateCommand)) {
-            while (rs.next()) {
-                item = helper(rs);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return item;
-    }
+		String updateCommand = "UPDATE Item SET interiorColor= ? WHERE vid = ?";
+		Item item = new Item();
+		try (Connection conn = DatabaseConnection.connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(updateCommand)) {
+			while (rs.next()) {
+				item = helper(rs);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return item;
+	}
 
 }

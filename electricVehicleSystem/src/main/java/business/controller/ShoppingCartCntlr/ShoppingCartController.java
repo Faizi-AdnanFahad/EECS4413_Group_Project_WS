@@ -32,6 +32,9 @@ public class ShoppingCartController {
 		return cart.getVehiclesInCart();
 	}
 
+	/*
+	 * Sends a post request to create a new user
+	 */
 	@POST
 	@Path("/{userId}")
 	@Consumes(MediaType.APPLICATION_JSON)

@@ -23,6 +23,9 @@ public class AdministrationController {
 		return feedback.listFeedbacks();
 	}
 
+	/*
+	 * Sends a post request to create a new feedback
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)

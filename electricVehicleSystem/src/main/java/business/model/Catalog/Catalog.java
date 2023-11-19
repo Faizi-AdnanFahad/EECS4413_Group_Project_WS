@@ -14,7 +14,8 @@ public class Catalog {
 		this.vehicles = new ArrayList<Item>();
 		this.itemDao = ItemDAO.getInstance();
 	}
-
+	
+	// Adds a vehicle to the list of vehicles in the catalog.
 	public void addVehicles(Item item) {
 		this.vehicles.add(item);
 	}
@@ -51,6 +52,7 @@ public class Catalog {
 		return this.itemDao.getVehicleById(id);
 	}
 
+	/* Create a new vehicle in the database */
 	public boolean createNewVehicle(Item item) {
 		return this.itemDao.createVehicle(item);
 	}
@@ -59,6 +61,7 @@ public class Catalog {
 		return this.itemDao.deleteVehicle(vid);
 	}
 
+    // Filters vehicles by model using ItemDAO given a vehicle brand/model
 	public List<Item> filterByModel(String model) {
 		return itemDao.filterByModel(model);
 	}
