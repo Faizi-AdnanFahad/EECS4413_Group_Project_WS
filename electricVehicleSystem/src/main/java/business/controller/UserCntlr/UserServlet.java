@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import business.model.Analytics.Analytics;
 import business.model.Catalog.Catalog;
 
 import business.model.User.User;
@@ -31,6 +32,7 @@ public class UserServlet extends HttpServlet {
 		String op = (String) request.getParameter("op");
 		int operation = Integer.parseInt(op);
 
+		// if user wants to sign in
 		if (operation == 0) {
 			String email, password;
 			email = (String) request.getParameter("username");
@@ -40,14 +42,21 @@ public class UserServlet extends HttpServlet {
 
 			if (user.getEmail() != null && (user.getPassword().equals(password))) {
 
-				session.setAttribute("userId", user.getId());
-
-				request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+				Analytics.userLoginCount++;
+				System.out.println(user.toString());
+				if (user.getType().equals("admin")) {
+					request.setAttribute("firstname", user.getFirstName());
+					request.setAttribute("lastname", user.getLastName());
+					request.getRequestDispatcher("index/adminView.jsp").forward(request, response);
+				} else {
+					session.setAttribute("userId", user.getId());
+					request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+				}
 
 			} else {
 				response.sendRedirect("index/userpassError.html");
 			}
-		} else if (operation == 1) {
+		} else if (operation == 1) { // if user wants to sign up
 			String firstname, lastname, email, password, type;
 
 			firstname = (String) request.getParameter("firstName");

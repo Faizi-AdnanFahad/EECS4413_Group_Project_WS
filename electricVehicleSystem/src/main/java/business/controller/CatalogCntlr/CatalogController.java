@@ -64,7 +64,10 @@ public class CatalogController {
 
 		return catalog.filterByModel(capitalized);
 	}
-
+	
+	/*
+	 * Given a string, capitalizes and returns the capitalized string.
+	 */
 	private static String capitalizeFirstLetter(String input) {
 		if (input == null || input.isEmpty()) {
 			return input; // Return unchanged if input is null or empty

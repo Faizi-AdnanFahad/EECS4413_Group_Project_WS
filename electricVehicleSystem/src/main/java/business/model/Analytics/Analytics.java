@@ -4,6 +4,8 @@ import business.model.Administrator.Administrator;
 
 public class Analytics {
 	
+	public static int userLoginCount = 0;
+	
 	public Analytics getAnalytics()
 	{
 		return null;
@@ -14,9 +16,9 @@ public class Analytics {
 		return null;
 	}
 	
-	public String getAppUsage()
+	public static int getAppUsage()
 	{
-		return null;
+		return userLoginCount;
 	}
 	
 	public Administrator getAdmin()

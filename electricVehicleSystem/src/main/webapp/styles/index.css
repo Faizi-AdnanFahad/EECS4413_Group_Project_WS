@@ -21,29 +21,29 @@ header {
 }
 
 .sort {
-      text-align: center;
-    }
-    
-.button {
-      display: inline-block;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      margin: 5px;
-      cursor: pointer;
-      border: 2px solid #3498db;
-      border-radius: 5px;
-      color: #3498db;
-      background-color: #fff;
-      transition: background-color 0.3s, color 0.3s;
-    }
+	text-align: center;
+}
 
-    /* Hover effect for the buttons */
-    .button:hover {
-      background-color: #3498db;
-      color: #fff;
-    }
+.button {
+	display: inline-block;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 5px;
+	cursor: pointer;
+	border: 2px solid #3498db;
+	border-radius: 5px;
+	color: #3498db;
+	background-color: #fff;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for the buttons */
+.button:hover {
+	background-color: #3498db;
+	color: #fff;
+}
 
 /* Card styling with flexbox */
 #itemsContainer {
@@ -91,7 +91,8 @@ footer {
 }
 
 #compareButton {
-	position: fixed;
+	/* position: fixed; */
+	position: absolute;
 	top: 10px;
 	right: 10px;
 	background-color: #4CAF50;
@@ -103,4 +104,61 @@ footer {
 	display: inline-block;
 	font-size: 16px;
 	cursor: pointer;
+}
+
+#viewCartBtn {
+	background-color: #4CAF50;
+	/* Green background */
+	color: white;
+	/* White text color */
+	padding: 10px 20px;
+	/* Padding around text */
+	border: none;
+	/* No border */
+	border-radius: 5px;
+	/* Rounded corners */
+	cursor: pointer;
+	/* Cursor on hover */
+	position: absolute;
+	/* Position absolute for top right */
+	top: 60px;
+	right: 10px;
+}
+
+#signInBtn {
+	background-color: #4CAF50;
+	/* Green background */
+	color: white;
+	/* White text color */
+	padding: 10px 20px;
+	/* Padding around text */
+	border: none;
+	/* No border */
+	border-radius: 5px;
+	/* Rounded corners */
+	cursor: pointer;
+	/* Cursor on hover */
+	position: absolute;
+	/* Position absolute for top right */
+	top: 10px;
+	left: 10px;
+}
+
+#signUpBtn {
+	background-color: #4CAF50;
+	/* Green background */
+	color: white;
+	/* White text color */
+	padding: 10px 20px;
+	/* Padding around text */
+	border: none;
+	/* No border */
+	border-radius: 5px;
+	/* Rounded corners */
+	cursor: pointer;
+	/* Cursor on hover */
+	position: absolute;
+	/* Position absolute for top right */
+	top: 60px;
+	left: 10px;
 }

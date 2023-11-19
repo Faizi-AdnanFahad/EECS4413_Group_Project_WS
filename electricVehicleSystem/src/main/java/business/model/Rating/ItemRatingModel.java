@@ -15,6 +15,7 @@ public class ItemRatingModel extends Rating {
 		return this.ratingDAO.listRatingsByVehicle(vid);
 	}
 
+	// creates a new rating in the db
 	public boolean postNewRating(Rating rating) {
 		return this.ratingDAO.postRating(rating);
 	}

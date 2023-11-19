@@ -28,10 +28,12 @@ public class VehicleComparisionCntlr extends HttpServlet {
 		
 		if (MAX_NUM_VEHICLES_TO_COMPARE <= 3) {
 			List<Item> items = this.catalog.compareVehicles(compareVehiclesStringArray);
+			// store the list of items in the response object to be able to use in the jsp file
 			request.setAttribute("items", items);
 			request.getRequestDispatcher(JSPXFILE).forward(request, response);
 
 		} else {
+			// server side error handlign
 			throw new NoSuchFieldError("Maximum comparable number of vehicles are " + MAX_NUM_VEHICLES_TO_COMPARE);
 		}
 

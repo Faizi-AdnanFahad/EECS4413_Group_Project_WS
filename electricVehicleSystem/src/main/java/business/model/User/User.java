@@ -1,11 +1,6 @@
 package business.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
-
-import presistence.DatabaseConnection;
 import presistence.daoLayer.UserDAO;
 
 public class User {
@@ -17,7 +12,7 @@ public class User {
 	private String password;
 	private String type;
 	private UserDAO userDAO;
-
+	
 	public User() {
 		this.userDAO = UserDAO.getInstance();
 	}
