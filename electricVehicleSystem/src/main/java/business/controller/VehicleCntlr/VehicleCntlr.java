@@ -8,6 +8,7 @@ import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -40,15 +41,24 @@ public class VehicleCntlr {
 		item.setPrice(Integer.parseInt(price));
 		item.setQuanitity(Integer.parseInt(quanitity));
 		item.setMileage(Integer.parseInt(mileage));
-		
+
 		catalog.createNewVehicle(item);
 		return item;
 	}
-	
+
+	@PUT
+	@Path("/{vid}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Item customizeInteriorColor(@PathParam("vid") String id, @QueryParam("color") String color) {
+		return item.customizeInteriorColour(color, Integer.parseInt(id));
+	}
+
 	@DELETE
 	@Path("/{vid}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public boolean deletePlant(@PathParam("vid") String vid) {
 		return this.catalog.deleteVehicle(Integer.parseInt(vid));
 	}
+
 }

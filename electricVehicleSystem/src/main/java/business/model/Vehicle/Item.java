@@ -12,6 +12,7 @@ public class Item {
 	private int mileage;
 	private int historyId;
 	private ItemDAO itemDao;
+	private String interiorColor;
 
 	public Item() {
 		this.itemDao = ItemDAO.getInstance();
@@ -85,8 +86,8 @@ public class Item {
 		return this.itemDao.getVehicleById(id);
 	}
 
-	public void customizeInteriorColour(String id, String newColour) {
-		// TBD
+	public Item customizeInteriorColour(String color, int id) {
+		return this.itemDao.updateInteriorColour(color, id);
 	}
 
 	public void customizeExteriorColour(String id, String newColour) {
@@ -97,4 +98,11 @@ public class Item {
 		// TBD
 	}
 
+	public String getInteriorColor() {
+		return interiorColor;
+	}
+
+	public void setInteriorColor(String interiorColor) {
+		this.interiorColor = interiorColor;
+	}
 }

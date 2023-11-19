@@ -10,18 +10,18 @@ import business.model.Catalog.Catalog;
 import business.model.Vehicle.Item;
 import presistence.DatabaseConnection;
 
-public class ItemDAO {
+public class POItemDAO {
 
 	/* Singleton Design Pattern */
-	private static ItemDAO instance;
+	private static POItemDAO instance;
 
-	private ItemDAO() {
+	private POItemDAO() {
 
 	}
 
-	public static ItemDAO getInstance() {
+	public static POItemDAO getInstance() {
 		if (instance == null) {
-			instance = new ItemDAO();
+			instance = new POItemDAO();
 		}
 		return instance;
 	}
@@ -303,20 +303,5 @@ public class ItemDAO {
 			return false;
 		}
 	}
-
-	public Item updateInteriorColour(String color, int vid) {
-        String updateCommand = "UPDATE Item SET interiorColor= ? WHERE vid = ?";
-        Item item = new Item();
-        try (Connection conn = DatabaseConnection.connect();
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(updateCommand)) {
-            while (rs.next()) {
-                item = helper(rs);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return item;
-    }
 
 }
