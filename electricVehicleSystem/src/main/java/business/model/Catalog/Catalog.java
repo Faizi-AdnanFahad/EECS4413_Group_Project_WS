@@ -69,4 +69,8 @@ public class Catalog {
 	public boolean addVehicleToCart(int userId, int vid) {
 		return this.itemDao.insertCartItem(userId, vid);
 	}
+
+	public List<Item> listDeals() {
+		return this.itemDao.listAllDeals();
+	}
 }

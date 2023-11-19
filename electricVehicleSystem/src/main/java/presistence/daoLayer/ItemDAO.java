@@ -326,4 +326,25 @@ public class ItemDAO {
 		return item;
 	}
 
+	public List<Item> listAllDeals() {
+		String sql = "SELECT * FROM item WHERE price BETWEEN 40000 AND 50000;";
+
+		Catalog catalog = new Catalog();
+
+		try (Connection conn = DatabaseConnection.connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+
+			while (rs.next()) {
+				Item item = helper(rs);
+
+				// add items to the catalog
+				catalog.addVehicles(item);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return catalog.getVehicles();
+	}
+
 }
