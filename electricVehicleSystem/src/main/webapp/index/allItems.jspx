@@ -31,7 +31,10 @@
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
 
-
+	 <form action="/electricVehicleSystem/SignOutServlet"  method="post">
+                <input type="submit" value="Sign Out"/>
+     </form>
+	<div class="container">
 	<div class="container">
 		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign
 			Out</button>
@@ -57,6 +60,7 @@
 				</form>
 			</div>
 		</div>
+
 		<div id="itemsContainer">
 			<c:forEach var="j" begin="0" end="5">
 				<div class="card">

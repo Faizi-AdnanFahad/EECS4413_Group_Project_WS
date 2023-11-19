@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import business.model.Analytics.Analytics;
 import business.model.Catalog.Catalog;
 
 import business.model.User.User;
@@ -38,11 +39,23 @@ public class UserServlet extends HttpServlet {
 
 			User user = this.user.getByUsername(email);
 
+
 			if (user.getEmail() != null && (user.getPassword().equals(password))) {
+				
+				Analytics.userLoginCount++;
+				System.out.println(user.toString());
+				if(user.getType().equals("admin"))
+				{
+					request.setAttribute("firstname", user.getFirstName());
+					request.setAttribute("lastname", user.getLastName());
+					request.getRequestDispatcher("index/adminView.jsp").forward(request, response);
+				}
+				else
+				{
+					session.setAttribute("userId", user.getId());
+					request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+				}
 
-				session.setAttribute("userId", user.getId());
-
-				request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
 
 			} else {
 				response.sendRedirect("index/userpassError.html");
