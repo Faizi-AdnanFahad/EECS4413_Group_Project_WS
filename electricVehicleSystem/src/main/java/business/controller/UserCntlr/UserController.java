@@ -2,6 +2,7 @@ package business.controller.UserCntlr;
 
 import java.util.List;
 
+import business.model.Analytics.Analytics;
 import business.model.User.User;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
@@ -20,6 +21,13 @@ public class UserController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAllUsers() {
 		return this.user.selectAllUsers();
+	}
+	
+	@GET
+	@Path("/usage")
+	@Produces(MediaType.APPLICATION_JSON)
+	public int getAppUsage() {
+		return Analytics.getAppUsage();
 	}
 
 	@POST
