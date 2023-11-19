@@ -38,23 +38,27 @@ public class UserServlet extends HttpServlet {
 
 			User user = this.user.getByUsername(email);
 
-			
-		    if (user.getEmail() != null && (user.getPassword().equals(password))) 
-		    {  	
 
-		    	session.setAttribute("id", user.getId());
-		    	System.out.println(session.getAttribute("id"));
-		    	
-		    	request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
-	          	    	
-		    } 
-		    else 
-		    {
-		    	response.sendRedirect("index/userpassError.html");
-		    }
-		}
-		else if (operation == 1)
-		{
+			if (user.getEmail() != null && (user.getPassword().equals(password))) {
+				
+				System.out.println(user.toString());
+				if(user.getType().equals("admin"))
+				{
+					session.setAttribute("firstname", user.getFirstName());
+					session.setAttribute("lastname", user.getLastName());
+					request.getRequestDispatcher("index/adminView.jsp").forward(request, response);
+				}
+				else
+				{
+					session.setAttribute("userId", user.getId());
+					request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+				}
+
+
+			} else {
+				response.sendRedirect("index/userpassError.html");
+			}
+		} else if (operation == 1) {
 			String firstname, lastname, email, password, type;
 
 			firstname = (String) request.getParameter("firstName");
