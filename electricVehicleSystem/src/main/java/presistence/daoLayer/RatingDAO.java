@@ -25,7 +25,7 @@ public class RatingDAO {
 		}
 		return instance;
 	}
-	
+
 	/*
 	 * Get a list of all ratings in the database
 	 */
@@ -33,7 +33,7 @@ public class RatingDAO {
 		String sql = "SELECT id AS rateID, rateNum, reviewDescription, itemId, userId FROM Rating";
 
 		List<Rating> allRatings = new ArrayList<>();
-		
+
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
@@ -52,7 +52,7 @@ public class RatingDAO {
 		}
 		return allRatings;
 	}
-	
+
 	/*
 	 * Lists all rating in the database
 	 */
@@ -60,7 +60,7 @@ public class RatingDAO {
 		String sql = "SELECT id AS rateID, rateNum, reviewDescription, itemId, userId FROM Rating WHERE itemId=" + vid;
 
 		List<Rating> allRatings = new ArrayList<>();
-		
+
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
@@ -79,7 +79,7 @@ public class RatingDAO {
 		}
 		return allRatings;
 	}
-	
+
 	/*
 	 * Create a new rating in the database
 	 */
@@ -99,6 +99,21 @@ public class RatingDAO {
 		}
 
 	}
-	
-	
+
+	public boolean deleteRating(int rateId) {
+		String deleteCommand = "DELETE FROM Rating WHERE id = ?";
+
+		try (Connection conn = DatabaseConnection.connect();
+				PreparedStatement statement = conn.prepareStatement(deleteCommand)) {
+			statement.setInt(1, rateId);
+			int rowsAffected = statement.executeUpdate();
+
+			// Check if any rows were affected to determine if the deletion was successful
+			return rowsAffected > 0;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
+
 }

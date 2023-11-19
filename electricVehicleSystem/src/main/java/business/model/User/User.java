@@ -1,7 +1,6 @@
 package business.model.User;
 
 import java.util.List;
-
 import presistence.daoLayer.UserDAO;
 
 public class User {
@@ -89,13 +88,13 @@ public class User {
 
 	public String getType() {
 		return type;
-		
+
 	}
 
 	public List<User> selectAllUsers() {
 		return this.userDAO.selectAllUsers();
 	}
-	
+
 	public User getByUsername(String email) {
 		return this.userDAO.getByUsername(email);
 	}
@@ -103,15 +102,17 @@ public class User {
 	public boolean CreateUser(User user) {
 		return this.userDAO.CreateUser(user);
 	}
-	
-	public String getUserPassword(String email)
-	{
+
+	public String getUserPassword(String email) {
 		return userDAO.getUserPassword(email);
 	}
-	
+
 	public String toString() {
-		return "ID: " + id + " - Firstname: " + firstName + " - Lastname: " + lastName + " - Email: " + email + " - Password: "
-				+ password + " - Type: " + type;
+		return "ID: " + id + " - Firstname: " + firstName + " - Lastname: " + lastName + " - Email: " + email
+				+ " - Password: " + password + " - Type: " + type;
+	}
+
+	public boolean deleteUser(int id) {
+		return this.userDAO.deleteUser(id);
 	}
 }
-

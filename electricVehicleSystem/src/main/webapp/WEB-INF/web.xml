@@ -15,29 +15,29 @@
       <param-name>jersey.config.server.provider.packages</param-name>
       <param-value>
 				package
-				business.controller.CatalogCntlr;business.controller.UserCntlr;business.controller.VehicleCntlr;business.controller.VehicleComparisionCntlr;</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Jersey REST Service</servlet-name>
-    <url-pattern>/rest/*</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>VehicleController</display-name>
-    <servlet-name>VehicleController</servlet-name>
-    <servlet-class>business.controller.VehicleCntlr.VehicleController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>VehicleController</servlet-name>
-    <url-pattern>/VehicleController</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>VehicleComparisionCntlr</display-name>
-    <servlet-name>VehicleComparisionCntlr</servlet-name>
-    <servlet-class>
+				business.controller.CatalogCntlr;business.controller.UserCntlr;business.controller.VehicleCntlr;business.controller.VehicleComparisionCntlr;business.controller.AdministratorCntlr;business.controller.ShoppingCartCntlr;</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>VehicleController</display-name>
+		<servlet-name>VehicleController</servlet-name>
+		<servlet-class>business.controller.VehicleCntlr.VehicleController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VehicleController</servlet-name>
+		<url-pattern>/VehicleController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>VehicleComparisionCntlr</display-name>
+		<servlet-name>VehicleComparisionCntlr</servlet-name>
+		<servlet-class>
 			business.controller.VehicleComparisionCntlr.VehicleComparisionCntlr
 		</servlet-class>
   </servlet>
@@ -77,4 +77,22 @@
     <servlet-name>SignOutServlet</servlet-name>
     <url-pattern>/SignOutServlet</url-pattern>
   </servlet-mapping>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RateController</servlet-name>
+		<url-pattern>/RateController</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FeedbackController</display-name>
+		<servlet-name>FeedbackController</servlet-name>
+		<servlet-class>
+			business.controller.AdministratorCntlr.FeedbackController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FeedbackController</servlet-name>
+		<url-pattern>/FeedbackController</url-pattern>
+	</servlet-mapping>
+
 </web-app>

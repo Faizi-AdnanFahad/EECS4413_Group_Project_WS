@@ -4,6 +4,7 @@ import java.util.List;
 import business.model.Rating.ItemRatingModel;
 import business.model.Rating.Rating;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -46,5 +47,15 @@ public class RatingController {
 		ItemRatingModel irm = new ItemRatingModel();
 		irm.postNewRating(newRating);
 		return newRating;
+	}
+	
+	/* to be completed */
+	@DELETE
+	@Path("/{id}")
+	@Consumes(MediaType.TEXT_PLAIN)
+	public boolean deletePlant(@PathParam("id") String id) {
+		int idInt = Integer.parseInt(id);
+		ItemRatingModel irm = new ItemRatingModel();
+		return irm.deleteRating(idInt);
 	}
 }

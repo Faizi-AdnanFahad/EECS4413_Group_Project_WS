@@ -20,16 +20,49 @@
 <body>
 	<header>
 		<h1>Listing All Items</h1>
+		<a href="http://localhost:8080/electricVehicleSystem/rest/cart/3"
+			id="viewCartBtn" class="btn btn-primary">View Cart</a>
+		<a id="signInBtn" class="btn btn-primary"
+			href="/electricVehicleSystem/index/SignInView.html"><button>Sign In</button></a>
+		<a id="signUpBtn" class="btn btn-primary"
+			href="/electricVehicleSystem/index/SignUpView.html"><button>Sign Up</button></a> 
 	</header>
 	<a id="compareButtonHref" class="btn btn-primary"
-		href="../VehicleComparisionCntlr?vehiclesToCompare="><button
+		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
+
 	 <form action="/electricVehicleSystem/SignOutServlet"  method="post">
                 <input type="submit" value="Sign Out"/>
      </form>
 	<div class="container">
+	<div class="container">
+		<button id="signoutBtn" class="btn btn-danger" onclick="signOut()">Sign
+			Out</button>
+		<div class="sort">
+			<div id="button1" class="button">
+				<form action="sortByPriceASC.jspx" method="get">
+					<button id="updateData" type="submit">Price_ASC</button>
+				</form>
+			</div>
+			<div id="button2" class="button">
+				<form action="sortByPriceDESC.jspx" method="get">
+					<button id="updateData" type="submit">Price_DESC</button>
+				</form>
+			</div>
+			<div id="button3" class="button">
+				<form action="sortByMileageHTL.jspx" method="get">
+					<button id="updateData" type="submit">Mileage_HTL</button>
+				</form>
+			</div>
+			<div id="button4" class="button">
+				<form action="sortByMileageLTH.jspx" method="get">
+					<button id="updateData" type="submit">Mileage_LTH</button>
+				</form>
+			</div>
+		</div>
+
 		<div id="itemsContainer">
-			<c:forEach var="j" begin="0" end="4">
+			<c:forEach var="j" begin="0" end="5">
 				<div class="card">
 					<p id="itemName_${j}">
 						<span>Vehicle Brand: </span>
@@ -45,8 +78,8 @@
 					</p>
 					<div class="button-container">
 						<a id="viewMoreBtn_${j}" class="btn btn-primary"
-							href="../VehicleController?id="><button>View More</button></a>
-						<button>Add to Cart</button>
+							href="/electricVehicleSystem/VehicleController?id="><button>View
+								More</button></a>
 					</div>
 					<label>Compare<input type="checkbox"
 						id="compareCheckbox_${j}"></input></label>
@@ -56,15 +89,20 @@
 		</div>
 	</div>
 	<footer>
-		<p>© 2023 Item Information System</p>
+		<form action="/electricVehicleSystem/FeedbackController" method="post">
+			<label for="Feedback">Feedback:</label> <input id="feedback"
+				name="feedback" type="text"></input> <input type="submit"
+				value="Submit Feedback"></input>
+		</form>
+		<p>© 2023 Electric Vehicle System</p>
 	</footer>
 
 	<script>
-	    function signOut() {
-	        alert("Signing out...");
-	        window.location.href = "/SignInView.html"; 
-	        
-	    }
+		function signOut() {
+			alert("Signing out...");
+			window.location.href = "/electricVehicleSystem/index/SignInView.html";
+
+		}
 	</script>
 	<script src="/electricVehicleSystem/scripts/populateLists.js"></script>
 	<script>

@@ -92,12 +92,10 @@ public class UserServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	/*
-	private List<Item> parseResponse(InputStream inputStream) throws IOException {
-	    // Use a library like Jackson for JSON parsing
-	    ObjectMapper objectMapper = new ObjectMapper();
-	    List<Item> itemList = objectMapper.readValue(inputStream, new TypeReference<List<Item>>() {});
-	    return itemList;
-	}
-	*/
+	 * private List<Item> parseResponse(InputStream inputStream) throws IOException
+	 * { // Use a library like Jackson for JSON parsing ObjectMapper objectMapper =
+	 * new ObjectMapper(); List<Item> itemList = objectMapper.readValue(inputStream,
+	 * new TypeReference<List<Item>>() {}); return itemList; }
+	 */
 
 }
