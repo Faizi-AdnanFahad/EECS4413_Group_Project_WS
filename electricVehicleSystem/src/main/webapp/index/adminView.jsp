@@ -9,7 +9,7 @@
 <body>
     <header>Admin Access View</header>
     <div class="container">
-    	<h1>Welcome Back <%= request.getAttribute("firstname") %></h1>
+    	<h1>Welcome Back <%= request.getAttribute("firstname") %>, <%= request.getAttribute("lastname") %></h1>
         <div class="options">
             <form action="profile.jsp">
                 <input type="submit" value="Profile"/>
@@ -18,9 +18,9 @@
                 <input type="submit" value="Vehicle Sales Report"/>
             </form>
             <form action="appUsageReport.jsp">
-                <input type="submit" value="App Usage Report"/>
+                <input type="submit" value="App Usage Report" onclick="generate()"/>
             </form>
-            <form action="signOut.jsp">
+            <form action="/electricVehicleSystem/SignOutServlet"  method="post">
                 <input type="submit" value="Sign Out"/>
             </form>
         </div>
@@ -29,5 +29,11 @@
     <footer>
         <p>© 2023 Admin View</p>
     </footer>
+    <script>
+    	function generate()
+    	{
+    		
+    	}
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ import business.model.Administrator.Administrator;
 
 public class Analytics {
 	
-	static int userLoginCount = 0;
+	public static int userLoginCount = 0;
 	
 	public Analytics getAnalytics()
 	{
