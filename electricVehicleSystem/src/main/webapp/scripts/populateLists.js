@@ -48,13 +48,13 @@ function populateMain() {
 		if (xhr.status >= 200 && xhr.status < 300) {
 			// Request was successful
 			var jsonResponse = JSON.parse(xhr.responseText);
-			for (var i = 0; i < 32; i++) {
+			for (var i = 0; i < 24; i++) {
 				var data = jsonResponse[i];
 
 				// Change the URL of the button
 				changeOneItemURLBtn(data, "viewMoreBtn_" + i);
 				// Log the length of the JSON object
-
+// 1}.jpg?raw=true
 				// Update item details
 				updateItemDetails(i, "itemName_", data.name);
 				updateItemDetails(i, "itemModel_", data.model);
