@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<div id="itemsContainer">
-			<c:forEach var="j" begin="0" end="5">
+			<c:forEach var="j" begin="0" end="31">
 				<div class="card">
 					<p id="itemName_${j}">
 						<span>Vehicle Brand: </span>

@@ -26,16 +26,16 @@ function populateMain() {
 	// Get the value of the "vid" parameter
 	var vid = searchParams.get("model");
 	console.log(vid)
-	
+
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
-	
+
 	let urlBackend = "http://localhost:8080/electricVehicleSystem/rest/items"
-	
+
 	if (vid != null) {
 		urlBackend += "/filter?model=" + vid;
 	}
-	
+
 	// Configure the request
 	xhr.open(
 		"GET",
@@ -48,11 +48,12 @@ function populateMain() {
 		if (xhr.status >= 200 && xhr.status < 300) {
 			// Request was successful
 			var jsonResponse = JSON.parse(xhr.responseText);
-			for (var i = 0; i < 6; i++) {
+			for (var i = 0; i < 32; i++) {
 				var data = jsonResponse[i];
 
 				// Change the URL of the button
 				changeOneItemURLBtn(data, "viewMoreBtn_" + i);
+				// Log the length of the JSON object
 
 				// Update item details
 				updateItemDetails(i, "itemName_", data.name);
