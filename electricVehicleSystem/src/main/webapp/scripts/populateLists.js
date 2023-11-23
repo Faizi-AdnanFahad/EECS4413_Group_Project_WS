@@ -15,13 +15,31 @@ function changeOneItemURLBtn(data, id) {
 
 // Function to populate the main content
 function populateMain() {
+
+	// Get the current URL
+	var currentURL = window.location.href;
+
+	// Parse the URL
+	var urlObject = new URL(currentURL);
+	var searchParams = new URLSearchParams(urlObject.search);
+
+	// Get the value of the "vid" parameter
+	var vid = searchParams.get("model");
+	console.log(vid)
+	
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
-
+	
+	let urlBackend = "http://localhost:8080/electricVehicleSystem/rest/items"
+	
+	if (vid != null) {
+		urlBackend += "/filter?model=" + vid;
+	}
+	
 	// Configure the request
 	xhr.open(
 		"GET",
-		"http://localhost:8080/electricVehicleSystem/rest/items",
+		urlBackend,
 		true
 	);
 
