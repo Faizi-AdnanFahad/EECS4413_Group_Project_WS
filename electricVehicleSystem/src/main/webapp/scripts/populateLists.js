@@ -26,7 +26,6 @@ function populateMain() {
 	// Get the value of the "vid" parameter
 
 	var model = searchParams.get("model");
-	console.log(model)
 	
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();

@@ -27,7 +27,8 @@
 				Up</a> <a href="/electricVehicleSystem/index/SignInView.html">Sign
 				In</a> <a href="http://localhost:8080/electricVehicleSystem/rest/cart/3">View
 				Cart</a>
-			<form id="signoutForm" action="/electricVehicleSystem/SignOutServlet" method="post">
+			<form id="signoutForm" action="/electricVehicleSystem/SignOutServlet"
+				method="post">
 				<input type="submit" value="Sign Out"></input>
 			</form>
 		</nav>
@@ -41,37 +42,30 @@
 		<input type="submit" value="Sign Out"></input>
 	</form>
 	<br></br>
-	 <select id="searchInput" placeholder="Select an option">
-    <option value="Tesla">Tesla</option>
-    <option value="Toyota">Toyota</option>
-    <option value="BYD">BYD</option>
-    <option value="KIA">KIA</option>
-    <option value="Benz">Benz</option>
-    <!-- Add more options as needed -->
-  </select>
-  <button onclick="performSearch()">Filter</button>
+	<select id="searchInput" placeholder="Select an option">
+		<option value="Tesla">Tesla</option>
+		<option value="Toyota">Toyota</option>
+		<option value="Byd">BYD</option>
+		<option value="Kia">KIA</option>
+		<option value="Benz">Benz</option>
+		<option value="Chevrolet">Chevrolet</option>
+		<option value="Ford">Ford</option>
+		<option value="Nissan">Nissan</option>
+		<option value="Audi">Audi</option>
+		<option value="Hyundai">Hyundai</option>
+		<option value="Porsche">Porsche</option>
+		<option value="Rivian">Rivian</option>
+		<option value="Bmw">Bmw</option>
 
-  		<script>
-    		// Function to handle the search button click
-    		function performSearch() {
-    		// Get the input value from the search box
-      		var searchText = document.getElementById("searchInput").value;
+	</select>
+	<button onclick="performSearch()">Filter</button>
 
-      		// Construct the URL with the filter parameter
-      		var url = "?model=" + encodeURIComponent(searchText);
-
-     		 // Redirect the user to the new URL
-     		 window.location.href = url;
-    		}
-  		</script>
-  		<script>
-			<!-- allows the script before it to work somehow-->
-				console.log("");
-		</script>
-		<br></br>
-	<a id="DealsButtonHref" class="btn btn-primary"
-		href="/electricVehicleSystem/DealsController"><button
-			id="DealsButton">Deals</button></a>
+	<script src="/electricVehicleSystem/scripts/filter.js"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
+	<br></br>
 
 	<div class="container">
 		<div class="sort">
@@ -97,7 +91,7 @@
 			</div>
 		</div>
 		<div id="itemsContainer">
-			<c:forEach var="j" begin="0" end="31">
+			<c:forEach var="j" begin="0" end="23">
 				<div class="card">
 					<img
 						src="https://github.com/Faizi-AdnanFahad/EECS4413_Group_Project_WS/blob/main/sources/cars/"
