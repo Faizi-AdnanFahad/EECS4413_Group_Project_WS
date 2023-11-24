@@ -17,23 +17,23 @@ function changeOneItemURLBtn(data, id) {
 function populateMain() {
 
 	// Get the current URL
-	var currentURL = window.location.href;
+	var currentURL = window.location.href; 
 
 	// Parse the URL
 	var urlObject = new URL(currentURL);
 	var searchParams = new URLSearchParams(urlObject.search);
 
 	// Get the value of the "vid" parameter
-	var vid = searchParams.get("model");
-	console.log(vid)
+	var model = searchParams.get("model");
+	console.log(model)
 	
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
 	
 	let urlBackend = "http://localhost:8080/electricVehicleSystem/rest/items"
 	
-	if (vid != null) {
-		urlBackend += "/filter?model=" + vid;
+	if (model != null) {
+		urlBackend += "/filter?model=" + model;
 	}
 	
 	// Configure the request

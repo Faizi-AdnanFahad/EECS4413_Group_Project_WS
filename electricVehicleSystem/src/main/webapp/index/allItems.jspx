@@ -35,6 +35,35 @@
 	<form action="/electricVehicleSystem/SignOutServlet" method="post">
 		<input type="submit" value="Sign Out"></input>
 	</form>
+	<br></br>
+	 <select id="searchInput" placeholder="Select an option">
+    <option value="Tesla">Tesla</option>
+    <option value="Toyota">Toyota</option>
+    <option value="BYD">BYD</option>
+    <option value="KIA">KIA</option>
+    <option value="Benz">Benz</option>
+    <!-- Add more options as needed -->
+  </select>
+  <button onclick="performSearch()">Filter</button>
+
+  		<script>
+    		// Function to handle the search button click
+    		function performSearch() {
+    		// Get the input value from the search box
+      		var searchText = document.getElementById("searchInput").value;
+
+      		// Construct the URL with the filter parameter
+      		var url = "?model=" + encodeURIComponent(searchText);
+
+     		 // Redirect the user to the new URL
+     		 window.location.href = url;
+    		}
+  		</script>
+  		<script>
+			<!-- allows the script before it to work somehow-->
+				console.log("");
+		</script>
+		<br></br>
 	<a id="DealsButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/DealsController"><button
 			id="DealsButton">Deals</button></a>
