@@ -54,7 +54,18 @@ function populateMain() {
 				// Change the URL of the button
 				changeOneItemURLBtn(data, "viewMoreBtn_" + i);
 				// Log the length of the JSON object
-// 1}.jpg?raw=true
+
+				// Get the image element with the class "vehicle-image"
+				console.log("vehicle_image" + i)
+				var vehicleImage = document.getElementById("vehicle_image_" + i);
+
+				// Check if the image element is found
+				if (vehicleImage) {
+					// Append something to the src attribute of the image
+					vehicleImage.src += "car" + data.vid +  ".jpg?raw=true";
+				}
+				
+
 				// Update item details
 				updateItemDetails(i, "itemName_", data.name);
 				updateItemDetails(i, "itemModel_", data.model);
