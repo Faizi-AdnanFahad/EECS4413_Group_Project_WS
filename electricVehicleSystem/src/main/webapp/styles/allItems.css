@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* Style for the card container */
+.card {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 20px;
+	padding: 20px;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the image */
+.card img {
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+/* Style for the item details */
+.card p {
+	margin: 10px 0;
+}
+
+/* Style for the buttons */
+.button-container {
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: 8px 16px;
+	margin: 8px;
+	text-decoration: none;
+	background-color: #007bff;
+	color: #fff;
+	border-radius: 4px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #0056b3;
+}
+
+/* Style for the checkbox */
+.card label {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}

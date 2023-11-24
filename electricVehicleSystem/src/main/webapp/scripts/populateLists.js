@@ -24,18 +24,19 @@ function populateMain() {
 	var searchParams = new URLSearchParams(urlObject.search);
 
 	// Get the value of the "vid" parameter
+
 	var model = searchParams.get("model");
 	console.log(model)
 	
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
-	
+
 	let urlBackend = "http://localhost:8080/electricVehicleSystem/rest/items"
 	
 	if (model != null) {
 		urlBackend += "/filter?model=" + model;
 	}
-	
+
 	// Configure the request
 	xhr.open(
 		"GET",
@@ -48,11 +49,23 @@ function populateMain() {
 		if (xhr.status >= 200 && xhr.status < 300) {
 			// Request was successful
 			var jsonResponse = JSON.parse(xhr.responseText);
-			for (var i = 0; i < 6; i++) {
+			for (var i = 0; i < 24; i++) {
 				var data = jsonResponse[i];
 
 				// Change the URL of the button
 				changeOneItemURLBtn(data, "viewMoreBtn_" + i);
+				// Log the length of the JSON object
+
+				// Get the image element with the class "vehicle-image"
+				console.log("vehicle_image" + i)
+				var vehicleImage = document.getElementById("vehicle_image_" + i);
+
+				// Check if the image element is found
+				if (vehicleImage) {
+					// Append something to the src attribute of the image
+					vehicleImage.src += "car" + data.vid +  ".jpg?raw=true";
+				}
+				
 
 				// Update item details
 				updateItemDetails(i, "itemName_", data.name);

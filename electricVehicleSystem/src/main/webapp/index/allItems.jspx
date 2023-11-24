@@ -19,14 +19,19 @@
 
 <body>
 	<header>
-		<h1>Listing All Items</h1>
-		<a href="http://localhost:8080/electricVehicleSystem/rest/cart/3"
-			id="viewCartBtn" class="btn btn-primary">View Cart</a> <a
-			id="signInBtn" class="btn btn-primary"
-			href="/electricVehicleSystem/index/SignInView.html"><button>Sign
-				In</button></a> <a id="signUpBtn" class="btn btn-primary"
-			href="/electricVehicleSystem/index/SignUpView.html"><button>Sign
-				Up</button></a>
+
+		<!-- Fixed Navbar -->
+		<nav>
+			<a href="#">Home</a> <a href="#">Deals</a> <a href="#feedback">Feedback
+				Form</a> <a href="/electricVehicleSystem/index/SignUpView.html">Sign
+				Up</a> <a href="/electricVehicleSystem/index/SignInView.html">Sign
+				In</a> <a href="http://localhost:8080/electricVehicleSystem/rest/cart/3">View
+				Cart</a>
+			<form id="signoutForm" action="/electricVehicleSystem/SignOutServlet" method="post">
+				<input type="submit" value="Sign Out"></input>
+			</form>
+		</nav>
+
 	</header>
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
@@ -67,7 +72,7 @@
 	<a id="DealsButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/DealsController"><button
 			id="DealsButton">Deals</button></a>
-	
+
 	<div class="container">
 		<div class="sort">
 			<div id="button1" class="button">
@@ -92,8 +97,13 @@
 			</div>
 		</div>
 		<div id="itemsContainer">
-			<c:forEach var="j" begin="0" end="5">
+			<c:forEach var="j" begin="0" end="31">
 				<div class="card">
+					<img
+						src="https://github.com/Faizi-AdnanFahad/EECS4413_Group_Project_WS/blob/main/sources/cars/"
+						alt="Vehicle Image" id="vehicle_image_${j}" width="300"
+						height="200"></img>
+
 					<p id="itemName_${j}">
 						<span>Vehicle Brand: </span>
 					</p>

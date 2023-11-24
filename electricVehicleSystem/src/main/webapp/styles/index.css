@@ -26,26 +26,24 @@ header {
 
 .button {
 	display: inline-block;
-	padding: 10px 20px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 16px;
 	margin: 5px;
 	cursor: pointer;
-	border: 2px solid #3498db;
 	border-radius: 5px;
-	color: #3498db;
 	background-color: #fff;
 	transition: background-color 0.3s, color 0.3s;
 }
 
 /* Hover effect for the buttons */
 .button:hover {
-	background-color: #3498db;
-	color: #fff;
+	background-color: darkgreen;
+	/* Green color */
+	color: white;
 }
 
-/* Card styling with flexbox */
+/* Card styling with flexbox and new advanced styles */
 #itemsContainer {
 	display: flex;
 	flex-wrap: wrap;
@@ -55,16 +53,29 @@ header {
 .card {
 	background-color: white;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	border-radius: 8px;
+	/* Increased border radius */
 	margin: 10px;
-	padding: 15px;
+	padding: 20px;
+	/* Increased padding */
 	width: calc(25% - 20px);
-	/* Adjust width based on the number of cards */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+	box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	/* Increased border radius */
 }
 
 .card p {
-	margin: 5px 0;
+	margin: 10px 0;
 }
 
 .button-container {
@@ -74,12 +85,19 @@ header {
 }
 
 button {
-	background-color: #333;
+	background-color: #4CAF50;
 	color: white;
 	border: none;
-	padding: 5px 10px;
+	padding: 10px 20px;
 	border-radius: 5px;
 	cursor: pointer;
+}
+
+/* Hover effect for buttons */
+button:hover {
+	background-color: darkgreen;
+	/* Green color */
+	color: white;
 }
 
 /* Footer styling */
@@ -91,9 +109,8 @@ footer {
 }
 
 #compareButton {
-	/* position: fixed; */
 	position: absolute;
-	top: 10px;
+	top: 50px;
 	right: 10px;
 	background-color: #4CAF50;
 	color: white;
@@ -106,59 +123,65 @@ footer {
 	cursor: pointer;
 }
 
+
+
 #viewCartBtn {
 	background-color: #4CAF50;
-	/* Green background */
 	color: white;
-	/* White text color */
 	padding: 10px 20px;
-	/* Padding around text */
 	border: none;
-	/* No border */
 	border-radius: 5px;
-	/* Rounded corners */
 	cursor: pointer;
-	/* Cursor on hover */
 	position: absolute;
-	/* Position absolute for top right */
 	top: 60px;
 	right: 10px;
 }
 
-#signInBtn {
-	background-color: #4CAF50;
-	/* Green background */
+#compareButton:hover,
+#viewCartBtn:hover {
+	background-color: darkgreen;
+	/* Green color */
 	color: white;
-	/* White text color */
-	padding: 10px 20px;
-	/* Padding around text */
-	border: none;
-	/* No border */
-	border-radius: 5px;
-	/* Rounded corners */
-	cursor: pointer;
-	/* Cursor on hover */
-	position: absolute;
-	/* Position absolute for top right */
-	top: 10px;
-	left: 10px;
 }
 
-#signUpBtn {
+/* Style for the fixed navbar */
+nav {
 	background-color: #4CAF50;
-	/* Green background */
 	color: white;
-	/* White text color */
 	padding: 10px 20px;
-	/* Padding around text */
-	border: none;
-	/* No border */
-	border-radius: 5px;
-	/* Rounded corners */
-	cursor: pointer;
-	/* Cursor on hover */
-	position: absolute;
-	/* Position absolute for top right */
-	top: 60px;
-	left: 10px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	transition: background-color 0.3s;
+}
+
+/* Add a slight shadow to the navbar on scroll */
+nav.scrolled {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the navbar links */
+nav a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	margin: 0 10px;
+	font-size: 16px;
+}
+
+nav a:hover {
+	background-color: darkgreen;
+	/* Green color */
+	color: white;
+
+}
+
+/* Style for the main content */
+.content {
+	padding: 60px 20px 20px;
+}
+
+#signoutForm {
+	display: inline;
 }
