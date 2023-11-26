@@ -32,15 +32,7 @@ header {
 	margin: 5px;
 	cursor: pointer;
 	border-radius: 5px;
-	background-color: #fff;
 	transition: background-color 0.3s, color 0.3s;
-}
-
-/* Hover effect for the buttons */
-.button:hover {
-	background-color: darkgreen;
-	/* Green color */
-	color: white;
 }
 
 /* Card styling with flexbox and new advanced styles */
@@ -84,21 +76,6 @@ header {
 	margin-top: 10px;
 }
 
-button {
-	background-color: #4CAF50;
-	color: white;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-/* Hover effect for buttons */
-button:hover {
-	background-color: darkgreen;
-	/* Green color */
-	color: white;
-}
 
 /* Footer styling */
 footer {
@@ -144,38 +121,6 @@ footer {
 	color: white;
 }
 
-/* Style for the fixed navbar */
-nav {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px 20px;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
-	transition: background-color 0.3s;
-}
-
-/* Add a slight shadow to the navbar on scroll */
-nav.scrolled {
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Style for the navbar links */
-nav a {
-	color: white;
-	text-decoration: none;
-	padding: 10px 20px;
-	margin: 0 10px;
-	font-size: 16px;
-}
-
-nav a:hover {
-	background-color: darkgreen;
-	/* Green color */
-	color: white;
-
-}
 
 /* Style for the main content */
 .content {
@@ -184,4 +129,49 @@ nav a:hover {
 
 #signoutForm {
 	display: inline;
+}
+
+/* styles.css */
+
+/* Header styles */
+.header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+.header a {
+    color: #ffffff;
+}
+
+/* Container styles */
+.container {
+    margin-top: 20px;
+}
+
+/* Search and Filter styles */
+.search-filter {
+    margin-bottom: 20px;
+}
+
+.sort button {
+    margin-right: 10px;
+}
+
+/* Card styles */
+.card {
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
 }
