@@ -14,79 +14,141 @@
 <link rel="stylesheet" type="text/css"
 	href="/electricVehicleSystem/styles/onePage.css"></link>
 
+<!-- Bootstrap Links -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous"></link>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
 </head>
 
-<body>
-	<div class="card">
-		<c:if test="${not empty item}">
-			<p>
-				<span>VIN Number: </span>${item.vid}</p>
-			<p>
-				<span>Name: </span>${item.name}</p>
-			<p>
-				<span>Descriptions: </span>${item.description}</p>
-			<p>
-				<span>Model: </span>${item.model}</p>
-			<p>
-				<span>Quantity: </span>${item.quanitity}</p>
-			<p>
-				<span>Price: </span>${item.price}</p>
-			<p>
-				<span>Mileage: </span>${item.mileage}</p>
-			<p>
-				<span>History: </span>${item.historyId}</p>
-			<!-- Retrieve a session attribute and store it in a variable -->
+<header class="container-fluid bg-dark text-light py-2">
+	<!-- Fixed Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<a class="navbar-brand" href="#">Home</a>
 
-			<!-- Display the value -->
-			<p>Session Attribute Value: ${param['id']}</p>
-		</c:if>
-	</div>
+		<div class="ms-auto">
+			<a class="btn btn-success me-2"
+				href="/electricVehicleSystem/index/SignInView.html">Sign In</a> <a
+				href="#" class="btn btn-danger me-2" id="signOutBtn">Sign Out</a>
 
-	<!-- section for a Calculator to calculate monthly payment for the user  -->
-	<h2>Loan Calculator</h2>
-	<div id="loanCalculatorForm">
-		<label for="vehiclePrice">Vehicle Price*:</label> <input type="number"
-			id="vehiclePrice" name="vehiclePrice" min="0"></input> <label
-			for="downPayment">Down Payment*:</label> <input type="number"
-			id="downPayment" name="downPayment" min="0"></input> <label
-			for="interestRate">Loan Interest Rate*:</label> <select
-			id="interestRate" name="interestRate">
-			<option value="0.05">5%</option>
-			<option value="0.1">10%</option>
-			<option value="0.15">15%</option>
-		</select> <label for="loanDuration">Loan Duration (in months)*:</label> <select
-			id="loanDuration" name="loanDuration">
-			<option value="36">36 months</option>
-			<option value="48">48 months</option>
-			<option value="72">72 months</option>
-		</select> <input type="submit" value="Calculate Monthly Payment"
-			onclick="calculateWithAjax()"></input>
-		<p id="loanValue"></p>
+			<script>
+				document
+						.getElementById('signOutBtn')
+						.addEventListener(
+								'click',
+								function() {
+									// Use JavaScript to trigger the logout process
+									// You can redirect to the servlet URL or perform any other actions here
+									window.location.href = '/electricVehicleSystem/SignOutServlet';
+								});
+			</script>
 
-	</div>
-
-	<!-- A Form that authorized users can comment on a vehicle. -->
-	<h2>Submit a Review</h2>
-	<form action="/electricVehicleSystem/RateController?vid=${item.vid}"
-		method="post">
-		<label for="rating">Rating:</label> <input type="number" id="rating"
-			name="rating" min="1" max="5"> </input> <label for="comment">Comment:</label>
-		<input id="comment" name="comment" type="text"></input> <input
-			type="submit" value="Submit Review"></input>
-	</form>
-
-
-
-	<!-- Add a section for displaying a list of reviews -->
-	<h2>Reviews</h2>
-	<c:forEach var="j" begin="0" end="10">
-		<div class="review-card">
-			<div id="user_${j}">User:</div>
-			<div id="rating_${j}">Rating:</div>
-			<div id="description_${j}">Comment:</div>
-			<hr></hr>
+			<a class="btn btn-primary"
+				href="http://localhost:8080/electricVehicleSystem/rest/cart/3">View
+				Cart</a>
 		</div>
-	</c:forEach>
+	</nav>
+</header>
+
+<body>
+	<div class="container">
+
+		<div class="card">
+			<c:if test="${not empty item}">
+				<img
+					src="https://github.com/Faizi-AdnanFahad/EECS4413_Group_Project_WS/blob/main/sources/cars/car${item.vid}.jpg?raw=true"
+					alt="Vehicle Image" class="vehicle-image" width="700" height="300"></img>
+				<div class="card-body">
+					<p class="card-title">
+						<span>Name: </span>${item.name}
+					</p>
+					<p>
+						<span>Descriptions: </span>${item.description}
+					</p>
+					<p>
+						<span>Model: </span>${item.model}
+					</p>
+					<p>
+						<span>Quantity: </span>${item.quanitity}
+					</p>
+					<p>
+						<span>Price: </span>${item.price}
+					</p>
+					<p>
+						<span>Mileage: </span>${item.mileage}
+					</p>
+					<p>
+						<span>History: </span>${item.historyId}
+					</p>
+					<p class="bs-primary">Session Attribute Value: ${param['id']}</p>
+				</div>
+
+			</c:if>
+		</div>
+
+
+		<!-- section for a Calculator to calculate monthly payment for the user  -->
+		<h2>Loan Calculator</h2>
+		<div id="loanCalculatorForm">
+			<label for="vehiclePrice">Vehicle Price*:</label> <input
+				type="number" id="vehiclePrice" name="vehiclePrice" min="0"></input>
+			<label for="downPayment">Down Payment*:</label> <input type="number"
+				id="downPayment" name="downPayment" min="0"></input> <label
+				for="interestRate">Loan Interest Rate*:</label> <select
+				id="interestRate" name="interestRate">
+				<option value="0.05">5%</option>
+				<option value="0.1">10%</option>
+				<option value="0.15">15%</option>
+			</select> <label for="loanDuration">Loan Duration (in months)*:</label> <select
+				id="loanDuration" name="loanDuration">
+				<option value="36">36 months</option>
+				<option value="48">48 months</option>
+				<option value="72">72 months</option>
+			</select> <input type="submit" value="Calculate Monthly Payment"
+				onclick="calculateWithAjax()"></input>
+			<p id="loanValue"></p>
+		</div>
+
+		<div class="row mt-5">
+			<div class="col-lg-12">
+				<h2 class="mb-4">Submit a Review</h2>
+				<form action="/electricVehicleSystem/RateController?vid=${item.vid}"
+					method="post" class="needs-validation">
+					<div class="mb-3">
+						<label for="rating" class="form-label">Rating:</label> <input
+							type="number" id="rating" name="rating" class="form-control"
+							min="1" max="5" ></input>
+						<div class="invalid-feedback">Please provide a valid rating.</div>
+					</div>
+					<div class="mb-3">
+						<label for="comment" class="form-label">Comment:</label>
+						<input id="comment" name="comment" class="form-control"
+							rows="3" ></input>
+						<div class="invalid-feedback">Please enter a comment.</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit
+						Review</button>
+				</form>
+
+				<h2>Reviews</h2>
+				<c:forEach var="j" begin="0" end="10">
+					<div class="review-card">
+						<div id="user_${j}">User:</div>
+						<div id="rating_${j}">Rating:</div>
+						<div id="description_${j}">Comment:</div>
+						<hr></hr>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+
+
+	</div>
+
+
 
 
 	<script src="/electricVehicleSystem/scripts/populateReviews.js"></script>
@@ -99,6 +161,24 @@
 	<!-- allows the script before it to work somehow-->
 		console.log("");
 	</script>
+	<!-- JavaScript Bundle with Popper -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+		integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+		crossorigin="anonymous"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
+	</script>
+
 </body>
 	</html>
 </jsp:root>
