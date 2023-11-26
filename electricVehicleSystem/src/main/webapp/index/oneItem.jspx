@@ -20,16 +20,20 @@
 	rel="stylesheet"
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 	crossorigin="anonymous"></link>
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
 </head>
 
 <header class="container-fluid bg-dark text-light py-2">
 	<!-- Fixed Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-		<a class="navbar-brand nav-link" href="/electricVehicleSystem/index/home.html">Home</a>
-		<a class="navbar-brand nav-link" href="/electricVehicleSystem/index/allItems.jspx">Vehicles</a>
-
+		<a class="navbar-brand nav-link"
+			href="/electricVehicleSystem/index/home.html">Home</a> <a
+			class="navbar-brand nav-link"
+			href="/electricVehicleSystem/index/allItems.jspx">Vehicles</a> <a
+			class="navbar-brand nav-link" href="#loanCalculatorForm">Calculate
+			Payment</a>
 		<div class="ms-auto">
 			<a class="btn btn-success me-2"
 				href="/electricVehicleSystem/index/SignInView.html">Sign In</a> <a
@@ -92,25 +96,57 @@
 
 
 		<!-- section for a Calculator to calculate monthly payment for the user  -->
-		<h2>Loan Calculator</h2>
-		<div id="loanCalculatorForm">
-			<label for="vehiclePrice">Vehicle Price*:</label> <input
-				type="number" id="vehiclePrice" name="vehiclePrice" min="0"></input>
-			<label for="downPayment">Down Payment*:</label> <input type="number"
-				id="downPayment" name="downPayment" min="0"></input> <label
-				for="interestRate">Loan Interest Rate*:</label> <select
-				id="interestRate" name="interestRate">
-				<option value="0.05">5%</option>
-				<option value="0.1">10%</option>
-				<option value="0.15">15%</option>
-			</select> <label for="loanDuration">Loan Duration (in months)*:</label> <select
-				id="loanDuration" name="loanDuration">
-				<option value="36">36 months</option>
-				<option value="48">48 months</option>
-				<option value="72">72 months</option>
-			</select> <input type="submit" value="Calculate Monthly Payment"
-				onclick="calculateWithAjax()"></input>
-			<p id="loanValue"></p>
+		<div class="container mt-5">
+			<h2 class="text-center">Loan Calculator</h2>
+			<div id="loanCalculatorForm">
+				<form>
+					<div class="mb-3">
+						<label for="vehiclePrice" class="form-label">Vehicle
+							Price*:</label> <input type="number" class="form-control"
+							id="vehiclePrice" name="vehiclePrice" min="0"></input>
+					</div>
+					<div class="mb-3">
+						<label for="downPayment" class="form-label">Down Payment*:</label>
+						<input type="number" class="form-control" id="downPayment"
+							name="downPayment" min="0"></input>
+					</div>
+					<div class="mb-3">
+						<label for="interestRate" class="form-label">Loan Interest
+							Rate*:</label> <select class="form-select" id="interestRate"
+							name="interestRate">
+							<option value="0.05">5%</option>
+							<option value="0.1">10%</option>
+							<option value="0.15">15%</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label for="loanDuration" class="form-label">Loan Duration
+							(in months)*:</label> <select class="form-select" id="loanDuration"
+							name="loanDuration">
+							<option value="36">36 months</option>
+							<option value="48">48 months</option>
+							<option value="72">72 months</option>
+						</select>
+					</div>
+					<button type="button" class="btn btn-primary"
+						onclick="calculateWithAjax()">Calculate Monthly Payment</button>
+					<p id="loanValue" class="mt-3"></p>
+				</form>
+
+				<!-- Result section with two columns -->
+				<div class="row mt-3">
+					<div class="col-md-6">
+						<!-- Column for result without tax -->
+						<p id="loanValueWithoutTax"></p>
+					</div>
+					<div class="col-md-6">
+						<!-- Column for result with tax -->
+						<p id="loanValueWithTax"></p>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 
 		<div class="row mt-5">
@@ -121,13 +157,12 @@
 					<div class="mb-3">
 						<label for="rating" class="form-label">Rating:</label> <input
 							type="number" id="rating" name="rating" class="form-control"
-							min="1" max="5" ></input>
+							min="1" max="5"></input>
 						<div class="invalid-feedback">Please provide a valid rating.</div>
 					</div>
 					<div class="mb-3">
-						<label for="comment" class="form-label">Comment:</label>
-						<input id="comment" name="comment" class="form-control"
-							rows="3" ></input>
+						<label for="comment" class="form-label">Comment:</label> <input
+							id="comment" name="comment" class="form-control" rows="3"></input>
 						<div class="invalid-feedback">Please enter a comment.</div>
 					</div>
 					<button type="submit" class="btn btn-primary">Submit

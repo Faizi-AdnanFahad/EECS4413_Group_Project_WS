@@ -6,6 +6,19 @@ body {
 	/* Bootstrap default background color */
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #007bff !important;
+}
+
+h6 {
+	display: inline-block;
+}
+
 .container {
 	margin-top: 50px;
 }
