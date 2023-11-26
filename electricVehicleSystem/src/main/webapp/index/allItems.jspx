@@ -37,12 +37,9 @@
 	<a id="compareButtonHref" class="btn btn-primary"
 		href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare="><button
 			id="compareButton">Compare</button></a>
-
-	<form action="/electricVehicleSystem/SignOutServlet" method="post">
-		<input type="submit" value="Sign Out"></input>
-	</form>
 	<br></br>
 	<select id="searchInput" placeholder="Select an option">
+		<option value="All">All</option>
 		<option value="Tesla">Tesla</option>
 		<option value="Toyota">Toyota</option>
 		<option value="Byd">BYD</option>
