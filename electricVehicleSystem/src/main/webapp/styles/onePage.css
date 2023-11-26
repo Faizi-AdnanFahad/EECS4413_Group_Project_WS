@@ -2,58 +2,78 @@
 
 /* General Styles */
 body {
-    background-color: #f8f9fa; /* Bootstrap default background color */
+	background-color: #f8f9fa;
+	/* Bootstrap default background color */
 }
 
 .container {
-    margin-top: 50px;
+	margin-top: 50px;
 }
 
 /* Card Styles */
 .card {
-    margin: auto;
-    width: 50%;
+	margin: auto;
+	width: 50%;
 }
 
 /* Center the card */
 .card {
-    margin: auto;
-    width: 80%;
+	margin: auto;
+	width: 80%;
 }
 
 /* Differentiate spans with normal paragraphs */
-.card-body p span{
+.card-body p span {
 	font-weight: bolder;
 	color: #007bff;
 }
 
 .vehicle-image {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 /* Loan Calculator Styles */
 #loanCalculatorForm {
-    background-color: #e9ecef; /* Bootstrap input field background color */
-    padding: 15px;
-    border-radius: 5px;
+	background-color: #e9ecef;
+	/* Bootstrap input field background color */
+	padding: 15px;
+	border-radius: 5px;
 }
 
 /* Review Styles */
 .review-card {
-    border: 1px solid #ced4da; /* Bootstrap default border color */
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
+	border: 1px solid #ced4da;
+	/* Bootstrap default border color */
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 /* Bootstrap Overrides */
 /* Override Bootstrap's default link color */
 a {
-    color: #007bff;
+	color: #007bff;
 }
 
 /* Override Bootstrap's default link hover color */
 a:hover {
-    color: #0056b3;
+	color: #0056b3;
+}
+
+
+.navbar {
+	background-color: #343a40;
+}
+
+.nav-link {
+	padding: 0.25rem 0;
+	font-weight: 700;
+	margin-left: 1rem;
+	border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+	color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgba(255, 255, 255, 0.5);
 }

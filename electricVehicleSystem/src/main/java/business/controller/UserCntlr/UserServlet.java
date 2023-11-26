@@ -50,7 +50,7 @@ public class UserServlet extends HttpServlet {
 					request.getRequestDispatcher("index/adminView.jsp").forward(request, response);
 				} else {
 					session.setAttribute("userId", user.getId());
-					request.getRequestDispatcher("index/allItems.jspx").forward(request, response);
+					request.getRequestDispatcher("index/home.html").forward(request, response);
 				}
 
 			} else {

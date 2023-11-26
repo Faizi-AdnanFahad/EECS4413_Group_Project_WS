@@ -25,11 +25,14 @@
 <body>
 	<header class="container-fluid bg-dark text-light py-2">
 		<!-- Fixed Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" href="#">Home</a> <a class="navbar-brand"
-				href="#">Deals</a> <a class="navbar-brand" href="#feedback">Feedback
-				</a> <a class="navbar-brand"
-				href="/electricVehicleSystem/index/SignUpView.html">Sign Up</a> <a
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+			<a class="navbar-brand nav-link" href="/electricVehicleSystem/index/home.html">Home</a>
+			<a class="navbar-brand nav-link" href="#">Deals</a> 
+			<a class="navbar-brand nav-link"
+				href="#feedback">Feedback </a> 
+			<a class="navbar-brand nav-link"
+				href="/electricVehicleSystem/index/SignUpView.html">Sign Up</a> 
+			<a
 				id="compareButtonHref" class="btn btn-primary"
 				href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare=">Compare</a>
 
@@ -51,7 +54,7 @@
 				</script>
 
 				<a class="btn btn-primary"
-					href="http://localhost:8080/electricVehicleSystem/rest/cart/3">View
+					href="/electricVehicleSystem/rest/cart/3">View
 					Cart</a>
 			</div>
 		</nav>

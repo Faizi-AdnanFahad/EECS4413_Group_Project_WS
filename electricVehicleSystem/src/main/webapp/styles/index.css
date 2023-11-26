@@ -135,43 +135,60 @@ footer {
 
 /* Header styles */
 .header {
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 10px 0;
+	background-color: #343a40;
+	color: #ffffff;
+	padding: 10px 0;
 }
 
 .header a {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 /* Container styles */
 .container {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 /* Search and Filter styles */
 .search-filter {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .sort button {
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 /* Card styles */
 .card {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 /* Footer styles */
 .footer {
-    background-color: #343a40;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
+	background-color: #343a40;
+	color: #ffffff;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.navbar {
+	background-color: #343a40;
+}
+
+
+.nav-link {
+	padding: 0.25rem 0;
+	font-weight: 700;
+	margin-left: 1rem;
+	border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+	color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgba(255, 255, 255, 0.5);
 }
