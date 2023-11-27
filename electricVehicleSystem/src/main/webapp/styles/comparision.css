@@ -9,6 +9,7 @@
 
 /* Individual card styling */
 .card {
+	margin-top: 40px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 10px;
@@ -27,4 +28,26 @@
 	background-color: #e0e0e0;
 	transform: scale(1.03);
 	cursor: pointer;
+}
+
+/* Differentiate spans with normal paragraphs */
+.card-body p span {
+	font-weight: bolder;
+	color: #007bff;
+}
+
+.navbar {
+	background-color: #343a40;
+}
+
+.nav-link {
+	padding: 0.25rem 0;
+	font-weight: 700;
+	margin-left: 1rem;
+	border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+	color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgba(255, 255, 255, 0.5);
 }

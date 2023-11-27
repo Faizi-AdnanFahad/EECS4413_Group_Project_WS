@@ -17,7 +17,7 @@ function changeOneItemURLBtn(data, id) {
 function populateMain() {
 
 	// Get the current URL
-	var currentURL = window.location.href; 
+	var currentURL = window.location.href;
 
 	// Parse the URL
 	var urlObject = new URL(currentURL);
@@ -26,15 +26,20 @@ function populateMain() {
 	// Get the value of the "vid" parameter
 
 	var model = searchParams.get("model");
-	
+
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
 
 	let urlBackend = "http://localhost:8080/electricVehicleSystem/rest/items"
-	
+
 	if (model != null) {
 		urlBackend += "/filter?model=" + model;
 	}
+
+	if (model == "All") {
+		window.location.href = "http://localhost:8080/electricVehicleSystem/index/allItems.jspx";
+	}
+
 
 	// Configure the request
 	xhr.open(
@@ -62,9 +67,9 @@ function populateMain() {
 				// Check if the image element is found
 				if (vehicleImage) {
 					// Append something to the src attribute of the image
-					vehicleImage.src += "car" + data.vid +  ".jpg?raw=true";
+					vehicleImage.src += "car" + data.vid + ".jpg?raw=true";
 				}
-				
+
 
 				// Update item details
 				updateItemDetails(i, "itemName_", data.name);

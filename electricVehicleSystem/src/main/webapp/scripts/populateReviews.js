@@ -1,6 +1,22 @@
+async function getUserNameWithFetch(id) {
+	try {
+		const response = await fetch(`http://localhost:8080/electricVehicleSystem/rest/users/${id}`);
 
-function populateReview() {
+		if (!response.ok) {
+			throw new Error(`Request failed with status: ${response.status}`);
+		}
 
+		const jsonResponse = await response.json();
+		const firstName = jsonResponse.firstName;
+
+		return firstName;
+	} catch (error) {
+		console.error(error.message);
+		throw error; // Re-throw the error to indicate failure
+	}
+}
+
+async function populateReview() {
 	// Get the current URL
 	var currentURL = window.location.href;
 
@@ -10,48 +26,55 @@ function populateReview() {
 
 	// Get the value of the "vid" parameter
 	var vid = searchParams.get("id");
-	console.log(vid)
-	// Create an instance of XMLHttpRequest
-	var xhr = new XMLHttpRequest();
-	// Configure the request
-	xhr
-		.open(
+
+	try {
+		// Create an instance of XMLHttpRequest
+		var xhr = new XMLHttpRequest();
+
+		// Configure the request
+		xhr.open(
 			"GET",
 			"http://localhost:8080/electricVehicleSystem/rest/rating/" + vid,
-			true);
-	// Set up event handlers
-	xhr.onload = function() {
-		if (xhr.status >= 200 && xhr.status < 300) {
-			// Request was successful
-			var jsonResponse = JSON
-				.parse(xhr.responseText);
-			for (i = 0; i < jsonResponse.length; i++) {
-				var data = jsonResponse[i];
-				console.log(data)
-				document
-					.getElementById("user_" + i).textContent += data.userId;
-				document.getElementById("rating_"
-					+ i).textContent += data.rateNum;
-				document.getElementById("description_"
-					+ i).textContent += data.reviewDescription;
+			true
+		);
+
+		// Set up event handlers
+		xhr.onload = async function() {
+			if (xhr.status >= 200 && xhr.status < 300) {
+				// Request was successful
+				var jsonResponse = JSON.parse(xhr.responseText);
+
+				for (i = 0; i < jsonResponse.length; i++) {
+					var data = jsonResponse[i];
+
+					// get the firstname associated with the user id of a rating
+					const firstName = await getUserNameWithFetch(data.userId);
+
+					document.getElementById("user_" + i).innerHTML = "<h5>" + firstName + "</h5>";
+
+					var element = document.getElementById("rating_" + i);
+					element.setAttribute("data-rating", data.rateNum);
+					element.textContent = "Rated: " + data.rateNum + " stars";
+
+					document.getElementById("description_" + i).textContent = data.reviewDescription;
+				}
+			} else {
+				// Request had an error
+				console.error("Request failed with status: " + xhr.status);
 			}
+		};
 
-		} else {
-			// Request had an error
-			console
-				.error("Request failed with status: "
-					+ xhr.status);
-		}
-	};
+		xhr.onerror = function() {
+			// Handle network errors
+			console.error("Network error");
+		};
 
-	xhr.onerror = function() {
-		// Handle network errors
-		console.error("Network error");
-	};
-
-	// Send the request
-	xhr.send();
+		// Send the request
+		xhr.send();
+	} catch (error) {
+		console.error("An error occurred in populateReview:", error);
+	}
 }
 
 // run the function
-populateReview()
+populateReview();
