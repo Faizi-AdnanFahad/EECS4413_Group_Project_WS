@@ -23,6 +23,37 @@
 </head>
 
 <body>
+	<header>
+		<!-- Fixed Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+			<a class="navbar-brand nav-link"
+				href="/electricVehicleSystem/index/home.html">Home</a> <a
+				class="navbar-brand nav-link"
+				href="/electricVehicleSystem/index/allItems.jspx">Vehicles</a>
+			<div class="ms-auto">
+				<a class="btn btn-success me-2"
+					href="/electricVehicleSystem/index/SignInView.html">Sign In</a> <a
+					href="#" class="btn btn-danger me-2" id="signOutBtn">Sign Out</a>
+	
+				<script>
+					document
+							.getElementById('signOutBtn')
+							.addEventListener(
+									'click',
+									function() {
+										// Use JavaScript to trigger the logout process
+										// You can redirect to the servlet URL or perform any other actions here
+										window.location.href = '/electricVehicleSystem/SignOutServlet';
+									});
+				</script>
+	
+				<a class="btn btn-primary"
+					href="http://localhost:8080/electricVehicleSystem/rest/cart/3">View
+					Cart</a>
+			</div>
+		</nav>
+	
+	</header>
 	<div class="container mt-5">
 		<div class="card-container card-deck">
 			<c:forEach items="${items}" var="item">
@@ -33,13 +64,12 @@
 						style="height: 200px; object-fit: cover;"></img>
 					<div class="card-body">
 						<h5 class="card-title">${item.name}</h5>
-						<p class="card-text">vid: ${item.vid}</p>
-						<p class="card-text">Descriptions: ${item.description}</p>
-						<p class="card-text">Model: ${item.model}</p>
-						<p class="card-text">Quantity: ${item.quanitity}</p>
-						<p class="card-text">Price: ${item.price}</p>
-						<p class="card-text">Mileage: ${item.mileage}</p>
-						<p class="card-text">History: ${item.historyId}</p>
+						<p class="card-text"><span>Descriptions:</span> ${item.description}</p>
+						<p class="card-text"><span>Model:</span> ${item.model}</p>
+						<p class="card-text"><span>Quantity:</span> ${item.quanitity}</p>
+						<p class="card-text"><span>Price:</span> ${item.price}</p>
+						<p class="card-text"><span>Mileage:</span> ${item.mileage}</p>
+						<p class="card-text"><span>History:</span> ${item.historyId}</p>
 					</div>
 					<a id="viewMoreBtn_${j}" class="btn btn-primary"
 							href="/electricVehicleSystem/VehicleController?id=${item.vid}">View More</a>
