@@ -1,6 +1,8 @@
 package business.controller.UserCntlr;
 
 import java.io.IOException;
+
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,6 +31,11 @@ public class SignOutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		session.invalidate();
+		
+        // Remove the attribute from the application context to sign out the user
+        ServletContext servletContext = getServletContext();
+        servletContext.removeAttribute("userId");
+
 		response.sendRedirect("index/SignInView.html");
 	}
 

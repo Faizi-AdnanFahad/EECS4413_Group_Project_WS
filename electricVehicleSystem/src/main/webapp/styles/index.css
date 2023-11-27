@@ -115,13 +115,6 @@ footer {
 	right: 10px;
 }
 
-#compareButton:hover,
-#viewCartBtn:hover {
-	background-color: darkgreen;
-	/* Green color */
-	color: white;
-}
-
 
 /* Style for the main content */
 .content {
@@ -131,9 +124,6 @@ footer {
 #signoutForm {
 	display: inline;
 }
-
-/* styles.css */
-
 /* Header styles */
 .header {
 	background-color: #343a40;

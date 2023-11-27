@@ -43,13 +43,13 @@ public class UserServlet extends HttpServlet {
 			if (user.getEmail() != null && (user.getPassword().equals(password))) {
 
 				Analytics.userLoginCount++;
-				System.out.println(user.toString());
 				if (user.getType().equals("admin")) {
 					request.setAttribute("firstname", user.getFirstName());
 					request.setAttribute("lastname", user.getLastName());
 					request.getRequestDispatcher("index/adminView.jsp").forward(request, response);
 				} else {
-					session.setAttribute("userId", user.getId());
+					session.setAttribute("id", user.getId());
+					this.getServletContext().setAttribute("userId", user.getId());// persisted in the application
 					request.getRequestDispatcher("index/home.html").forward(request, response);
 				}
 
