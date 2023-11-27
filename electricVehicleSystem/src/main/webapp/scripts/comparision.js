@@ -4,6 +4,7 @@
 const MAX_COMPARABLE_VEHICLES = 3;
 
 var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+console.log(checkboxes)
 // Convert the NodeList to an array for easier manipulation
 var checkboxArray = Array.from(checkboxes);
 var counter = 0;
@@ -17,12 +18,17 @@ var compareHref = compareAnchor
 
 var comparables = "";
 // Function to update the list when a checkbox is checked or unchecked
-function updateCheckedCheckboxes(checkboxId) {
-	var index = checkedCheckboxes.indexOf(checkboxId[checkboxId.length - 1]);
+function updateCheckedCheckboxes(checkboxStringId) {
+	var parts = checkboxStringId.split('_');
+	
+	var charactersAfterUnderscore = parts[1]; // gives us the id of vehicle
+
+	var index = checkedCheckboxes.indexOf(charactersAfterUnderscore);
 	if (index === -1) {
 		// Checkbox is checked, add to the list
 		if (checkedCheckboxes.length < MAX_COMPARABLE_VEHICLES) {
-			checkedCheckboxes.push(checkboxId[checkboxId.length - 1]);
+			checkedCheckboxes.push(charactersAfterUnderscore);
+			console.log(checkboxStringId[checkboxStringId.length - 1])
 
 			comparables = checkedCheckboxes.join(",");
 
@@ -30,7 +36,7 @@ function updateCheckedCheckboxes(checkboxId) {
 			compareAnchor.setAttribute('href', modifiedHref);
 		}
 		else {
-			document.getElementById(checkboxId).checked = false;
+			document.getElementById(checkboxStringId).checked = false;
 			alert("You can not compare more than *" + MAX_COMPARABLE_VEHICLES + "* vehicles!")
 		}
 	} else {
@@ -41,7 +47,6 @@ function updateCheckedCheckboxes(checkboxId) {
 
 // Add event listener to each checkbox
 for (var j = 0; j < checkboxArray.length; j++) {
-
 	checkboxArray[j].addEventListener('change', function() {
 		updateCheckedCheckboxes(this.id);
 	});
