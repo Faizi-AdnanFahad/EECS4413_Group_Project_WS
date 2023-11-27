@@ -134,83 +134,8 @@ public class ItemDAO {
 	/*
 	 * Sorting strategies
 	 */
-	public List<Item> sortByPriceDESC() {
-		String sql = "SELECT * FROM Item ORDER BY price desc";
-		Catalog catalog = new Catalog();
-		try (Connection conn = DatabaseConnection.connect();
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
-			while (rs.next()) {
-				Item item = new Item();
-				item.setVid(rs.getInt("vid"));
-				item.setName(rs.getString("name"));
-				item.setDescription(rs.getString("description"));
-				item.setModel(rs.getString("model"));
-				item.setQuanitity(rs.getInt("quanitity"));
-				item.setPrice(rs.getInt("price"));
-				item.setMileage(rs.getInt("mileage"));
-				item.setHistoryId(rs.getInt("history"));
-
-				catalog.addVehicles(item);
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return catalog.getVehicles();
-	}
-
-	public List<Item> sortByPriceASC() {
-		String sql = "SELECT * FROM Item ORDER BY price asc";
-		Catalog catalog = new Catalog();
-		try (Connection conn = DatabaseConnection.connect();
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
-			while (rs.next()) {
-				Item item = new Item();
-				item.setVid(rs.getInt("vid"));
-				item.setName(rs.getString("name"));
-				item.setDescription(rs.getString("description"));
-				item.setModel(rs.getString("model"));
-				item.setQuanitity(rs.getInt("quanitity"));
-				item.setPrice(rs.getInt("price"));
-				item.setMileage(rs.getInt("mileage"));
-				item.setHistoryId(rs.getInt("history"));
-
-				catalog.addVehicles(item);
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return catalog.getVehicles();
-	}
-
-	public List<Item> sortByMileageHTL() {
-		String sql = "SELECT * FROM Item ORDER BY mileage desc";
-		Catalog catalog = new Catalog();
-		try (Connection conn = DatabaseConnection.connect();
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
-			while (rs.next()) {
-				Item item = new Item();
-				item.setVid(rs.getInt("vid"));
-				item.setName(rs.getString("name"));
-				item.setDescription(rs.getString("description"));
-				item.setModel(rs.getString("model"));
-				item.setQuanitity(rs.getInt("quanitity"));
-				item.setPrice(rs.getInt("price"));
-				item.setMileage(rs.getInt("mileage"));
-				item.setHistoryId(rs.getInt("history"));
-
-				catalog.addVehicles(item);
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return catalog.getVehicles();
-	}
-
-	public List<Item> sortByMileageLTH() {
-		String sql = "SELECT * FROM Item ORDER BY mileage asc";
+	public List<Item> sortBy(String sort) {
+		String sql = "SELECT * FROM Item ORDER BY "+sort;
 		Catalog catalog = new Catalog();
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
