@@ -53,10 +53,10 @@ function calculateWithAjax() {
 
 	let resultWithTax =
 		"<h4>Payments With Tax</h4>" +
-		"<h6>Vehicle Including Tax:</h6> $" + vehiclePriceWithTax.toFixed(2) + "<br>" +
-		"<h6>Monthly Payment (with tax):</h6> $" + monthlyPaymentWithTax.toFixed(2) + "<br>" +
+		"<h6>Vehicle Price:</h6> $" + vehiclePriceWithTax.toFixed(2) + "<br>" +
+		"<h6>Monthly Payment:</h6> $" + monthlyPaymentWithTax.toFixed(2) + "<br>" +
 		"<h6>Bi-Weekly Payment:</h6> $" + biWeeklyPaymentWithTax.toFixed(2) + "<br>" +
-		"<h6>Weekly Payment (with tax):</h6> $" + weeklyPaymentWithTax.toFixed(2) + "<br>" +
+		"<h6>Weekly Payment:</h6> $" + weeklyPaymentWithTax.toFixed(2) + "<br>" +
 		"<h6>Cost of Borrowing:</h6> $" + costOfBorrowingWithTax.toFixed(2) + "<br>";
 
 	document.getElementById('loanValueWithTax').innerHTML = resultWithTax;
