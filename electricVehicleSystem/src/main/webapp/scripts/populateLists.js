@@ -26,6 +26,8 @@ function populateMain() {
 	// Get the value of the "vid" parameter
 
 	var model = searchParams.get("model");
+	
+	var sorting= searchParams.get("sorting");
 
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
@@ -39,7 +41,10 @@ function populateMain() {
 	if (model == "All") {
 		window.location.href = "http://localhost:8080/electricVehicleSystem/index/allItems.jspx";
 	}
-
+	
+	if(sorting != null){
+		urlBackend += "/sort?sorting=" + sorting;
+	}
 
 	// Configure the request
 	xhr.open(

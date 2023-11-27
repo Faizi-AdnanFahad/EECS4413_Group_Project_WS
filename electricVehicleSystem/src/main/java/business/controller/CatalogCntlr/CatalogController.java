@@ -30,38 +30,15 @@ public class CatalogController {
 	public List<Item> getDeals() {
 		return this.catalog.listDeals();
 	}
-
+	
 	@GET
-	@Path("sortASC")
+	@Path("/sort")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Item> sortByPrice() {
+	public List<Item> sortByP(@PathParam("sort") String sort, @QueryParam("sorting") String sorting) {
 
-		return this.catalog.sortByPriceAsc();
+		return this.catalog.sortBy(sorting);
 	}
-
-	@GET
-	@Path("sortDESC")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Item> sortByPriceDESC() {
-
-		return this.catalog.sortByPriceDesc();
-	}
-
-	@GET
-	@Path("sortHTL")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Item> sortByMileageHTL() {
-
-		return this.catalog.sortByMileageHTL();
-	}
-
-	@GET
-	@Path("sortLTH")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Item> sortByMileageLTH() {
-
-		return this.catalog.sortByMileageLTH();
-	}
+	
 
 	@GET
 	@Path("/filter")

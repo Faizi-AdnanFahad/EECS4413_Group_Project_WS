@@ -23,29 +23,13 @@ public class Catalog {
 	public List<Item> getVehicles() {
 		return this.vehicles;
 	}
-
-	public List<Item> sortByPriceAsc() {
-		return this.itemDao.sortByPriceASC();
-	}
-
-	public List<Item> sortByPriceDesc() {
-		return this.itemDao.sortByPriceDESC();
-	}
-
+	
 	public List<Item> listVehicles() {
 		return this.itemDao.listAllVehicles();
 	}
 
 	public List<Item> compareVehicles(String[] cars) {
 		return this.itemDao.compareVehicles(cars);
-	}
-
-	public List<Item> sortByMileageHTL() {
-		return this.itemDao.sortByMileageHTL();
-	}
-
-	public List<Item> sortByMileageLTH() {
-		return this.itemDao.sortByMileageLTH();
 	}
 
 	public Item getVehicleById(String id) {
@@ -72,5 +56,9 @@ public class Catalog {
 
 	public List<Item> listDeals() {
 		return this.itemDao.listAllDeals();
+	}
+
+	public List<Item> sortBy(String sort) {
+		return this.itemDao.sortBy(sort);
 	}
 }
