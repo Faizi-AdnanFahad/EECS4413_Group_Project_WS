@@ -252,7 +252,7 @@ public class ItemDAO {
 	}
 
 	public List<Item> listAllDeals() {
-		String sql = "SELECT * FROM item WHERE price BETWEEN 40000 AND 50000;";
+		String sql = "SELECT * FROM item WHERE price BETWEEN 20000 AND 40000";
 
 		Catalog catalog = new Catalog();
 

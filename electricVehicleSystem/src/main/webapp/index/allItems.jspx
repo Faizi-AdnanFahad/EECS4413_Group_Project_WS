@@ -29,7 +29,7 @@
 			<a class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/home.html">Home</a> <a
 				class="navbar-brand nav-link"
-				href="/electricVehicleSystem/index/viewHotDeals.jspx">Deals</a> <a
+				href="/electricVehicleSystem/DealsController">Deals</a> <a
 				class="navbar-brand nav-link" href="#feedback">Feedback </a> <a
 				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/SignUpView.html">Sign Up</a> <a
@@ -95,8 +95,9 @@
 		<div class="d-flex align-items-center mt-3">
 			<select id="search" class="form-select"
 				placeholder="Select an option">
-				<option value="Price asc">Price ASC</option>
-				<option value="Price desc">Price DESC</option>
+				<option value="">Select</option>
+				<option value="Price asc">Ascending Prices</option>
+				<option value="Price desc">Descending Prices</option>
 				<option value="Mileage asc">Mileage LTH</option>
 				<option value="Mileage desc">Mileage HTL</option>
 			</select>
