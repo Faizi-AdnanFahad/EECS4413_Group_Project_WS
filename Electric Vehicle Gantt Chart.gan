@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-10-19" view-index="0" gantt-divider-location="1522" resource-divider-location="300" version="3.2.3247" locale="en_CA">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2023-11-17" view-index="0" gantt-divider-location="707" resource-divider-location="300" version="3.2.3247" locale="en_CA">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Name" width="692" order="0"/>
-        <field id="tpd4" name="Begin date" width="10" order="1"/>
-        <field id="tpd5" name="End date" width="122" order="2"/>
+        <field id="tpd3" name="Name" width="81" order="0"/>
+        <field id="tpd4" name="Begin date" width="20" order="1"/>
+        <field id="tpd5" name="End date" width="20" order="2"/>
         <field id="tpc0" name="Assigned to" width="844" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <timeline>
@@ -74,152 +74,152 @@
                 </task>
             </task>
         </task>
-        <task id="29" name="Deliverable 2" color="#ff3366" meeting="false" start="2023-10-19" duration="24" complete="0" thirdDate="2023-10-19" thirdDate-constraint="1" expand="false">
-            <task id="56" name="Setup the project and GitHub permissions" color="#ff3366" meeting="false" start="2023-10-19" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+        <task id="29" name="Deliverable 2" color="#ff3366" meeting="false" start="2023-11-30" duration="21" complete="0" thirdDate="2023-10-19" thirdDate-constraint="1" expand="false">
+            <task id="56" name="Setup the project and GitHub permissions" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
             </task>
-            <task id="54" name="Database Schema Design" color="#ff3366" meeting="false" start="2023-10-19" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="54" name="Database Schema Design" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                <task id="60" name="Create an E/R Diagram for the db" color="#ff3366" meeting="false" start="2023-10-19" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="61" name="Connect the the db and the web application with JDBC" color="#ff3366" meeting="false" start="2023-10-20" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="60" name="Create an E/R Diagram for the db" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="61" name="Connect the the db and the web application with JDBC" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="55" name="Database Connection and setup" color="#ff3366" meeting="false" start="2023-10-20" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="55" name="Database Connection and setup" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <depend id="37" type="2" difference="0" hardness="Strong"/>
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
             </task>
-            <task id="37" name="List electric vehicles available in the catalogue" color="#ff3366" meeting="false" start="2023-10-24" duration="3" complete="0" thirdDate="2023-10-20" thirdDate-constraint="1" expand="false">
+            <task id="37" name="List electric vehicles available in the catalogue" color="#ff3366" meeting="false" start="2023-12-04" duration="3" complete="0" thirdDate="2023-10-20" thirdDate-constraint="1" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                <task id="63" name="Create REST routes and relevant DAOs" color="#ff3366" meeting="false" start="2023-10-24" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="64" name="Create simple JSP file and populate it with data coming from the db" color="#ff3366" meeting="false" start="2023-10-24" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="63" name="Create REST routes and relevant DAOs" color="#ff3366" meeting="false" start="2023-12-04" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="64" name="Create simple JSP file and populate it with data coming from the db" color="#ff3366" meeting="false" start="2023-12-04" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="40" name="View full details of each electric vehicle (including the vehicle history report if applicable) available in the catalogue" color="#ff3366" meeting="false" start="2023-10-26" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="40" name="View full details of each electric vehicle (including the vehicle history report if applicable) available in the catalogue" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <notes>
                     <![CDATA[View full details of each electric vehicle (including the vehicle history report if applicable) available in the catalogue]]>
                 </notes>
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                <task id="62" name="Create the REST routes and relevant DAO(s)" color="#ff3366" meeting="false" start="2023-10-26" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="62" name="Create the REST routes and relevant DAO(s)" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="38" name="Implement the sorting mechanism" color="#ff3366" meeting="false" start="2023-10-31" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="38" name="Implement the sorting mechanism" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                <task id="65" name="Sort by ascending price" color="#ff3366" meeting="false" start="2023-10-31" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="66" name="Sort by descending price" color="#ff3366" meeting="false" start="2023-11-01" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="67" name="Sort by mileage high to low" color="#ff3366" meeting="false" start="2023-11-01" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="68" name="Sort by mileage low to high" color="#ff3366" meeting="false" start="2023-11-02" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="65" name="Sort by ascending price" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="66" name="Sort by descending price" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="67" name="Sort by mileage high to low" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="68" name="Sort by mileage low to high" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="39" name="Filter electric vehicles by brands, by shapes, by model year, by vehicle history (i.e., with reported accidents/damages, and without reported accidents/damages)" color="#ff3366" meeting="false" start="2023-11-02" duration="6" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="39" name="Filter electric vehicles by brands, by shapes, by model year, by vehicle history (i.e., with reported accidents/damages, and without reported accidents/damages)" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                <task id="69" name="filter by brands" color="#ff3366" meeting="false" start="2023-11-02" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="70" name="Filter by shapes" color="#ff3366" meeting="false" start="2023-11-08" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="71" name="Filter by model year" color="#ff3366" meeting="false" start="2023-11-09" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="72" name="Filter by vehicle history" color="#ff3366" meeting="false" start="2023-11-09" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="69" name="filter by brands" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="70" name="Filter by shapes" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="71" name="Filter by model year" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="72" name="Filter by vehicle history" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="49" name="Register" color="#ff3366" meeting="false" start="2023-11-09" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="49" name="Register" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Arian"/>
-                <task id="75" name="implement the model and other relevant APIs" color="#ff3366" meeting="false" start="2023-11-09" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="73" name="Implement a simple html page for user inputs" color="#ff3366" meeting="false" start="2023-11-09" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="74" name="implement a simple client and server side validation" color="#ff3366" meeting="false" start="2023-11-09" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="75" name="implement the model and other relevant APIs" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="73" name="Implement a simple html page for user inputs" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="74" name="implement a simple client and server side validation" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="51" name="Sign Out" color="#ff3366" meeting="false" start="2023-11-13" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="51" name="Sign Out" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="Arian"/>
             </task>
-            <task id="50" name="Sign in" color="#ff3366" meeting="false" start="2023-11-09" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="50" name="Sign in" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Arian"/>
-                <task id="78" name="Implement the model and other relevant APIs" color="#ff3366" meeting="false" start="2023-11-09" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="77" name="implement a simple client and server side validation" color="#ff3366" meeting="false" start="2023-11-09" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="76" name="Implement a simple html page for user inputs" color="#ff3366" meeting="false" start="2023-11-09" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="78" name="Implement the model and other relevant APIs" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="77" name="implement a simple client and server side validation" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="76" name="Implement a simple html page for user inputs" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="45" name="Add vehicles to the shopping cart" color="#ff3366" meeting="false" start="2023-11-09" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="45" name="Add vehicles to the shopping cart" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Selena"/>
-                <task id="79" name="Create the relevant servlets and routes" color="#ff3366" meeting="false" start="2023-11-09" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="79" name="Create the relevant servlets and routes" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="46" name="Edit or remove vehicles from the shopping cart" color="#ff3366" meeting="false" start="2023-11-07" duration="9" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="46" name="Edit or remove vehicles from the shopping cart" color="#ff3366" meeting="false" start="2023-11-30" duration="9" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Selena"/>
-                <task id="59" name="Seperate route and page for shopping cart" color="#ff3366" meeting="false" start="2023-11-07" duration="9" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="59" name="Seperate route and page for shopping cart" color="#ff3366" meeting="false" start="2023-11-30" duration="9" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
             </task>
-            <task id="47" name="“Check out” by providing credit card information and shipping information to purchase the vehicles in the shopping cart" color="#ff3366" meeting="false" start="2023-11-13" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="47" name="“Check out” by providing credit card information and shipping information to purchase the vehicles in the shopping cart" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[“Check out” by providing credit card information and shipping information to purchase the vehicles in the shopping cart]]>
                 </notes>
                 <customproperty taskproperty-id="tpc0" value="Selena"/>
             </task>
-            <task id="43" name="Be able to compare vehicles" color="#ff3366" meeting="false" start="2023-10-31" duration="7" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="43" name="Be able to compare vehicles" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                <task id="80" name="implement the route and retrieve data from database" color="#ff3366" meeting="false" start="2023-10-31" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="81" name="get user input in the form of a checklist and a button to compare vehicles" color="#ff3366" meeting="false" start="2023-11-03" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="80" name="implement the route and retrieve data from database" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="81" name="get user input in the form of a checklist and a button to compare vehicles" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="44" name="Select a vehicle customization options" color="#ff3366" meeting="false" start="2023-11-13" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="44" name="Select a vehicle customization options" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                <task id="82" name="create PUT http methods to handle editing information for a vechle" color="#ff3366" meeting="false" start="2023-11-13" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="82" name="create PUT http methods to handle editing information for a vechle" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Tirth"/>
                 </task>
             </task>
-            <task id="48" name="Write reviews on vehicles and rate vehicles using five stars" color="#ff3366" meeting="false" start="2023-11-10" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="48" name="Write reviews on vehicles and rate vehicles using five stars" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
             </task>
-            <task id="58" name="Run reports on application usage" color="#ff3366" meeting="false" start="2023-11-01" duration="7" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="58" name="Run reports on application usage" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Arian"/>
-                <task id="84" name="implement the model, daos and other relevant class and methods" color="#ff3366" meeting="false" start="2023-11-06" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="83" name="Have different view for admins" color="#ff3366" meeting="false" start="2023-11-01" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="84" name="implement the model, daos and other relevant class and methods" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="83" name="Have different view for admins" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="57" name="Run Reports on vehicle sales" color="#ff3366" meeting="false" start="2023-11-02" duration="6" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="57" name="Run Reports on vehicle sales" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <customproperty taskproperty-id="tpc0" value="Arian"/>
-                <task id="85" name="Have different view for admins" color="#ff3366" meeting="false" start="2023-11-02" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="86" name="Implement the model, daos and other relevant class and methods" color="#ff3366" meeting="false" start="2023-11-06" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="85" name="Have different view for admins" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="86" name="Implement the model, daos and other relevant class and methods" color="#ff3366" meeting="false" start="2023-11-30" duration="4" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="53" name="Feedback Form (Original Use Case)" color="#ff3366" meeting="false" start="2023-11-06" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="53" name="Feedback Form (Original Use Case)" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="Tirth"/>
             </task>
-            <task id="41" name="View hot deals" color="#ff3366" meeting="false" start="2023-11-14" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="41" name="View hot deals" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="Tirth"/>
             </task>
-            <task id="52" name="Ask questions to a chatbot able to answer basic questions and help customers navigate to a specific vehicle or support page" color="#ff3366" meeting="false" start="2023-11-01" duration="15" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="52" name="Ask questions to a chatbot able to answer basic questions and help customers navigate to a specific vehicle or support page" color="#ff3366" meeting="false" start="2023-11-30" duration="15" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="Selena"/>
             </task>
-            <task id="42" name="Use a loan calculator (*)" color="#ff3366" meeting="false" start="2023-11-15" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
+            <task id="42" name="Use a loan calculator (*)" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="false">
                 <notes>
                     <![CDATA[Use a loan calculator (*)]]>
                 </notes>
                 <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                <task id="87" name="Create a simple form to handle user inputs and calculate monthly payment for the user" color="#ff3366" meeting="false" start="2023-11-15" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
-                <task id="88" name="implement simple client and server side validations for the user inputs" color="#ff3366" meeting="false" start="2023-11-15" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="87" name="Create a simple form to handle user inputs and calculate monthly payment for the user" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
+                <task id="88" name="implement simple client and server side validations for the user inputs" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="89" name="Server side simple Chatbot implementation" color="#ff3366" meeting="false" start="2023-10-20" duration="20" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="89" name="Server side simple Chatbot implementation" color="#ff3366" meeting="false" start="2023-11-30" duration="20" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                 <customproperty taskproperty-id="tpc0" value="All Team Members"/>
             </task>
-            <task id="32" name="Additional Report Sections" color="#ff3366" meeting="false" start="2023-10-19" duration="22" complete="0" thirdDate="2023-10-19" thirdDate-constraint="0" expand="false">
-                <task id="30" name="Deployment Diagram" color="#ff3366" meeting="false" start="2023-11-14" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+            <task id="32" name="Additional Report Sections" color="#ff3366" meeting="false" start="2023-11-30" duration="21" complete="0" thirdDate="2023-10-19" thirdDate-constraint="0" expand="false">
+                <task id="30" name="Deployment Diagram" color="#ff3366" meeting="false" start="2023-11-30" duration="2" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <notes>
                         <![CDATA[ You should use a deployment diagram to describe the deployment technologies you are planning to use and to illustrate the fact that your system is cloud-native. ]]>
                     </notes>
                     <customproperty taskproperty-id="tpc0" value="Tirth"/>
                 </task>
-                <task id="35" name="16 Test Cases" color="#ff3366" meeting="false" start="2023-10-19" duration="21" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="35" name="16 Test Cases" color="#ff3366" meeting="false" start="2023-11-30" duration="21" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <notes>
                         <![CDATA[A description of the test coverage for the server-side (e.g., 16 additional test cases i.e., four test cases per team member, or a Postman-related file). 15% ]]>
                     </notes>
                     <customproperty taskproperty-id="tpc0" value="All Team Members"/>
                 </task>
-                <task id="34" name="Activities Plan" color="#ff3366" meeting="false" start="2023-10-19" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="34" name="Activities Plan" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <notes>
                         <![CDATA[Activities plan for deliverables 2.  10% (here, the TA will look at the team meeting logs and will use them to deduct up to 30% of the overall deliverables 2 grade to each team member that seems to not participate enough in the completion of the team project) ]]>
                     </notes>
                     <customproperty taskproperty-id="tpc0" value="Adnan"/>
                 </task>
-                <task id="36" name="Description of Server0side implementation" color="#ff3366" meeting="false" start="2023-11-14" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="36" name="Description of Server0side implementation" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <notes>
                         <![CDATA[A description of the server-side implementation. You should notably describe how your implementation follows REST principles. You should describe the technologies used to implement your back-end. You should describe the technologies you are planning to use to implement the chatbot. 20% ]]>
                     </notes>
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
-                <task id="33" name="Desribing Quality Attributes" color="#ff3366" meeting="false" start="2023-11-14" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="33" name="Desribing Quality Attributes" color="#ff3366" meeting="false" start="2023-11-30" duration="3" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <notes>
                         <![CDATA[You should describe the quality attributes (e.g., security, performance, scalability) your architecture supports and how that architecture supports them. 20% ]]>
                     </notes>
                     <customproperty taskproperty-id="tpc0" value="Arian"/>
                 </task>
-                <task id="31" name="Detailed Design Section and rational of design Choices" color="#ff3366" meeting="false" start="2023-11-13" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
+                <task id="31" name="Detailed Design Section and rational of design Choices" color="#ff3366" meeting="false" start="2023-11-30" duration="5" complete="0" thirdDate="2023-09-27" thirdDate-constraint="0" expand="true">
                     <notes>
                         <![CDATA[The detailed design (refined component diagram) + rationale of design choices (e.g., design patterns used, JEE patterns used, architectural patterns used). ]]>
                     </notes>
@@ -227,98 +227,117 @@
                 </task>
             </task>
         </task>
-        <task id="90" name="Deliverable 3" meeting="false" start="2023-10-27" duration="1" complete="0" expand="true">
-            <task id="104" name="Report" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                <task id="91" name="Ordering &amp; Cart Backend" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+        <task id="90" name="Deliverable 3" color="#ff3366" meeting="false" start="2023-11-20" duration="14" complete="0" thirdDate="2023-11-20" thirdDate-constraint="0" expand="true">
+            <task id="104" name="Report" color="#ff3366" meeting="false" start="2023-11-20" duration="9" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="93" name="The final design" color="#ff3366" meeting="false" start="2023-11-27" duration="4" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="false">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                    <task id="125" name="Use case diagram" color="#ff3366" meeting="false" start="2023-11-27" duration="4" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                        <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                    </task>
+                    <task id="126" name="Sequence Diagram" color="#ff3366" meeting="false" start="2023-11-27" duration="4" complete="0" thirdDate="2023-11-27" thirdDate-constraint="0" expand="true">
+                        <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                    </task>
+                    <task id="127" name="Component Diagram" color="#ff3366" meeting="false" start="2023-11-27" duration="4" complete="0" thirdDate="2023-11-27" thirdDate-constraint="0" expand="true">
+                        <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                    </task>
+                </task>
+                <task id="94" name="Rationale of design choices (e.g., design patterns used, JEE patterns used, architectural patterns used)" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Arian"/>
                 </task>
-                <task id="92" name="Filtering Front-end with allItems.jspx file" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="95" name="Quality attributes (e.g., security, performance, scalability)" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Tirth"/>
                 </task>
-                <task id="93" name="The final design (i.e., the final versions of the use case diagram, sequence diagrams, component diagram)" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="96" name="Updated deployment diagram" color="#ff3366" meeting="false" start="2023-11-29" duration="2" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="97" name="A description of your web design (UIs)" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Selena"/>
+                </task>
+                <task id="98" name="Activities plan for deliverables 3" color="#ff3366" meeting="false" start="2023-11-20" duration="2" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Adnan"/>
                 </task>
-                <task id="94" name="rationale of design choices (e.g., design patterns used, JEE patterns used, architectural patterns used)" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Arian"/>
-                </task>
-                <task id="95" name="describe the quality attributes (e.g., security, performance, scalability)" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="96" name="improve your deployment diagram" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="97" name="A description of your web design" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="102" name="A description of the client-side implementation. You should describe the technologies you used to implement your front-end." color="#ff3366" meeting="false" start="2023-11-29" duration="2" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
-                <task id="98" name="Activities plan for deliverables 3" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                </task>
-                <task id="102" name="A description of the client-side implementation. You should describe the technologies you used to implement your front-end." color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="101" name="Technologies for chatbot feature" color="#ff3366" meeting="false" start="2023-11-28" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
-                <task id="101" name="You should describe the technologies you have used to implement the chatbot feature" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="100" name="A demo Section." color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
-                <task id="100" name="A demo Section." color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="99" name="Stength and Wearkness of our system" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
-                <task id="99" name="A description of the strengths and weaknesses of your e-commerce system." color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Selena"/>
-                </task>
-                <task id="103" name="A README file comprising the instructions allowing to install and run your system." color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="103" name="A README file comprising the instructions allowing to install and run your system." color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Selena"/>
                 </task>
             </task>
-            <task id="105" name="Implementation" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                <task id="106" name="Deployment to AWS" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                </task>
-                <task id="107" name="Sign up page" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Selena"/>
-                </task>
-                <task id="108" name="Sign in page" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Selena"/>
-                </task>
-                <task id="109" name="Setting up https" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                </task>
-                <task id="121" name="Catalog page" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                </task>
-                <task id="110" name="Filtering items" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="111" name="Sorting items" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="112" name="Cart page" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Selena"/>
-                </task>
-                <task id="113" name="Checkout/ordering page" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Selena"/>
-                </task>
-                <task id="114" name="Rate and review using five stars" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                </task>
-                <task id="115" name="Feedback form" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="116" name="chatbot implementation" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="117" name="deals page and design" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
-                </task>
-                <task id="118" name="loan calculator design" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
-                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
-                </task>
-                <task id="119" name="admin page/reporting and feedbacks" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+            <task id="105" name="Implementation" color="#ff3366" meeting="false" start="2023-11-20" duration="14" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="91" name="Ordering Component Backend" color="#ff3366" meeting="false" start="2023-11-20" duration="13" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Arian"/>
                 </task>
-                <task id="120" name="Vehicle comparision page" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="124" name="Shopping Cart Backend" color="#ff3366" meeting="false" start="2023-11-20" duration="14" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Arian"/>
+                </task>
+                <task id="92" name="Filtering Front-end with allItems.jspx file" color="#ff3366" meeting="false" start="2023-11-20" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="123" name="Deals back-end and front-end" color="#ff3366" meeting="false" start="2023-11-21" duration="7" complete="0" thirdDate="2023-10-19" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="106" name="Deployment to AWS" color="#ff3366" meeting="false" start="2023-11-29" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Adnan"/>
                 </task>
-                <task id="122" name="add pictures for each vehicle" color="#8cb6ce" meeting="false" start="2023-10-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                <task id="107" name="Sign up page UI" color="#ff3366" meeting="false" start="2023-11-28" duration="2" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="108" name="Sign in page UI" color="#ff3366" meeting="false" start="2023-11-29" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="109" name="Setting up https certificate" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="121" name="Catalog page UI" color="#ff3366" meeting="false" start="2023-11-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="110" name="Filtering items UI" color="#ff3366" meeting="false" start="2023-11-28" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="111" name="Sorting items UI" color="#ff3366" meeting="false" start="2023-11-29" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="112" name="Cart page UI" color="#ff3366" meeting="false" start="2023-11-21" duration="4" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Selena"/>
+                </task>
+                <task id="113" name="Checkout/ordering page UI" color="#ff3366" meeting="false" start="2023-11-23" duration="5" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Selena"/>
+                </task>
+                <task id="114" name="Rate and review using five stars UI" color="#ff3366" meeting="false" start="2023-11-27" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="115" name="Feedback form UI" color="#ff3366" meeting="false" start="2023-11-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="116" name="chatbot implementation back-end" color="#ff3366" meeting="false" start="2023-11-20" duration="13" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="128" name="chatbot implementation UI" color="#ff3366" meeting="false" start="2023-11-21" duration="7" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <depend id="29" type="2" difference="0" hardness="Strong"/>
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="117" name="deals page UI" color="#ff3366" meeting="false" start="2023-11-28" duration="2" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tirth"/>
+                </task>
+                <task id="118" name="loan calculator UI" color="#ff3366" meeting="false" start="2023-11-27" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="119" name="admin page/reporting and feedbacks UI" color="#ff3366" meeting="false" start="2023-11-24" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Arian"/>
+                </task>
+                <task id="120" name="Vehicle comparision page UI" color="#ff3366" meeting="false" start="2023-11-24" duration="2" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Adnan"/>
+                </task>
+                <task id="122" name="add pictures for each vehicle" color="#ff3366" meeting="false" start="2023-11-21" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                     <customproperty taskproperty-id="tpc0" value="Adnan"/>
                 </task>
             </task>
