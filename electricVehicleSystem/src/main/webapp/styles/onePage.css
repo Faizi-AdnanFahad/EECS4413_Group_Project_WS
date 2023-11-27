@@ -10,7 +10,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
 	color: #007bff !important;
 }
@@ -20,16 +19,11 @@ h6 {
 }
 
 .container {
+	padding-top: 40px;
 	margin-top: 50px;
 }
 
 /* Card Styles */
-.card {
-	margin: auto;
-	width: 50%;
-}
-
-/* Center the card */
 .card {
 	margin: auto;
 	width: 80%;
@@ -89,4 +83,15 @@ a:hover {
 .nav-link:hover {
 	color: rgba(255, 255, 255, 0.5);
 	border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Center the image */
+img {
+	margin: auto;
+}
+
+.outline-border {
+	padding: 20px;
+	border: 1px solid #adb5bd;
+	border-radius: 10px;
 }

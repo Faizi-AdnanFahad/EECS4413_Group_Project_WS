@@ -99,6 +99,9 @@ public class User {
 		return this.userDAO.getByUsername(email);
 	}
 
+	public User getByUserByID(String id) {
+		return this.userDAO.getByUserByID(id);
+	}
 	public boolean CreateUser(User user) {
 		return this.userDAO.CreateUser(user);
 	}

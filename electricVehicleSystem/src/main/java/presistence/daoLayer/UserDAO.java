@@ -164,4 +164,25 @@ public class UserDAO {
 		}
 	}
 
+	public User getByUserByID(String id) {
+		User user = new User();
+		String selectUser = "SELECT * FROM User WHERE id='" + id + "'";
+		try (Connection conn = DatabaseConnection.connect();
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(selectUser)) {
+			while (rs.next()) {
+				user.setId(rs.getInt("id"));
+				user.setFirstName(rs.getString("firstName"));
+				user.setLastName(rs.getString("lastName"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				user.setType(rs.getString("type"));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return user;
+	}
+
 }

@@ -3,6 +3,8 @@ package business.controller.UserCntlr;
 import java.util.List;
 
 import business.model.Analytics.Analytics;
+import business.model.Rating.ItemRatingModel;
+import business.model.Rating.Rating;
 import business.model.User.User;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
@@ -21,6 +23,13 @@ public class UserController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> getAllUsers() {
 		return this.user.selectAllUsers();
+	}
+	
+	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public User getRatingByParameter(@PathParam("id") String vid) {
+		return this.user.getByUserByID(vid);
 	}
 	
 	@GET
