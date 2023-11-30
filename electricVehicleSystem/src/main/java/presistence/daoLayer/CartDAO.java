@@ -31,7 +31,6 @@ public class CartDAO {
 		String sql = "SELECT vid FROM Cart WHERE userId=" + userId;
 
 		List<Integer> vids = new ArrayList<Integer>();
-		
 		try (Connection conn = DatabaseConnection.connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {
@@ -39,7 +38,8 @@ public class CartDAO {
 			while (rs.next()) {
 				vids.add(rs.getInt("vid"));
 			}
-		} catch (SQLException e) {
+		}
+			catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 		return vids;
