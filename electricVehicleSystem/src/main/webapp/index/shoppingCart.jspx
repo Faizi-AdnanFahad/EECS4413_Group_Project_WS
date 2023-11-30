@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <style>
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Shopping Cart</h1>
+  </header>
+
+  <div class="cart">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Product 1</td>
+          <td>$20.00</td>
+          <td>2</td>
+          <td>$40.00</td>
+        </tr>
+        <tr>
+          <td>Product 2</td>
+          <td>$15.00</td>
+          <td>1</td>
+          <td>$15.00</td>
+        </tr>
+        <!-- Add more rows for additional products -->
+      </tbody>
+    </table>
+
+    <div class="total">
+      <p>Total: $55.00</p>
+    </div>
+
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </div>
+
+</body>
+</html>
