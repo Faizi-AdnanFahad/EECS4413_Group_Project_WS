@@ -13,9 +13,7 @@
     <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
     <init-param>
       <param-name>jersey.config.server.provider.packages</param-name>
-      <param-value>
-				package
-				business.controller.CatalogCntlr;business.controller.UserCntlr;business.controller.VehicleCntlr;business.controller.VehicleComparisionCntlr;business.controller.AdministratorCntlr;business.controller.ShoppingCartCntlr;</param-value>
+      <param-value>package business.controller.CatalogCntlr;business.controller.UserCntlr;business.controller.VehicleCntlr;business.controller.VehicleComparisionCntlr;business.controller.AdministratorCntlr;business.controller.ShoppingCartCntlr;</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -98,5 +96,15 @@
   <servlet-mapping>
     <servlet-name>DealsController</servlet-name>
     <url-pattern>/DealsController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CurrentUserServlet</display-name>
+    <servlet-name>CurrentUserServlet</servlet-name>
+    <servlet-class>business.controller.UserCntlr.CurrentUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CurrentUserServlet</servlet-name>
+    <url-pattern>/CurrentUserServlet</url-pattern>
   </servlet-mapping>
 </web-app>

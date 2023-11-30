@@ -11,20 +11,28 @@
 <body>
     <header>Admin Access View</header>
     <div class="container">
-        <h1>Welcome Back <%= request.getAttribute("firstname") %>, <%= request.getAttribute("lastname") %></h1>
+    	<div class="myHeader">
+    		<div class="headLeft"></div>
+        	<h1>Welcome Back <%= session.getAttribute("firstname") %>, <%= request.getAttribute("lastname") %></h1>
+        	<div class="headRight"></div>
+        </div>
         <div class="options">
-            <form action="profile.jsp">
-                <input type="submit" value="Profile"/>
-            </form>
-            <form action="vehicleSalesReport.jsp">
-                <input type="submit" value="Vehicle Sales Report"/>
-            </form>
-            <form id="frmAppUsage">
-                <input type="submit" value="App Usage Report"/>
-            </form>
-            <form action="/electricVehicleSystem/SignOutServlet" method="post">
-                <input type="submit" value="Sign Out"/>
-            </form>
+        	<div class="opLeft"></div>
+	        <div class="adminForm">
+	            <form action="profile.jsp">
+	                <input type="submit" value="Profile"/>
+	            </form>
+	            <form action="vehicleSalesReport.jsp">
+	                <input type="submit" value="Vehicle Sales Report"/>
+	            </form>
+	            <form id="frmAppUsage">
+	                <input type="submit" value="App Usage Report"/>
+	            </form>
+	            <form action="/electricVehicleSystem/SignOutServlet" method="post">
+	                <input type="submit" value="Sign Out"/>
+	            </form>
+            </div>
+            <div class="opRight"></div>
         </div>
     </div>
 

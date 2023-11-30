@@ -31,7 +31,6 @@ public class ShoppingCartController {
 		cart.loadItemsToCatalog(vids);
 		return cart.getVehiclesInCart();
 	}
-
 	/*
 	 * Sends a post request to create a new user
 	 */
@@ -43,4 +42,19 @@ public class ShoppingCartController {
 		ShoppingCart sc = new ShoppingCart();
 		return sc.addToCart(Integer.parseInt(userId), Integer.parseInt(vid));
 	}
+	
+	
+	@GET
+	@Path("/allItems")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Item> getAllCatalogs() {
+		System.out.println("GET REQUEST");
+		List<Integer> vids = cart.getAllVidsForUser(3);
+		cart.loadItemsToCatalog(vids);
+		return cart.getVehiclesInCart();
+	}
+
+	
+	
+
 }

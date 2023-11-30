@@ -10,8 +10,11 @@ body
 	line-height: 1.6;
 	margin: 0;
 	padding: 0;
-	background-color: #f4f4f4;
+	background-color:white;
 	height: 100vh;
+	display: flex;
+   	align-items: center;
+    justify-content: center;
 }
 
 .container 
@@ -21,7 +24,7 @@ body
     grid-template-rows: 0.2fr 0.8;
 }
 header {
-background: #687EFF;
+background-color: #333;
 color: #ffffff;
 padding: 1em 0;
 text-align: center;
@@ -29,7 +32,7 @@ border-radius: 20px;
 height: 10%;
 }
 footer {
-background: #687EFF;
+background-color: #333;
 color: #ffffff;
 text-align: center;
 padding: 1em 0;
@@ -39,7 +42,7 @@ height: 10%;
 }
 input[type="submit"] {
 cursor: pointer;
-background-color: #98E4FF;
+background-color: #4CAF50;
 color: #ffffff;
 border: none;
 padding: 10px 20px;
@@ -48,7 +51,7 @@ font-weight: bold;
 font-size: 0.9em;
 }
 input[type="submit"]:hover {
-background-color: #98E4FF;
+background-color: #4CAF50;
 }
 .options
 {
@@ -60,4 +63,19 @@ input
 {
 	margin:1em;
 	font-size:1.2em;
+}
+.myHeader
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.options
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.adminForm
+{
+	display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
