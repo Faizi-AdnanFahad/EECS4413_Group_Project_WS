@@ -85,7 +85,7 @@
 				<option value="Rivian">Rivian</option>
 				<option value="Bmw">Bmw</option>
 			</select>
-			<button onclick="performSearch()" class="btn btn-secondary ms-2">Filter</button>
+			<button onclick="performFilter()" class="btn btn-secondary ms-2">Filter</button>
 		</div>
 
 		<script src="/electricVehicleSystem/scripts/filter.js"></script>

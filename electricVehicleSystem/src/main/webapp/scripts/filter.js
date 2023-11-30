@@ -4,7 +4,7 @@
 // Function to handle the search button click
 
 
-function performSearch() {
+function performFilter() {
 	// Get the input value from the search box
 	var searchText = document.getElementById("searchInput").value;
 	console.log(searchText)
