@@ -33,6 +33,9 @@
 				class="navbar-brand nav-link" href="#feedback">Feedback </a> <a
 				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/SignUpView.html">Sign Up</a> <a
+				class="navbar-brand nav-link"
+				href="/electricVehicleSystem/index/chatbot.html">Chatbot</a> 
+				<a
 				id="compareButtonHref" class="btn btn-primary"
 				href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare=">Compare</a>
 
