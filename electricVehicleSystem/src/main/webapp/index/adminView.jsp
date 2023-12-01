@@ -45,7 +45,7 @@
                 e.preventDefault(); // prevent the form from submitting normally
 
                 $.ajax({
-                    url: "http://localhost:8080/electricVehicleSystem/rest/users/usage",
+                    url: "/electricVehicleSystem/rest/users/usage",
                     type: 'GET',
                     success: function(result){
                         alert("Number of user logins: " + result);

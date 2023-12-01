@@ -32,7 +32,7 @@ function populateMain() {
 	// Create an instance of XMLHttpRequest
 	var xhr = new XMLHttpRequest();
 
-	let urlBackend = "http://localhost:8080/electricVehicleSystem/rest/items"
+	let urlBackend = "/electricVehicleSystem/rest/items"
 
 	if (model != null) {
 		urlBackend += "/filter?model=" + model;

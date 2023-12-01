@@ -1,6 +1,6 @@
 async function getUserNameWithFetch(id) {
 	try {
-		const response = await fetch(`http://localhost:8080/electricVehicleSystem/rest/users/${id}`);
+		const response = await fetch(`/electricVehicleSystem/rest/users/${id}`);
 
 		if (!response.ok) {
 			throw new Error(`Request failed with status: ${response.status}`);
@@ -34,7 +34,7 @@ async function populateReview() {
 		// Configure the request
 		xhr.open(
 			"GET",
-			"http://localhost:8080/electricVehicleSystem/rest/rating/" + vid,
+			"/electricVehicleSystem/rest/rating/" + vid,
 			true
 		);
 

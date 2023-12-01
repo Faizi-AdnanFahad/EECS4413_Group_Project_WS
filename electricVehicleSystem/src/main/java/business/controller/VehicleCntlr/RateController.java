@@ -43,7 +43,7 @@ public class RateController extends HttpServlet {
 			ItemRatingModel irm = new ItemRatingModel();
 
 			irm.postNewRating(newRating);
-			response.sendRedirect("http://localhost:8080/electricVehicleSystem/VehicleController?id=" + vid);
+			response.sendRedirect("/electricVehicleSystem/VehicleController?id=" + vid);
 		}
 	}
 

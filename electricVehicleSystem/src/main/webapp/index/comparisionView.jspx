@@ -48,7 +48,7 @@
 				</script>
 	
 				<a class="btn btn-primary"
-					href="http://localhost:8080/electricVehicleSystem/rest/cart/3">View
+					href="/electricVehicleSystem/rest/cart/3">View
 					Cart</a>
 			</div>
 		</nav>
