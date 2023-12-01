@@ -23,7 +23,7 @@
             <!-- Rows will be dynamically added here -->
         </table>
         <!-- Add more items as needed -->
-        <a href="#" class="checkout-btn">Proceed to Checkout</a>
+        <a href="checkoutView.jsp" class="checkout-btn">Proceed to Checkout</a>
     </div>
     <script>
     	var idValue = $("#userID").val();
