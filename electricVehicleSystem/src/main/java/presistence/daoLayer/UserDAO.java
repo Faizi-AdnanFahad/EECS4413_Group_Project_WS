@@ -72,40 +72,32 @@ public class UserDAO {
 	}
 
 	public User getByUsername(String username) {
-		User user = new User();
-		String selectUser = "SELECT id,firstName,lastName,email,password,type FROM User WHERE email='" + username + "'";
-		try (Connection conn = DatabaseConnection.connect();
-				Statement statement = conn.createStatement();
-				ResultSet rs = statement.executeQuery(selectUser)) {
-			while (rs.next()) {
-				user.setId(rs.getInt("id"));
-				user.setFirstName(rs.getString("firstName"));
-				user.setLastName(rs.getString("lastName"));
-				user.setEmail(rs.getString("email"));
-				user.setPassword(rs.getString("password"));
-				user.setType(rs.getString("type"));
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
+	    User user = new User();
+	    String selectUser = "SELECT id, firstName, lastName, email, password, type FROM User WHERE email=?";
+	    
+	    try (Connection conn = DatabaseConnection.connect();
+	         PreparedStatement preparedStatement = conn.prepareStatement(selectUser)) {
 
-		return user;
+	        // Set the parameter safely
+	        preparedStatement.setString(1, username);
+
+	        try (ResultSet rs = preparedStatement.executeQuery()) {
+	            while (rs.next()) {
+	                user.setId(rs.getInt("id"));
+	                user.setFirstName(rs.getString("firstName"));
+	                user.setLastName(rs.getString("lastName"));
+	                user.setEmail(rs.getString("email"));
+	                user.setPassword(rs.getString("password"));
+	                user.setType(rs.getString("type"));
+	            }
+	        }
+	    } catch (SQLException e) {
+	        System.out.println(e.getMessage());
+	    }
+
+	    return user;
 	}
 
-	public String getUserPassword(String username) {
-		String password = null;
-		String selectPassword = "SELECT * FROM User WHERE email='" + username + "'";
-		try (Connection conn = DatabaseConnection.connect();
-				Statement statement = conn.createStatement();
-				ResultSet rs = statement.executeQuery(selectPassword)) {
-			while (rs.next()) {
-				password = rs.getString("password");
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		return password;
-	}
 
 	public List<Feedback> listAllFeedback() {
 		String sql = "SELECT description, userId FROM Feedback";
