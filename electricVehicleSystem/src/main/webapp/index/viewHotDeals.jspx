@@ -56,7 +56,7 @@
 	</header>
 	<div class="container mt-5">
 		<div class="card-container card-deck">
-			<c:forEach items="${item}" var="item">
+				<c:forEach items="${item}" var="item">
 				<div class="card mb-3">
 					<img
 						src="https://github.com/Faizi-AdnanFahad/EECS4413_Group_Project_WS/blob/main/sources/cars/car${item.vid}.jpg?raw=true"
@@ -67,14 +67,14 @@
 						<p class="card-text"><span>Descriptions:</span> ${item.description}</p>
 						<p class="card-text"><span>Model:</span> ${item.model}</p>
 						<p class="card-text"><span>Quantity:</span> ${item.quanitity}</p>
-						<p class="card-text"><span>Price:</span> ${item.price}</p>
+						<p class="card-text"><span>Price:</span> ${item.price}</p><h1 class="off-text"><p>${item.discount+5}% OFF Check</p></h1>
 						<p class="card-text"><span>Mileage:</span> ${item.mileage}</p>
 						<p class="card-text"><span>History:</span> ${item.historyId}</p>
 					</div>
 					<a id="viewMoreBtn_${j}" class="btn btn-primary"
 							href="/electricVehicleSystem/VehicleController?id=${item.vid}">View More</a>
 				</div>
-			</c:forEach>
+				</c:forEach>
 		</div>
 	</div>
 </body>
