@@ -30,27 +30,7 @@
 				href="/electricVehicleSystem/index/home.html">Home</a> <a
 				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/allItems.jspx">Vehicles</a>
-			<div class="ms-auto">
-				<a class="btn btn-success me-2"
-					href="/electricVehicleSystem/index/SignInView.html">Sign In</a> <a
-					href="#" class="btn btn-danger me-2" id="signOutBtn">Sign Out</a>
-	
-				<script>
-					document
-							.getElementById('signOutBtn')
-							.addEventListener(
-									'click',
-									function() {
-										// Use JavaScript to trigger the logout process
-										// You can redirect to the servlet URL or perform any other actions here
-										window.location.href = '/electricVehicleSystem/SignOutServlet';
-									});
-				</script>
-	
-				<a class="btn btn-primary"
-					href="/electricVehicleSystem/rest/cart/3">View
-					Cart</a>
-			</div>
+
 		</nav>
 	
 	</header>

@@ -92,6 +92,8 @@ public class RatingDAO {
 			statement.setInt(3, rating.getItemId());
 			statement.setInt(4, rating.getUserId());
 			statement.executeUpdate();
+			conn.commit();
+			conn.close();
 			return true;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
