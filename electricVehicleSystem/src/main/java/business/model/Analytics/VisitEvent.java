@@ -3,7 +3,12 @@ package business.model.Analytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import business.model.Vehicle.Item;
+import presistence.daoLayer.VisitEventDAO;
+
 public class VisitEvent {
+	
+	VisitEventDAO visitEventDAO = new VisitEventDAO();
 
 	public List<VisitEvent> listAllEvents()
 	{
@@ -11,9 +16,9 @@ public class VisitEvent {
 		return null;
 	}
 	
-	public List<VisitEvent> getSoldVehicles()
+	public List<Item> getSoldVehicles()
 	{
-		return null;
+		return visitEventDAO.getAllVehicleSold();
 	}
 	
 	public List<VisitEvent> getViewedVehicles()
