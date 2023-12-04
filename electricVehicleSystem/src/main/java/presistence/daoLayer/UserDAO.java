@@ -63,12 +63,13 @@ public class UserDAO {
 			statement.setString(5, user.getType());
 			System.out.println("before");
 			statement.executeUpdate();
+			conn.commit();
+			conn.close();
 			return true;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			return false;
 		}
-
 	}
 
 	public User getByUsername(String username) {
@@ -98,6 +99,20 @@ public class UserDAO {
 	    return user;
 	}
 
+	public String getUserPassword(String username) {
+		String password = null;
+		String selectPassword = "SELECT * FROM User WHERE email='" + username + "'";
+		try (Connection conn = DatabaseConnection.connect();
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(selectPassword)) {
+			while (rs.next()) {
+				password = rs.getString("password");
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return password;
+	}
 
 	public List<Feedback> listAllFeedback() {
 		String sql = "SELECT description, userId FROM Feedback";

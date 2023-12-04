@@ -67,7 +67,7 @@
 						<p class="card-text"><span>Descriptions:</span> ${item.description}</p>
 						<p class="card-text"><span>Model:</span> ${item.model}</p>
 						<p class="card-text"><span>Quantity:</span> ${item.quanitity}</p>
-						<p class="card-text"><span>Price:</span> ${item.price}</p><h1 class="off-text"><p>${item.discount+5}% OFF Check</p></h1>
+						<p class="card-text"><span>Price:</span> ${item.price * 0.80}</p><h1 class="off-text"><p>${item.discount+5}% OFF Check</p></h1>
 						<p class="card-text"><span>Mileage:</span> ${item.mileage}</p>
 						<p class="card-text"><span>History:</span> ${item.historyId}</p>
 					</div>
