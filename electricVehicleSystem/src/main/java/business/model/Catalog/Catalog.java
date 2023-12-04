@@ -9,6 +9,9 @@ import presistence.daoLayer.ItemDAO;
 public class Catalog {
 	private List<Item> vehicles;
 	private ItemDAO itemDao;
+	
+
+	
 
 	public Catalog() {
 		this.vehicles = new ArrayList<Item>();
@@ -61,4 +64,5 @@ public class Catalog {
 	public List<Item> sortBy(String sort) {
 		return this.itemDao.sortBy(sort);
 	}
+	
 }

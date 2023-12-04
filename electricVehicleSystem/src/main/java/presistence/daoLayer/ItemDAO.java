@@ -262,6 +262,8 @@ public class ItemDAO {
 
 			while (rs.next()) {
 				Item item = helper(rs);
+				item.setDiscount(10);
+				
 
 				// add items to the catalog
 				catalog.addVehicles(item);

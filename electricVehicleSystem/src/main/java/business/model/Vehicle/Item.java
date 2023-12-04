@@ -13,6 +13,7 @@ public class Item {
 	private int historyId;
 	private ItemDAO itemDao;
 	private String interiorColor;
+	private int discount=10;
 
 	public Item() {
 		this.itemDao = ItemDAO.getInstance();
@@ -104,5 +105,12 @@ public class Item {
 
 	public void setInteriorColor(String interiorColor) {
 		this.interiorColor = interiorColor;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount+5;
 	}
 }
