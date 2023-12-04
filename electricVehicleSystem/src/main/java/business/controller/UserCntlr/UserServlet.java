@@ -45,8 +45,8 @@ public class UserServlet extends HttpServlet {
 				Analytics.userLoginCount++;
 				if (user.getType().equals("admin")) {
 					session.setAttribute("id", user.getId());
-					request.setAttribute("firstname", user.getFirstName());
-					request.setAttribute("lastname", user.getLastName());
+					session.setAttribute("firstname", user.getFirstName());
+					session.setAttribute("lastname", user.getLastName());
 					request.getRequestDispatcher("index/adminView.jsp").forward(request, response);
 				} else {
 					session.setAttribute("id", user.getId());
