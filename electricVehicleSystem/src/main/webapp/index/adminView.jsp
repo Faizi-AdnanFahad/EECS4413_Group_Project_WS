@@ -27,11 +27,11 @@
     <section id="profileSection">
         <h2>View Profile</h2>
         <!-- Add content for viewing profile here -->
-        <%= session.getAttribute("id") %>
+        Admin Id: <%= session.getAttribute("id") %>
         </br>
-        <%= session.getAttribute("firstname") %>
+        Firstname: <%= session.getAttribute("firstname") %>
         </br>
-        <%= session.getAttribute("lastname") %>
+        Lastname: <%= session.getAttribute("lastname") %>
     </section>
 
     <section id="appUsageSection" style="display: none;">
