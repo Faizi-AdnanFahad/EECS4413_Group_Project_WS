@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import business.model.Administrator.Administrator;
 import business.model.Administrator.Feedback;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,13 +24,23 @@ public class FeedbackController extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
+        ServletContext servletContext = getServletContext();
+
 		String feedback = (String) request.getParameter("feedback");
 		System.out.println(feedback);
-		if (session.getAttribute("userId") == null) { // if user is not logged in, redirect it to the login page
+		String userIdForBackend = (String) request.getParameter("userId");
+		if (servletContext.getAttribute("userId") == null && userIdForBackend == null) { // if user is not logged in, redirect it to the login page
 			response.sendRedirect("index/SignInView.html");
 		} else {
+			int userId = 0;
+			System.out.println(userId);
+			if (session.getAttribute("userId") == null && userIdForBackend != null) {
+				userId = Integer.parseInt(userIdForBackend);
+			}
+			else {
+				userId = (int) servletContext.getAttribute("userId");
+			}
 			// create the feedback and redirect back to the same page
-			int userId = (int) session.getAttribute("userId");
 			Feedback newFeedback = new Feedback(feedback, userId);
 			Administrator admin = new Administrator();
 			admin.postNewFeedback(newFeedback);

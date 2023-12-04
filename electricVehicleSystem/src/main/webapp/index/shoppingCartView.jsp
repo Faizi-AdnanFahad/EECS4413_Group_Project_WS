@@ -24,35 +24,12 @@
 				href="/electricVehicleSystem/index/home.html">Home</a> <a
 				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/DealsController">Deals</a> <a
-				class="navbar-brand nav-link" href="#feedback">Feedback </a> <a
 				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/SignUpView.html">Sign Up</a> <a
 				class="navbar-brand nav-link"
-				href="/electricVehicleSystem/index/chatbot.html">Chatbot</a> <a
-				id="compareButtonHref" class="btn btn-primary"
-				href="/electricVehicleSystem/VehicleComparisionCntlr?vehiclesToCompare=">Compare</a>
+				href="/electricVehicleSystem/index/chatbot.html">Chatbot</a>
 
 			<div class="ms-auto">
-				<c:if test="${empty applicationScope['userId']}">
-					<a class="btn btn-success me-2"
-						href="/electricVehicleSystem/index/SignInView.html">Sign In</a>
-				</c:if>
-				<c:if test="${not empty applicationScope['userId']}">
-					<a href="#" class="btn btn-danger me-2" id="signOutBtn">Sign
-						Out</a>
-				</c:if>
-
-				<script>
-					document
-							.getElementById('signOutBtn')
-							.addEventListener(
-									'click',
-									function() {
-										// Use JavaScript to trigger the logout process
-										// You can redirect to the servlet URL or perform any other actions here
-										window.location.href = '/electricVehicleSystem/SignOutServlet';
-									});
-				</script>
 
 				<a class="btn btn-primary"
 					href="/electricVehicleSystem/index/shoppingCartView.jsp">View
@@ -72,6 +49,7 @@
 				<th>Model</th>
 				<th>Price</th>
 				<th>Mileage</th>
+				<th></th>
 			</tr>
 			<!-- Rows will be dynamically added here -->
 		</table>
@@ -93,6 +71,12 @@
 					row.append($("<td></td>").text(cart.model));
 					row.append($("<td></td>").text(cart.price));
 					row.append($("<td></td>").text(cart.mileage));
+					// Add a "Remove" button with a unique ID for each row
+					var removeButton = $("<button></button>").text("Remove")
+							.attr("class", "btn btn-danger removeBtn").attr(
+									"data-vid", cart.vid); // Store the vehicle ID as a data attribute
+					row.append($("<td></td>").append(removeButton));
+
 					table.append(row);
 				});
 			},
