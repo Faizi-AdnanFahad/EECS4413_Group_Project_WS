@@ -60,9 +60,13 @@
 									window.location.href = '/electricVehicleSystem/SignOutServlet';
 								});
 			</script>
+			
+			<c:if test="${not empty applicationScope['userId']}">
+				<a class="btn btn-primary"
+					href="/electricVehicleSystem/index/shoppingCartView.jsp">View
+					Cart</a>
+			</c:if>
 
-			<a class="btn btn-primary" href="/electricVehicleSystem/index/shoppingCartView.jsp">View
-				Cart</a>
 		</div>
 	</nav>
 </header>
@@ -98,9 +102,12 @@
 						<span>History: </span>${item.historyId}
 					</p>
 				</div>
-				<a id="addToCardBtn"
-					onclick="addToCart(${applicationScope['userId']})"
-					class="btn btn-primary">Add to Cart</a>
+				<c:if test="${not empty applicationScope['userId']}">
+
+					<a id="addToCardBtn"
+						onclick="addToCart(${applicationScope['userId']})"
+						class="btn btn-primary">Add to Cart</a>
+				</c:if>
 
 			</c:if>
 		</div>

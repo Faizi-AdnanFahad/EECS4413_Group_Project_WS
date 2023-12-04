@@ -59,10 +59,12 @@
 										window.location.href = '/electricVehicleSystem/SignOutServlet';
 									});
 				</script>
-
-				<a class="btn btn-primary"
-					href="/electricVehicleSystem/index/shoppingCartView.jsp">View
-					Cart</a>
+				
+				<c:if test="${not empty applicationScope['userId']}">
+					<a class="btn btn-primary"
+						href="/electricVehicleSystem/index/shoppingCartView.jsp">View
+						Cart</a>
+				</c:if>
 
 			</div>
 		</nav>

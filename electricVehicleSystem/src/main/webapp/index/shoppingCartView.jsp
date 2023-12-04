@@ -23,6 +23,8 @@
 			<a class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/home.html">Home</a> <a
 				class="navbar-brand nav-link"
+				href="/electricVehicleSystem/index/allItems.jspx">Vehicles</a> <a
+				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/DealsController">Deals</a> <a
 				class="navbar-brand nav-link"
 				href="/electricVehicleSystem/index/SignUpView.html">Sign Up</a> <a
@@ -74,16 +76,68 @@
 					// Add a "Remove" button with a unique ID for each row
 					var removeButton = $("<button></button>").text("Remove")
 							.attr("class", "btn btn-danger removeBtn").attr(
-									"data-vid", cart.vid); // Store the vehicle ID as a data attribute
-					row.append($("<td></td>").append(removeButton));
+									"data-vid", cart.vid).attr("onclick",
+									"removeItemFromCart(" + "<%=session.getAttribute("id")%>, " + cart.vid + ")");
+									row.append($("<td></td>").append(
+											removeButton));
 
-					table.append(row);
+									table.append(row);
+								});
+					},
+					error : function(error) {
+						console.log(error);
+					}
 				});
-			},
-			error : function(error) {
-				console.log(error);
-			}
-		});
+
+		function removeItemFromCart(userId, vid) {
+
+			// Get the current URL
+			var currentURL = window.location.href;
+
+			// Parse the URL
+			var urlObject = new URL(currentURL);
+			var searchParams = new URLSearchParams(urlObject.search);
+
+			// Create an instance of XMLHttpRequest
+			var xhr = new XMLHttpRequest();
+
+			// Configure the request for adding to the cart
+			xhr.open("DELETE", "/electricVehicleSystem/rest/cart/" + userId
+					+ "?vid=" + vid, true);
+			xhr.setRequestHeader("Content-Type", "application/json");
+
+			// Set up event handlers
+			xhr.onload = function() {
+				if (xhr.status >= 200 && xhr.status < 300) {
+					// Request was successful
+					var jsonResponse = JSON.parse(xhr.responseText);
+					window.location.reload();
+
+					// You can perform additional actions after adding to the cart here
+				} else {
+					// Request had an error
+					console.error("Request failed with status: " + xhr.status);
+				}
+			};
+
+			xhr.onerror = function() {
+				// Handle network errors
+				console.error("Network error");
+			};
+
+			// Create a payload to send with the POST request
+			var payload = {
+				vid : vid,
+			};
+
+			// Send the POST request with the payload
+			xhr.send(JSON.stringify(payload));
+		}
+	</script>
+	<script src="/electricVehicleSystem/scripts/removeFromCart.js"></script>
+	<script>
+	<!-- allows the script before it to work somehow-->
+		console.log("");
 	</script>
 
 	<!-- JavaScript Bundle with Popper -->

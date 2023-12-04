@@ -235,6 +235,23 @@ public class ItemDAO {
 			return false;
 		}
 	}
+	
+	public boolean deleteCartItem(int userId, int vid) {
+	    String deleteCommand = "DELETE FROM Cart WHERE userId = ? AND vid = ?";
+	    try (Connection conn = DatabaseConnection.connect();
+	         PreparedStatement statement = conn.prepareStatement(deleteCommand)) {
+	        statement.setInt(1, userId);
+	        statement.setInt(2, vid);
+
+	        int rowsAffected = statement.executeUpdate();
+
+	        // Check if any rows were affected to determine if the deletion was successful
+	        return rowsAffected > 0;
+	    } catch (SQLException e) {
+	        System.out.println(e.getMessage());
+	        return false;
+	    }
+	}
 
 	public Item updateInteriorColour(String color, int vid) {
 		String updateCommand = "UPDATE Item SET interiorColor= ? WHERE vid = ?";

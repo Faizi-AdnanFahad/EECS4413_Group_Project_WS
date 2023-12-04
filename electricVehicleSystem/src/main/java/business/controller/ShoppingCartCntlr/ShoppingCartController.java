@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -31,6 +32,7 @@ public class ShoppingCartController {
 		cart.loadItemsToCatalog(vids);
 		return cart.getVehiclesInCart();
 	}
+
 	/*
 	 * Sends a post request to create a new user
 	 */
@@ -38,12 +40,11 @@ public class ShoppingCartController {
 	@Path("/{userId}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean createPlant(@PathParam("userId") String userId, @QueryParam("vid") String vid) {
+	public boolean addItemsToCart(@PathParam("userId") String userId, @QueryParam("vid") String vid) {
 		ShoppingCart sc = new ShoppingCart();
 		return sc.addToCart(Integer.parseInt(userId), Integer.parseInt(vid));
 	}
-	
-	
+
 	@GET
 	@Path("/allItems")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -54,7 +55,13 @@ public class ShoppingCartController {
 		return cart.getVehiclesInCart();
 	}
 
-	
-	
+	@DELETE
+	@Path("/{userId}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean deleteItemFromCart(@PathParam("userId") String userId, @QueryParam("vid") String vid) {
+		ShoppingCart sc = new ShoppingCart();
+		return sc.deleteCartItem(Integer.parseInt(userId), Integer.parseInt(vid));
+	}
 
 }

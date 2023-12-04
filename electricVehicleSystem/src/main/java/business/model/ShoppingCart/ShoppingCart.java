@@ -41,6 +41,10 @@ public class ShoppingCart {
 	public boolean addToCart(int userId, int vid) {
 		return this.catalog.addVehicleToCart(userId, vid);
 	}
+	
+	public boolean deleteCartItem(int userId, int vid) {
+		return this.cartDAO.deleteCartItem(userId, vid);
+	}
 
 	public List<Integer> getAllVidsForUser(int userId) {
 		return this.cartDAO.getVehiclesInCart(userId);
